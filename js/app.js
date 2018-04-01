@@ -1,7 +1,7 @@
 /*
  * Create a list that holds all of your cards
  */
-let array = [fa-diamond, fa-paper-plane-o, fa-anchor, fa-bolt, fa-cube, fa-leaf, fa-bicycle, fa-bomb];
+let cards = [fa-diamond, fa-paper-plane-o, fa-anchor, fa-bolt, fa-cube, fa-leaf, fa-bicycle, fa-bomb];
 
 /*
  * Display the cards on the page
@@ -11,7 +11,7 @@ let array = [fa-diamond, fa-paper-plane-o, fa-anchor, fa-bolt, fa-cube, fa-leaf,
  */
 
 // Shuffle function from http://stackoverflow.com/a/2450976
-function shuffle(array) {
+ document.addEventListener('DOMContentLoaded', function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
     while (currentIndex !== 0) {
@@ -23,7 +23,7 @@ function shuffle(array) {
     }
 
     return array;
-}
+});
 
 
 /*
