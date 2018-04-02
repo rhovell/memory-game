@@ -1,8 +1,8 @@
 /*
  * Create a list that holds all of your cards
  */
-let cards = ['fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube', 'fa-leaf', 'fa-bicycle', 'fa-bomb'];
-
+var cards = ['fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube', 'fa-leaf', 'fa-bicycle', 'fa-bomb',
+              'fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube', 'fa-leaf', 'fa-bicycle', 'fa-bomb'];
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -11,7 +11,7 @@ let cards = ['fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube'
  */
 
 // Shuffle function from http://stackoverflow.com/a/2450976
-function shuffle(array) {
+function shuffle(array){
     var currentIndex = array.length, temporaryValue, randomIndex;
 
     while (currentIndex !== 0) {
@@ -24,10 +24,37 @@ function shuffle(array) {
 
     return array;
 }
+// create container div
+const container = document.createElement('div');
+container.classList = 'container';
+// add container div to body
+document.body.append(container);
+// moves javascript link to bottom of body
+$('#js').insertAfter(container);
+// create deck ul list
+const dealtCards = document.createElement('ul');
+dealtCards.classList = 'deck';
 
+function respondToTheClick() {
+// this function will handle card clicks
+}
+// shuffle cards
+cardList = shuffle(cards);
+// add cards to deck
+container.appendChild(dealtCards);
+// add card elements and class details
+for (let i = 1; i <= cards.length; i++) {
+  const placedCard = document.createElement('li');
+  placedCard.classList = 'card';
+  const cardDetails = document.createElement('i');
+  cardDetails.classList = 'fa ' + cardList[i];
+  dealtCards.appendChild(placedCard);
+  placedCard.appendChild(cardDetails);
+}
+// add event listener to all cards
+dealtCards.addEventListener('click', respondToTheClick);
 
-/*
- * set up the event listener for a card. If a card is clicked:
+/* set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
  *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
  *  - if the list already has another card, check to see if the two cards match
@@ -36,6 +63,3 @@ function shuffle(array) {
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
-document.querySelector('.card').addEventListener('click', function (evt) {
-    $(".card").addClassName('open show');
-});
