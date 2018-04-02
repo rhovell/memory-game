@@ -1,8 +1,7 @@
 /*
  * Create a list that holds all of your cards
  */
-var cards = ['fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube', 'fa-leaf', 'fa-bicycle', 'fa-bomb',
-              'fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube', 'fa-leaf', 'fa-bicycle', 'fa-bomb'];
+var cards = ['fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube', 'fa-leaf', 'fa-bicycle', 'fa-bomb', 'fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube', 'fa-leaf', 'fa-bicycle', 'fa-bomb'];
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -36,14 +35,13 @@ const dealtCards = document.createElement('ul');
 dealtCards.classList = 'deck';
 
 function respondToTheClick() {
-// this function will handle card clicks
-}
+};
 // shuffle cards
 cardList = shuffle(cards);
 // add cards to deck
 container.appendChild(dealtCards);
 // add card elements and class details
-for (let i = 1; i <= cards.length; i++) {
+for (let i = 0; i < cards.length; i++) {
   const placedCard = document.createElement('li');
   placedCard.classList = 'card';
   const cardDetails = document.createElement('i');
