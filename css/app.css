@@ -81,6 +81,22 @@ h1 {
     font-size: 33px;
 }
 
+/* Card animation styling */
+/* The animation code */
+@-webkit-keyframes wrong-animation {
+  from {background-color: red;}
+  to {background-color: #2e3d49;}
+	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+/* The element to apply the animation to */
+.wrong {
+   animation-name: wrong-animation;
+   animation-duration: 1.5s;
+}
 /*
  * Styles for the Score Panel
  */
