@@ -81,55 +81,60 @@ function respondToTheClick(e) {
 }
 
 function check(event) {
-  // variables for new openCards array
+// variables for new openCards array
   let firstChoice = openCards[0];
   let secondChoice = openCards[1];
-  // if cards match
+// if cards match
   if(openCards.length % 2 === 0 && firstChoice === secondChoice){
     console.log("perform check function if openCards is divisible by 2");
       match();
-    //   console.log("if match called");
-    //   console.log("openCards array = " + openCards);
-    }
+// console.log("if match called");
+// console.log("openCards array = " + openCards);
+  }
     // if cards dont match
   if(openCards.length % 2 === 0 && firstChoice != secondChoice){
-      // console.log("if no match called");
-      // console.log("openCards array = " + openCards);
-      notAMatch = setTimeout(function noMatch(){
-        // console.log("noMatch called");
-        let selects = $(".open.show");
-        selects.addClass("wrong");
-        // console.log("wrong class added");
-        // console.log("openCards array = " + openCards);
-        clear();
-      },1001);
-    }
+// console.log("if no match called");
+// noMatch function
+    notAMatch = setTimeout(function noMatch(){
+// console.log("noMatch called");
+    let selects = $(".open.show");
+    selects.addClass("wrong");
+// console.log("wrong class added");
+// console.log("openCards array = " + openCards);
+    clear();
+    },1001);
+  }
 }
-// perform match animation
+// match function
 function match(){
-  // console.log("match called");
-  // console.log("openCards array = " + openCards);
+// console.log("match called");
+  let openSelects = $(".open.show");
+  openSelects.removeClass("open show");
+  openSelects.addClass("match");
+  console.log("remove open show classes and add match");
+// console.log("openCards array = " + openCards);
   let match = document.querySelector(".card.match");
   match.removeEventListener('click', respondToTheClick);
+  console.log("removeEventListener from matched cards");
   openCards.splice(0, 2);
+  console.log("clear open cards array")
 }
-// noMatch function
 
 function clear(){
-  // console.log("open.show class removed");
+// console.log("open.show class removed");
   clearOpen = setTimeout(function(){
     let openSelects = $(".open.show");
     openSelects.removeClass("open show");
   },100);
-  // console.log("clear function called with timeout")
+// console.log("clear function called with timeout")
   myVar = setTimeout(function clearWrong(){
-    // console.log("clearWrong function called");
+// console.log("clearWrong function called");
     let selects = $(".card.wrong");
     selects.removeClass("wrong");
-    // console.log("wrong class removed");
+// console.log("wrong class removed");
     openCards.splice(0, 2);
-    // console.log("openCards emptied");
-    // console.log("openCards array = " + openCards);
+// console.log("openCards emptied");
+// console.log("openCards array = " + openCards);
   }, 2010);
 }
 /* set up the event listener for a card. If a card is clicked:
