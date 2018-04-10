@@ -56,9 +56,12 @@ for (var i = 0; i < cards.length; i++) {
 
 // function to call all other functions when card is clicked
 function respondToTheClick(e) {
+  // console.log("card selected");
+  // console.log("check if the target that is clicked is the li");
   // check if the target that is clicked is the li
   if (e.target.tagName === 'LI') {
     // toggles open and show class
+    // console.log("toggles open and show class");
     e.target.classList.add('open','show');
     // fucntion variables
     let choice = document.querySelector('.card.open.show');
@@ -66,13 +69,14 @@ function respondToTheClick(e) {
     // end of function variables
     choices.toArray;
     // remove event target
+    // console.log("remove event target");
     choice.removeEventListener('click', respondToTheClick);
     // add first selection to opencards array
     openCards.push(choices);
-    console.log("first card added");
-    console.log(openCards);
+    // console.log("card added to openCards array");
+    // console.log("openCards array = " + openCards);
     // perform check function
-  check(cards);
+    check(cards);
   }
 }
 
@@ -82,33 +86,48 @@ function check(event) {
   let secondChoice = openCards[1];
   // if cards match
   if(openCards.length % 2 === 0 && firstChoice === secondChoice){
+    // console.log("perform check function if openCards is divisible by 2");
       match();
-      console.log("if match called");
-      console.log(openCards);
+    //   console.log("if match called");
+    //   console.log("openCards array = " + openCards);
     }
     // if cards dont match
   if(openCards.length % 2 === 0 && firstChoice != secondChoice){
+      // console.log("if no match called");
+      // console.log("openCards array = " + openCards);
       noMatch();
-      console.log("if no match called");
-      console.log(openCards);
     }
 }
-
-function hold(){
-// adds to hold array
-}
+// perform match animation
 function match(){
-  // perform match animation
-  console.log("match called");
-  console.log(openCards);
+  // console.log("match called");
+  // console.log("openCards array = " + openCards);
+  let match = document.querySelector(".card.match");
+  match.removeEventListener('click', respondToTheClick);
 }
+// noMatch function
 function noMatch(){
-  // perform incorrect animation
-  console.log("noMatch called");
-  console.log(openCards);
+  // console.log("noMatch called");
+  let selects = $(".open.show");
+  selects.removeClass("open show");
+  // console.log("open.show class removed");
+  selects.addClass("wrong");
+  // console.log("wrong class added");
+  // console.log("openCards array = " + openCards);
+  clear();
+};
+function clear(){
+  // console.log("clear function called with timeout")
+  myVar = setTimeout(function clearWrong(){
+    // console.log("clearWrong function called");
+    let selects = $(".card.wrong");
+    selects.removeClass("wrong");
+    // console.log("wrong class removed");
+    openCards.splice(0, 2);
+    // console.log("openCards emptied");
+    // console.log("openCards array = " + openCards);
+  }, 3000);
 }
-
-
 /* set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
  *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
