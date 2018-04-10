@@ -86,7 +86,7 @@ function check(event) {
   let secondChoice = openCards[1];
   // if cards match
   if(openCards.length % 2 === 0 && firstChoice === secondChoice){
-    // console.log("perform check function if openCards is divisible by 2");
+    console.log("perform check function if openCards is divisible by 2");
       match();
     //   console.log("if match called");
     //   console.log("openCards array = " + openCards);
@@ -95,7 +95,14 @@ function check(event) {
   if(openCards.length % 2 === 0 && firstChoice != secondChoice){
       // console.log("if no match called");
       // console.log("openCards array = " + openCards);
-      noMatch();
+      notAMatch = setTimeout(function noMatch(){
+        // console.log("noMatch called");
+        let selects = $(".open.show");
+        selects.addClass("wrong");
+        // console.log("wrong class added");
+        // console.log("openCards array = " + openCards);
+        clear();
+      },1001);
     }
 }
 // perform match animation
@@ -104,19 +111,16 @@ function match(){
   // console.log("openCards array = " + openCards);
   let match = document.querySelector(".card.match");
   match.removeEventListener('click', respondToTheClick);
+  openCards.splice(0, 2);
 }
 // noMatch function
-function noMatch(){
-  // console.log("noMatch called");
-  let selects = $(".open.show");
-  selects.removeClass("open show");
-  // console.log("open.show class removed");
-  selects.addClass("wrong");
-  // console.log("wrong class added");
-  // console.log("openCards array = " + openCards);
-  clear();
-};
+
 function clear(){
+  // console.log("open.show class removed");
+  clearOpen = setTimeout(function(){
+    let openSelects = $(".open.show");
+    openSelects.removeClass("open show");
+  },100);
   // console.log("clear function called with timeout")
   myVar = setTimeout(function clearWrong(){
     // console.log("clearWrong function called");
@@ -126,7 +130,7 @@ function clear(){
     openCards.splice(0, 2);
     // console.log("openCards emptied");
     // console.log("openCards array = " + openCards);
-  }, 3000);
+  }, 2010);
 }
 /* set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)

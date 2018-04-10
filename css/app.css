@@ -73,6 +73,8 @@ h1 {
 
 .deck .card.show {
     font-size: 33px;
+    -webkit-transition: font-size 1s; /* Safari */
+    transition: font-size 1s;
 }
 
 .deck .card.match {
@@ -99,7 +101,7 @@ h1 {
 }
 /*
  * Styles for the Score Panel
- */
+*/
 
 .score-panel {
     text-align: left;
