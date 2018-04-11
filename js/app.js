@@ -1,9 +1,10 @@
 /*
- * Create a list that holds all of your cards
+ * card holding arrays
  */
 var cards = ['fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube', 'fa-leaf', 'fa-bicycle',
 'fa-bomb', 'fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube', 'fa-leaf', 'fa-bicycle', 'fa-bomb'];
 var openCards = [];
+var matchedCards = [];
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -25,6 +26,15 @@ function shuffle(array){
 
     return array;
 }
+/* Process explanation
++ div class = "container" element
+- move javascript link to bottom of body
++ ul class = "deck" element
+- shuffle cards array
++ li class = "card" elements
++ i class = cardList array items
++ addEventListener to li elements*/
+
 // create container div
 const container = document.createElement('div');
 // add container div to body
@@ -54,31 +64,44 @@ for (var i = 0; i < cards.length; i++) {
 }
   dealtCards.addEventListener('click', respondToTheClick);
 
+/* respondToTheClick process explanation
+- target li elements only
++ add open and show classes to selected card
+- removeEventListener from selected card
++ add selected I element class[1] to openCards array
+- call check() function*/
+
 // function to call all other functions when card is clicked
 function respondToTheClick(e) {
-  // console.log("card selected");
-  // console.log("check if the target that is clicked is the li");
-  // check if the target that is clicked is the li
+// console.log("card selected");
+// console.log("check if the target that is clicked is the li");
+// check if the target that is clicked is the li
   if (e.target.tagName === 'LI') {
-    // toggles open and show class
-    // console.log("toggles open and show class");
+// toggles open and show class
+// console.log("toggles open and show class");
     e.target.classList.add('open','show');
-    // fucntion variables
+// fucntion variables
     let choice = document.querySelector('.card.open.show');
     let choices = e.target.firstChild.classList[1];
-    // end of function variables
+// end of function variables
     choices.toArray;
-    // remove event target
-    // console.log("remove event target");
+// remove event target
+// console.log("remove event target");
     choice.removeEventListener('click', respondToTheClick);
-    // add first selection to opencards array
+// add first selection to opencards array
     openCards.push(choices);
-    // console.log("card added to openCards array");
-    // console.log("openCards array = " + openCards);
-    // perform check function
+// console.log("card added to openCards array");
+// console.log("openCards array = " + openCards);
+// perform check function
     check(cards);
   }
 }
+
+/* check process explanation
+- check openCards array items for matching values
+- if so call match() function
+- if not after 1.01 seconds add wrong class to card
++ call clear() function*/
 
 function check(event) {
 // variables for new openCards array
@@ -86,7 +109,7 @@ function check(event) {
   let secondChoice = openCards[1];
 // if cards match
   if(openCards.length % 2 === 0 && firstChoice === secondChoice){
-    console.log("perform check function if openCards is divisible by 2");
+// console.log("perform check function if openCards is divisible by 2");
       match();
 // console.log("if match called");
 // console.log("openCards array = " + openCards);
@@ -105,21 +128,48 @@ function check(event) {
     },1001);
   }
 }
+/* match process explanation
+- remove open.show classes
++ add match.hold classes
++ match class performs css animation
+- removeEventListener from matched cards
+- for every item in the openCards array, add I class[1] to matchedCards array
+- after 3 seconds remove match class
+- empty openCards array*/
+
 // match function
 function match(){
 // console.log("match called");
   let openSelects = $(".open.show");
   openSelects.removeClass("open show");
-  openSelects.addClass("match");
-  console.log("remove open show classes and add match");
-// console.log("openCards array = " + openCards);
+  openSelects.addClass("match hold");
+  // openSelects.addClass("hold");
+console.log("remove open show classes and add match");
+console.log("openCards array = " + openCards + " matchedCards array = " + matchedCards);
   let match = document.querySelector(".card.match");
+  let matches = match.firstChild.classList[1];
+  matches.toArray;
   match.removeEventListener('click', respondToTheClick);
-  console.log("removeEventListener from matched cards");
-  openCards.splice(0, 2);
-  console.log("clear open cards array")
+console.log("removeEventListener from matched cards");
+console.log("clear open cards array")
+for(let i = 0; i < openCards.length; i++){
+  matchedCards.push(matches);
+}
+holdCard = setTimeout(function (){
+  $(".card.match").removeClass("match");
+},3000);
+// $(".card.match").addClass("hold");
+openCards.splice(0, 2);
+
+console.log(matchedCards);
 }
 
+/* clear process explanation
+- after 0.001 seconds remove open.show classes
+- after 2.1 seconds remove wrong class
++ empty openCards array*/
+
+// wrong choice function
 function clear(){
 // console.log("open.show class removed");
   clearOpen = setTimeout(function(){
@@ -136,6 +186,13 @@ function clear(){
 // console.log("openCards emptied");
 // console.log("openCards array = " + openCards);
   }, 2010);
+}
+
+function win(){
+  if(matchedCards.length === 16){
+    console.log("win animation called");
+    winAnimation();
+  }
 }
 /* set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)

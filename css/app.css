@@ -113,6 +113,11 @@ h1 {
    animation-name: wrong-animation;
    animation-duration: 1.5s;
 }
+.card.hold {
+  cursor: default;
+  font-size: 33px;
+  background: #02ccba;
+}
 /*
  * Styles for the Score Panel
 */
