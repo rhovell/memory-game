@@ -5,6 +5,7 @@ var cards = ['fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube'
 'fa-bomb', 'fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube', 'fa-leaf', 'fa-bicycle', 'fa-bomb'];
 var openCards = [];
 var matchedCards = [];
+var starRatings = ['fa fa-star', 'fa fa-star', 'fa fa-star']
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -40,6 +41,41 @@ const container = document.createElement('div');
 // add container div to body
 document.body.append(container);
 container.classList = 'container';
+
+const scores = document.createElement('section');
+container.appendChild(scores);
+scores.classList = 'score-panel';
+const starRating = document.createElement('ul');
+starRating.classList = 'stars';
+for(var i = 0; i < starRatings.length; i++){
+const starList = document.createElement('li');
+starRating.appendChild(starList);
+const stars = document.createElement('I');
+starList.appendChild(stars);
+stars.classList = 'fa fa-star';
+scores.appendChild(starRating);
+}
+
+const moveCounter = document.createElement('span');
+scores.appendChild(moveCounter);
+console.log("add span element");
+moveCounter.classList = 'moves';
+console.log("add class moves");
+moveCounter.textContent = "0";
+console.log("add textContent");
+console.log("add m")
+const moveText = document.createElement('span');
+moveText.textContent = " Moves";
+scores.appendChild(moveText);
+
+const restartButton = document.createElement('div');
+scores.appendChild(restartButton);
+restartButton.classList = 'restart';
+const restart = document.createElement('I');
+restart.classList = 'fa fa-repeat';
+restartButton.appendChild(restart);
+
+
 // moves javascript link to bottom of body
 $('#js').insertAfter(container);
 // console.log("js moved");
@@ -94,6 +130,8 @@ function respondToTheClick(e) {
 // console.log("openCards array = " + openCards);
 // perform check function
     check(cards);
+    // moveCount();
+    // rating();
   }
 }
 
@@ -101,6 +139,7 @@ function respondToTheClick(e) {
 - check openCards array items for matching values
 - if so call match() function
 - if not after 1.01 seconds add wrong class to card
+- wrong class calls css animation
 + call clear() function*/
 
 function check(event) {
@@ -145,7 +184,7 @@ function match(){
   openSelects.addClass("match hold");
   // openSelects.addClass("hold");
 console.log("remove open show classes and add match");
-console.log("openCards array = " + openCards + " matchedCards array = " + matchedCards);
+console.log("openCards array = " + openCards);
   let match = document.querySelector(".card.match");
   let matches = match.firstChild.classList[1];
   matches.toArray;
@@ -160,8 +199,7 @@ holdCard = setTimeout(function (){
 },3000);
 // $(".card.match").addClass("hold");
 openCards.splice(0, 2);
-
-console.log(matchedCards);
+console.log("matchedCards array = " + matchedCards);
 }
 
 /* clear process explanation
