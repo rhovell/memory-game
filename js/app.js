@@ -131,7 +131,7 @@ function respondToTheClick(e) {
 // perform check function
     check(cards);
     moveCount();
-    // rating();
+    rating();
   }
 }
 
@@ -232,6 +232,28 @@ function moveCount(){
   console.log(moves);
   moves++;
   moveCounter.innerText = moves;
+}
+
+function rating(){
+  let stars = $(".stars .fa");
+  if(moves >= 18){
+    stars[2].classList = "fa fa-star-half";
+  }
+  if(moves >= 22){
+    stars[2].classList = "far fa-star";
+  }
+  if(moves >= 26){
+    stars[1].classList = "fa fa-star-half";
+  }
+  if(moves >= 30){
+    stars[1].classList = "far fa-star";
+  }
+  if(moves >= 34){
+    stars[0].classList = "fa fa-star-half";
+  }
+  if(moves >= 38){
+    stars[0].classList = "far fa-star";
+  }
 }
 
 function win(){
