@@ -35,17 +35,27 @@ function shuffle(array){
 + li class = "card" elements
 + i class = cardList array items
 + addEventListener to li elements*/
+createContainer();
+createStars();
+createMovecounter()
+createRestartButton()
+// moves javascript link to bottom of body
+  const container = document.querySelector(".container");
+$('#js').insertAfter(container);
 
 // create container div
-const container = document.createElement('div');
+function createContainer(){
+  const container = document.createElement('div');
 // add container div to body
 document.body.append(container);
 container.classList = 'container';
-
-const scores = document.createElement('section');
+}
+function createStars(){
+  const scores = document.createElement('section');
+  const starRating = document.createElement('ul');
+  const container = document.querySelector(".container");
 container.appendChild(scores);
 scores.classList = 'score-panel';
-const starRating = document.createElement('ul');
 starRating.classList = 'stars';
 for(var i = 0; i < starRatings.length; i++){
 const starList = document.createElement('li');
@@ -55,7 +65,10 @@ starList.appendChild(stars);
 stars.classList = 'fa fa-star';
 scores.appendChild(starRating);
 }
+}
 
+function createMovecounter(){
+  const scores = document.querySelector(".score-panel");
 const moveCounter = document.createElement('span');
 scores.appendChild(moveCounter);
 console.log("add span element");
@@ -67,17 +80,18 @@ console.log("add m")
 const moveText = document.createElement('span');
 moveText.textContent = " Moves";
 scores.appendChild(moveText);
-
+}
+function createRestartButton(){
+  const scores = document.querySelector(".score-panel");
 const restartButton = document.createElement('div');
 scores.appendChild(restartButton);
 restartButton.classList = 'restart';
 const restart = document.createElement('I');
 restart.classList = 'fa fa-repeat';
 restartButton.appendChild(restart);
+restartButton.addEventListener("click", restartGame);
+}
 
-
-// moves javascript link to bottom of body
-$('#js').insertAfter(container);
 // console.log("js moved");
 // create deck ul list
 const dealtCards = document.createElement('ul');
@@ -132,6 +146,9 @@ function respondToTheClick(e) {
     check(cards);
     moveCount();
     rating();
+    if(matchedCards.length === 16){
+      win();
+    }
   }
 }
 
@@ -226,7 +243,8 @@ function clear(){
   }, 2010);
 }
 
-let moves = document.querySelector('.moves').innerText;
+let moveCounter = document.querySelector('.moves');
+let moves = moveCounter.innerText;
 function moveCount(){
   console.log("moveCount function called")
   console.log(moves);
@@ -258,10 +276,14 @@ function rating(){
 }
 
 function win(){
-  if(matchedCards.length === 16){
     console.log("win animation called");
-    winAnimation();
-  }
+    // add pop up window with you win and restart options
+}
+
+function restartGame(){
+  // call to restart game - forces page reload
+  console.log("restart game called")
+  location.reload(true);
 }
 /* set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
