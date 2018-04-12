@@ -130,7 +130,7 @@ function respondToTheClick(e) {
 // console.log("openCards array = " + openCards);
 // perform check function
     check(cards);
-    // moveCount();
+    moveCount();
     // rating();
   }
 }
@@ -224,6 +224,14 @@ function clear(){
 // console.log("openCards emptied");
 // console.log("openCards array = " + openCards);
   }, 2010);
+}
+
+let moves = document.querySelector('.moves').innerText;
+function moveCount(){
+  console.log("moveCount function called")
+  console.log(moves);
+  moves++;
+  moveCounter.innerText = moves;
 }
 
 function win(){
