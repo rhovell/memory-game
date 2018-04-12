@@ -236,22 +236,23 @@ function moveCount(){
 
 function rating(){
   let stars = $(".stars .fa");
-  if(moves >= 18){
+  let halfStars = $(".stars .far")
+  if(moves === 18){
     stars[2].classList = "fa fa-star-half";
   }
-  if(moves >= 22){
+  if(moves === 22){
     stars[2].classList = "far fa-star";
   }
-  if(moves >= 26){
+  if(moves === 26){
     stars[1].classList = "fa fa-star-half";
   }
-  if(moves >= 30){
+  if(moves === 30){
     stars[1].classList = "far fa-star";
   }
-  if(moves >= 34){
+  if(moves === 34){
     stars[0].classList = "fa fa-star-half";
   }
-  if(moves >= 38){
+  if(moves === 38){
     stars[0].classList = "far fa-star";
   }
 }
