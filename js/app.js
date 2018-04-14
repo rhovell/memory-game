@@ -77,7 +77,7 @@ function levelSelectionChange(e){
   if (e.target.classList.contains('easy')) {
     levelSelects.style.display = "none";
     themeSelects.style.display = "block";
-let choosen = document.getElementById('easyThemeSelection');
+    let choosen = document.getElementById('easyThemeSelection');
     choosen.classList.add('lvlChoice');
     let choice = document.querySelector('.lvlChoice');
     let choices = e.target.id;
@@ -119,10 +119,96 @@ let choosen = document.getElementById('easyThemeSelection');
 
 
 function switchDecks(e){
-  // console.log(e.target);
+  let me = event.target.classList;
+  console.log(event.target);
   console.log("switchDecks called");
-  // if(e.target.)
-  // levelModal.style.display = "none";
+  // easy themes
+  if (me.contains('butterflies')) {
+    let choosen = document.getElementById('selectButterflies');
+    choosen.classList.add('lvlChoice');
+    let choice = document.querySelector('.butterflies.lvlChoice');
+    let choices = choice.id;
+    // choosen.style.display = "block";
+    levelMode.push(choices);
+    console.log(levelMode);
+}
+  if (me.contains('farmyard')) {
+    let choosen = document.getElementById('selectFarmyard');
+    choosen.classList.add('lvlChoice');
+    let choice = document.querySelector('.farmyard.lvlChoice');
+    let choices = choice.id;
+    // choosen.style.display = "block";
+    levelMode.push(choices);
+    console.log(levelMode);
+}
+// medium themes
+  if (me.contains('birds')) {
+    let choosen = document.getElementById('selectBirds');
+    choosen.classList.add('lvlChoice');
+    let choice = document.querySelector('.birds.lvlChoice');
+    let choices = choice.id;
+    // choosen.style.display = "block";
+    levelMode.push(choices);
+    console.log(levelMode);
+}
+  if (me.contains('bugs')) {
+    let choosen = document.getElementById('selectBugs');
+    choosen.classList.add('lvlChoice');
+    let choice = document.querySelector('.bugs.lvlChoice');
+    let choices = choice.id;
+    // choosen.style.display = "block";
+    levelMode.push(choices);
+    console.log(levelMode);
+}
+  if (me.contains('reptiles')) {
+    let choosen = document.getElementById('selectReptiles');
+    choosen.classList.add('lvlChoice');
+    let choice = document.querySelector('.reptiles.lvlChoice');
+    let choices = choice.id;
+    // choosen.style.display = "block";
+    levelMode.push(choices);
+    console.log(levelMode);
+}
+// hard themes
+if (me.contains('dinosaurs')) {
+  let choosen = document.getElementById('selectDinosaurs');
+  choosen.classList.add('lvlChoice');
+  let choice = document.querySelector('.dinosaurs.lvlChoice');
+  let choices = choice.id;
+  // choosen.style.display = "block";
+  levelMode.push(choices);
+  console.log(levelMode);
+}
+if (me.contains('endangered')) {
+  let choosen = document.getElementById('selectEndangered');
+  choosen.classList.add('lvlChoice');
+  let choice = document.querySelector('.endangered.lvlChoice');
+  let choices = choice.id;
+  // choosen.style.display = "block";
+  levelMode.push(choices);
+  console.log(levelMode);
+}
+if (me.contains('woodland')) {
+  let choosen = document.getElementById('selectWoodland');
+  choosen.classList.add('lvlChoice');
+  let choice = document.querySelector('.woodland.lvlChoice');
+  let choices = choice.id;
+  // choosen.style.display = "block";
+  levelMode.push(choices);
+  console.log(levelMode);
+}
+// difficult themeSelects
+if (me.contains('sealife')) {
+  let choosen = document.getElementById('selectSealife');
+  choosen.classList.add('lvlChoice');
+  let choice = document.querySelector('.sealife.lvlChoice');
+  let choices = choice.id;
+  // choosen.style.display = "block";
+  levelMode.push(choices);
+  console.log(levelMode);
+}
+  levelModal.style.display = "none";
+
 }
 /*
  * Display the cards on the page
@@ -155,8 +241,9 @@ function shuffle(array){
 + addEventListener to li elements*/
 createContainer();
 createStars();
-createMovecounter()
-createRestartButton()
+createMovecounter();
+createRestartButton();
+dealCards();
 // moves javascript link to bottom of body
   const container = document.querySelector(".container");
   const body = document.querySelector("body");
@@ -209,10 +296,16 @@ restart.classList = 'fa fa-repeat';
 restartButton.appendChild(restart);
 restartButton.addEventListener("click", restartGame);
 }
-
+function restartGame(){
+  // call to restart game - forces page reload
+  console.log("restart game called")
+  location.reload(true);
+}
 // console.log("js moved");
 // create deck ul list
+function dealCards(){
 const dealtCards = document.createElement('ul');
+const container = document.querySelector(".container");
 dealtCards.classList = 'deck';
 // add cards to deck
 container.appendChild(dealtCards);
@@ -231,7 +324,7 @@ for (var i = 0; i < cards.length; i++) {
   placedCard.appendChild(cardDetails);
 }
   dealtCards.addEventListener('click', respondToTheClick);
-
+}
 /* respondToTheClick process explanation
 - target li elements only
 + add open and show classes to selected card
@@ -396,12 +489,6 @@ function rating(){
 function win(){
     console.log("win animation called");
     // add pop up window with you win and restart options
-}
-
-function restartGame(){
-  // call to restart game - forces page reload
-  console.log("restart game called")
-  location.reload(true);
 }
 /* set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
