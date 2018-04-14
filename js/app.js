@@ -5,7 +5,9 @@ var cards = ['fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube'
 'fa-bomb', 'fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube', 'fa-leaf', 'fa-bicycle', 'fa-bomb'];
 var openCards = [];
 var matchedCards = [];
-var starRatings = ['fa fa-star', 'fa fa-star', 'fa fa-star']
+var starRatings = ['fa fa-star', 'fa fa-star', 'fa fa-star'];
+let levelMode = [];
+
 // easy level arrays
 var butterflyCards = ['blue', 'blue', 'red', 'red', 'orange', 'orange', 'yellow', 'yellow'];
 var farmyardCards = ['chicken', 'chicken', 'cow', 'cow', 'pig', 'pig', 'sheep', 'sheep'];
@@ -24,6 +26,92 @@ var endangeredCards = ['baboon', 'baboon', 'bear', 'bear', 'elephant', 'elephant
 var woodlandCards = ['badger', 'badger', 'deer', 'deer', 'fox', 'fox', 'hedgehog', 'hedgehog',
 'mouse', 'mouse', 'owl', 'owl', 'rabbit', 'rabbit', 'squirrel', 'squirrel'];
 
+// level variables
+const levelOne = document.getElementById('easyButton');
+const levelOneThemes = document.getElementsByClassName('easy');
+const levelOneChoices = document.querySelector('.easyThemeSelection');
+
+const levelTwo = document.getElementById('mediumButton');
+const levelTwoThemes = document.getElementsByClassName('medium');
+const levelTwoChoices = document.querySelector('.mediumThemeSelection');
+
+const levelThree = document.getElementById('hardButton');
+const levelThreeThemes = document.getElementsByClassName('hard');
+const levelThreeChoices = document.querySelector('.hardThemeSelection');
+
+const levelFour = document.getElementById('difficultButton');
+const levelFourThemes = document.getElementsByClassName('difficult');
+const levelFourChoices = document.querySelector('.difficultThemeSelection');
+
+const levelButton = document.querySelector(".button");
+const levelSelects = document.querySelector('#levelContent');
+const themeSelects = document.querySelector('#themeContent');
+const levelSelection = document.querySelector('.level');
+// theme variables
+const easyThemeSelection = document.querySelector('.easy.themes');
+const mediumThemeSelection = document.querySelector('.medium.themes');
+const hardThemeSelection = document.querySelector('.hard.themes');
+const difficultThemeSelection = document.querySelector('.difficult.themes');
+
+levelOne.addEventListener("click", levelSelectionChange);
+levelTwo.addEventListener("click", levelSelectionChange);
+levelThree.addEventListener("click", levelSelectionChange);
+levelFour.addEventListener("click", levelSelectionChange);
+// Intro and level select Modal
+// document on load show modal, with level selection buttons
+// buttons lead to theme selection window
+// theme select starts Game
+function introPopup(){
+const levelModal = document.getElementById("levelModal");
+const levelSelections = document.querySelector('.level');
+document.onload = levelModal.style.display = "block";
+}
+introPopup();
+
+function levelSelectionChange(e){
+  console.log(e.target.tagName);
+  if (e.target.classList.contains('easy')) {
+    levelSelects.style.display = "none";
+    themeSelects.style.display = "block";
+let choosen = document.getElementById('easyThemeSelection');
+    choosen.classList.add('lvlChoice');
+    let choice = document.querySelector('.lvlChoice');
+    let choices = e.target.id;
+    choosen.style.display = "block";
+    levelMode.push(choices);
+}
+  if (e.target.classList.contains('medium')) {
+    levelSelects.style.display = "none";
+    themeSelects.style.display = "block";
+    let choosen = document.getElementById('mediumThemeSelection');
+    choosen.classList.add('lvlChoice');
+    let choice = document.querySelector('.lvlChoice');
+    let choices = e.target.id;
+    choosen.style.display = "block";
+    levelMode.push(choices);
+}
+  if (e.target.classList.contains('hard')) {
+    levelSelects.style.display = "none";
+    themeSelects.style.display = "block";
+    let choosen = document.getElementById('hardThemeSelection');
+    choosen.classList.add('lvlChoice');
+    let choice = document.querySelector('.lvlChoice');
+    let choices = e.target.id;
+    choosen.style.display = "block";
+    levelMode.push(choices);
+}
+  if (e.target.classList.contains('difficult')) {
+    levelSelects.style.display = "none";
+    themeSelects.style.display = "block";
+    let choosen = document.getElementById('difficultThemeSelection');
+    choosen.classList.add('lvlChoice');
+
+    let choice = document.querySelector('.lvlChoice');
+    let choices = e.target.id;
+    choosen.style.display = "block";
+    levelMode.push(choices);
+}
+}
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -59,13 +147,13 @@ createMovecounter()
 createRestartButton()
 // moves javascript link to bottom of body
   const container = document.querySelector(".container");
-$('#js').insertAfter(container);
+  const body = document.querySelector("body");
+$('#js').insertAfter(body);
 
 // create container div
 function createContainer(){
   const container = document.createElement('div');
 // add container div to body
-document.body.append(container);
 container.classList = 'container';
 }
 function createStars(){
@@ -89,12 +177,12 @@ function createMovecounter(){
   const scores = document.querySelector(".score-panel");
 const moveCounter = document.createElement('span');
 scores.appendChild(moveCounter);
-console.log("add span element");
+// console.log("add span element");
 moveCounter.classList = 'moves';
-console.log("add class moves");
+// console.log("add class moves");
 moveCounter.textContent = "0";
-console.log("add textContent");
-console.log("add m")
+// console.log("add textContent");
+// console.log("add m")
 const moveText = document.createElement('span');
 moveText.textContent = " Moves";
 scores.appendChild(moveText);

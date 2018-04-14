@@ -21,6 +21,98 @@ body {
     font-family: 'Coda', cursive;
 }
 
+/* level selection modal styling */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 25%;
+    top: 20%;
+    width: 50%;
+    height: 60%;
+    overflow: scroll;
+    background: linear-gradient(to bottom, rgba(97, 215, 255, 1), rgba(73, 188, 16, 1));
+}
+
+/* Modal Content/Box */
+.level-modal-content {
+    background-image: url('C:/Users/rhove/OneDrive/Documents/web-development-LAPTOP-SQS5A76R/FEND/Second/memory-game/img/backgrounds/butterflies.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font: 1.2em;
+}
+
+.level-selection {
+  font: 1em;
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: 25% 25% 25% 25%;
+  margin: 0.5em 0 1em 0;
+}
+.level-selection .intro {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.level {
+  width: 100%;
+}
+.level.medium {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.level.hard {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.level.difficult {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.level-select.medium {
+  /* width: 45%; */
+  height: 3em;
+  display: inline-block;
+  /* padding: 2em 0 2em 0; */
+  margin: 0;
+}
+.level-selection button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding-bottom: 1em;
+}
+.level-selection button:hover {
+  background-color: rgba(97, 215, 255, 0.4);
+}
+.level-selection img {
+  height: 3em;
+}
+.level-desc {
+  font: 1em cursive;
+  /* font: font-style font-variant font-weight font-size/line-height
+  font-family|caption|icon|menu|message-box|small-caption|status-bar|initial|inherit; */
+}
+
+.theme-selection {
+  display: none;
+}
+.themes {
+  display: none;
+}
+
 .container {
     display: flex;
     justify-content: center;
@@ -138,9 +230,18 @@ h1 {
 .score-panel .stars li {
     list-style: none;
     display: inline-block;
+    /* image: url('C:/Users/rhove/OneDrive/Documents/web-development-LAPTOP-SQS5A76R/FEND/Second/memory-game/img/symbols/black-star-filled.png'); */
+    /* list-style-image: url('C:/Users/rhove/OneDrive/Documents/web-development-LAPTOP-SQS5A76R/FEND/Second/memory-game/img/symbols/black-star-filled.png'); */
+}
+.score-panel .stars {
+    display: inline-block;
+    /* image: url('C:/Users/rhove/OneDrive/Documents/web-development-LAPTOP-SQS5A76R/FEND/Second/memory-game/img/symbols/black-star-filled.png'); */
 }
 
 .score-panel .restart {
     float: right;
     cursor: pointer;
 }
+/* .fa-star {
+  background-image: url('C:/Users/rhove/OneDrive/Documents/web-development-LAPTOP-SQS5A76R/FEND/Second/memory-game/img/symbols/black-star-filled.png');
+} */

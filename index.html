@@ -17,9 +17,76 @@
         <header>
             <h1>Matching Game</h1>
         </header>
+
 </div>
+<!-- The Modal -->
+<div id = "levelModal" class = "modal">
+
+  <!-- Modal content -->
+  <div class = "level-modal-content">
+    <div class = "level-selection" id = "levelContent">
+      <p class = "intro">Hello! Welcome to the Animal Memory Card Game! Please select your level below...</p>
+      <div class = "level easy" id = "levelSelectE">
+        <p class = "level-desc easy" id = "easyP">Easy - 4 Pairs</p>
+        <button id = "easyButton" class = "button easyButton">
+      <img src = "img\symbols\gold-star-1.png" alt = "Easy - 4 Pairs" class = "level-select easy" id = "easyI">
+    </button>
+  </div>
+  <div class = "level medium" id = "levelSelectM">
+    <p class = "level-desc medium" id = "mediumP">Medium - 6 Pairs</p>
+    <button id = "mediumButton" class = "button mediumButton">
+      <img src = "img\symbols\gold-star-1.png" alt = "Medium - 6 Pairs"  class = "level-select medium" id = "mediumI-1">
+      <img src = "img\symbols\gold-star-1.png" alt = "Medium - 6 Pairs" class = "level-select medium" id = "mediumI-2">
+    </button>
+  </div>
+  <div class = "level hard" id = "levelSelectH">
+    <p class = "level-desc hard" id = "hardP">Hard - 8 Pairs</p>
+    <button id = "hardButton" class = "button hardButton">
+      <img src = "img\symbols\gold-star-3.png" alt = "Hard - 8 Pairs"  class = "level-select hard" id = "hardI">
+    </button>
+  </div>
+  <div class = "level difficult" id = "levelSelectD">
+    <p class = "level-desc difficult" id = "difficultP">Difficult - 10 Pairs</p>
+    <button id = "difficultButton" class = "button difficultButton">
+      <img src = "img\symbols\gold-star-4.png" alt = "Difficlut - 10 Pairs"  class = "level-select difficult" id = "difficultI">
+    </button>
+  </div>
+  </div>
+  <div class = "theme-selection" id = "themeContent">
+    <p class = "intro">Which deck would you like to play with?</p>
+    <div class = "easy themes" id = "easyThemeSelection">
+      <select name="easyThemes">
+       <option value="butterflies" id = "selectButterflies">Butterflies</option>
+       <option value="farmyard" id = "selectFarmyard">Farmyard</option>
+      </select>
+    </div>
+    <div class = "medium themes" id = "mediumThemeSelection">
+      <select name="mediumThemes">
+        <option value="birds" id = "selectBirds">Birds</option>
+        <option value="bugs" id = "selectBugs">A Bug's Life</option>
+        <option value="reptiles" id = "selectReptiles">Reptiles</option>
+      </select>
+    </div>
+    <div class = "hard themes" id = "hardThemeSelection">
+      <select name="mediumThemes">
+        <option value="dinosaurs" id = "selectDionsaurs">Dinosaurs</option>
+        <option value="endangered" id = "selectEndangered">Endangered Species</option>
+        <option value="woodland" id = "selectWoodland">Woodland Creatures</option>
+      </select>
+    </div>
+    <div class = "difficult themes" id = "difficultThemeSelection">
+      <select name="mediumThemes">
+        <option value="sealife" id = "selectSealife">Sealife</option>
+        <option value="tbc" id = "selectTbc">Coming Soon...</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+</div>
+
 <footer>
-  Animal logos designed by Freepik from Flaticon
+  Symbols designed by Freepik from Flaticon
 </footer>
     <script src="js/app.js" id = "js"></script>
 </body>
