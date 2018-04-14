@@ -1,7 +1,8 @@
 /*
  * card holding arrays
  */
-var cards = ['fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube', 'fa-leaf', 'fa-bicycle',
+var cards = [];
+var cardsOriginal = ['fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube', 'fa-leaf', 'fa-bicycle',
 'fa-bomb', 'fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube', 'fa-leaf', 'fa-bicycle', 'fa-bomb'];
 var openCards = [];
 var matchedCards = [];
@@ -48,11 +49,15 @@ const levelSelects = document.querySelector('#levelContent');
 const themeSelects = document.querySelector('#themeContent');
 const levelSelection = document.querySelector('.level');
 // theme variables
-const easyThemeSelection = document.querySelector('.easy.themes');
-const mediumThemeSelection = document.querySelector('.medium.themes');
-const hardThemeSelection = document.querySelector('.hard.themes');
-const difficultThemeSelection = document.querySelector('.difficult.themes');
-
+const themeSelectionOne = document.querySelector('.selectPack.one');
+const themeSelectionTwo = document.querySelector('.selectPack.two');
+const themeSelectionThree = document.querySelector('.selectPack.three');
+const themeSelectionFour = document.querySelector('.selectPack.four');
+// themeSelectionOne.addEventListener("click", switchDecks);
+// themeSelectionTwo.addEventListener("click", switchDecks);
+// themeSelectionThree.addEventListener("click", switchDecks);
+// themeSelectionFour.addEventListener("click", switchDecks);
+// console.log(themeSelection)
 levelOne.addEventListener("click", levelSelectionChange);
 levelTwo.addEventListener("click", levelSelectionChange);
 levelThree.addEventListener("click", levelSelectionChange);
@@ -60,16 +65,15 @@ levelFour.addEventListener("click", levelSelectionChange);
 // Intro and level select Modal
 // document on load show modal, with level selection buttons
 // buttons lead to theme selection window
-// theme select starts Game
-function introPopup(){
 const levelModal = document.getElementById("levelModal");
 const levelSelections = document.querySelector('.level');
+// theme select starts Game
+function introPopup(){
 document.onload = levelModal.style.display = "block";
 }
 introPopup();
 
 function levelSelectionChange(e){
-  console.log(e.target.tagName);
   if (e.target.classList.contains('easy')) {
     levelSelects.style.display = "none";
     themeSelects.style.display = "block";
@@ -111,6 +115,14 @@ let choosen = document.getElementById('easyThemeSelection');
     choosen.style.display = "block";
     levelMode.push(choices);
 }
+}
+
+
+function switchDecks(e){
+  // console.log(e.target);
+  console.log("switchDecks called");
+  // if(e.target.)
+  // levelModal.style.display = "none";
 }
 /*
  * Display the cards on the page

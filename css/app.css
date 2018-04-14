@@ -109,10 +109,56 @@ body {
 .theme-selection {
   display: none;
 }
-.themes {
-  display: none;
+.theme-selection-area {
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: 33% 33% 33%;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+.selectPack {
+  width: 33%;
+  display: inline-block;
+  cursor: pointer;
+}
+.selectPack:hover {
+  background-color: rgba(97, 215, 255, 0.4);
+}
+.selectPack.one {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.selectPack.two {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.selectPack.three {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 
+.themes {
+  display: none;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+.theme-selection-area .intro {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  width: 100%;
+}
 .container {
     display: flex;
     justify-content: center;

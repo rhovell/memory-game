@@ -29,56 +29,82 @@
       <div class = "level easy" id = "levelSelectE">
         <p class = "level-desc easy" id = "easyP">Easy - 4 Pairs</p>
         <button id = "easyButton" class = "button easyButton">
-      <img src = "img\symbols\gold-star-1.png" alt = "Easy - 4 Pairs" class = "level-select easy" id = "easyI">
-    </button>
-  </div>
-  <div class = "level medium" id = "levelSelectM">
-    <p class = "level-desc medium" id = "mediumP">Medium - 6 Pairs</p>
-    <button id = "mediumButton" class = "button mediumButton">
-      <img src = "img\symbols\gold-star-1.png" alt = "Medium - 6 Pairs"  class = "level-select medium" id = "mediumI-1">
-      <img src = "img\symbols\gold-star-1.png" alt = "Medium - 6 Pairs" class = "level-select medium" id = "mediumI-2">
-    </button>
-  </div>
-  <div class = "level hard" id = "levelSelectH">
-    <p class = "level-desc hard" id = "hardP">Hard - 8 Pairs</p>
-    <button id = "hardButton" class = "button hardButton">
-      <img src = "img\symbols\gold-star-3.png" alt = "Hard - 8 Pairs"  class = "level-select hard" id = "hardI">
-    </button>
-  </div>
-  <div class = "level difficult" id = "levelSelectD">
-    <p class = "level-desc difficult" id = "difficultP">Difficult - 10 Pairs</p>
-    <button id = "difficultButton" class = "button difficultButton">
-      <img src = "img\symbols\gold-star-4.png" alt = "Difficlut - 10 Pairs"  class = "level-select difficult" id = "difficultI">
-    </button>
-  </div>
+          <img src = "img\symbols\gold-star-1.png" alt = "Easy - 4 Pairs" class = "level-select easy" id = "easyI">
+        </button>
+      </div>
+    <div class = "level medium" id = "levelSelectM">
+      <p class = "level-desc medium" id = "mediumP">Medium - 6 Pairs</p>
+      <button id = "mediumButton" class = "button mediumButton">
+        <img src = "img\symbols\gold-star-1.png" alt = "Medium - 6 Pairs"  class = "level-select medium" id = "mediumI-1">
+        <img src = "img\symbols\gold-star-1.png" alt = "Medium - 6 Pairs" class = "level-select medium" id = "mediumI-2">
+      </button>
+    </div>
+    <div class = "level hard" id = "levelSelectH">
+      <p class = "level-desc hard" id = "hardP">Hard - 8 Pairs</p>
+      <button id = "hardButton" class = "button hardButton">
+        <img src = "img\symbols\gold-star-3.png" alt = "Hard - 8 Pairs"  class = "level-select hard" id = "hardI">
+      </button>
+    </div>
+    <div class = "level difficult" id = "levelSelectD">
+      <p class = "level-desc difficult" id = "difficultP">Difficult - 10 Pairs</p>
+      <button id = "difficultButton" class = "button difficultButton">
+        <img src = "img\symbols\gold-star-4.png" alt = "Difficlut - 10 Pairs"  class = "level-select difficult" id = "difficultI">
+      </button>
+    </div>
   </div>
   <div class = "theme-selection" id = "themeContent">
     <p class = "intro">Which deck would you like to play with?</p>
-    <div class = "easy themes" id = "easyThemeSelection">
-      <select name="easyThemes">
-       <option value="butterflies" id = "selectButterflies">Butterflies</option>
-       <option value="farmyard" id = "selectFarmyard">Farmyard</option>
-      </select>
-    </div>
-    <div class = "medium themes" id = "mediumThemeSelection">
-      <select name="mediumThemes">
-        <option value="birds" id = "selectBirds">Birds</option>
-        <option value="bugs" id = "selectBugs">A Bug's Life</option>
-        <option value="reptiles" id = "selectReptiles">Reptiles</option>
-      </select>
-    </div>
-    <div class = "hard themes" id = "hardThemeSelection">
-      <select name="mediumThemes">
-        <option value="dinosaurs" id = "selectDionsaurs">Dinosaurs</option>
-        <option value="endangered" id = "selectEndangered">Endangered Species</option>
-        <option value="woodland" id = "selectWoodland">Woodland Creatures</option>
-      </select>
-    </div>
-    <div class = "difficult themes" id = "difficultThemeSelection">
-      <select name="mediumThemes">
-        <option value="sealife" id = "selectSealife">Sealife</option>
-        <option value="tbc" id = "selectTbc">Coming Soon...</option>
-      </select>
+    <div class = "theme-selection-area">
+      <div class = "easy themes" id = "easyThemeSelection">
+        <!-- <div class = "easyThemes"> -->
+        <div class = "intro">Easy Decks</div>
+         <div class = "selectPack one butterflies" id = "selectButterflies" onclick = "switchDecks()"><h5>Butterflies</h5>
+           <img src = "img\game-sets\easy\butterflies\blue.png" alt = "Butterflies" class = "pack-select butterflies" id = "butterflyI">
+         </div>
+         <div class = "selectPack two farmyard" id = "selectFarmyard" onclick = "switchDecks()"><h5>Farmyard</h5>
+           <img src = "img\game-sets\easy\farmyard\cow.png" alt = "Farmyard" class = "pack-select farmyard" id = "farmyardI">
+        </div>
+       <!-- </div> -->
+      </div>
+      <div class = "medium themes" id = "mediumThemeSelection">
+        <!-- <div class = "mediumThemes"> -->
+        <div class = "intro">Medium Decks</div>
+          <div class = "selectPack one birds" id = "selectBirds" onclick = "switchDecks()"><h5>Birds</h5>
+            <img src = "img\game-sets\medium\birds\tucan.png" alt = "Birds" class = "pack-select birds" id = "birdsI">
+          </div>
+          <div class = "selectPack two bugs" id = "selectBugs" onclick = "switchDecks()"><h5>A Bug's Life</h5>
+            <img src = "img\game-sets\medium\bugs\snail.png" alt = "A Bugs Life" class = "pack-select bugs" id = "bugsI">
+          </div>
+          <div class = "selectPack three reptiles" id = "selectReptiles" onclick = "switchDecks()"><h5>Reptiles</h5>
+            <img src = "img\game-sets\medium\reptiles\chameleon.png" alt = "Reptiles" class = "pack-select reptiles" id = "reptilesI">
+          </div>
+        <!-- </div> -->
+      </div>
+      <div class = "hard themes" id = "hardThemeSelection">
+        <!-- <div class = "mediumThemes"> -->
+        <div class = "intro">Hard Decks</div>
+          <div class = "selectPack one dinosaurs" id = "selectDionsaurs" onclick = "switchDecks()"><h5>Dinosaurs</h5>
+            <img src = "img\game-sets\hard\dinosaurs\diplodocos.png" alt = "Dionsaurs" class = "pack-select dinosaurs" id = "dinosaursI">
+</div>
+          <div class = "selectPack two endangered" id = "selectEndangered" onclick = "switchDecks()"><h5>Endangered Species</h5>
+            <img src = "img\game-sets\hard\endangered\panda.png" alt = "Endangered Species" class = "pack-select endangered" id = "endangeredI">
+</div>
+          <div class = "selectPack three woodland" id = "selectWoodland" onclick = "switchDecks()"><h5>Woodland Creatures</h5>
+            <img src = "img\game-sets\hard\woodland\fox.png" alt = "Woodland" class = "pack-select woodland" id = "woodlandI">
+</div>
+        <!-- </div> -->
+      </div>
+      <div class = "difficult themes" id = "difficultThemeSelection">
+        <!-- <div class = "mediumThemes"> -->
+        <div class = "intro">Difficult Decks</div>
+          <div class = "selectPack one sealife" id = "selectSealife" onclick = "switchDecks()"><h5>Sealife</h5>
+            <img src = "img\game-sets\difficult\sealife\killer-whale.png" alt = "Sealife" class = "pack-select sealife" id = "sealifeI">
+</div>
+          <div class = "selectPack two tbc" id = "selectTbc"><h5>Coming Soon...</h5>
+            <img src = "img\symbols\black-star-1.png" alt = "Coming Soon" class = "pack-select tbc" id = "tbcI">
+</div>
+        <!-- </div> -->
+      </div>
     </div>
   </div>
 </div>
