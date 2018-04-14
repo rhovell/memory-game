@@ -211,7 +211,6 @@ if (me.contains('sealife')) {
 }
   levelModal.style.display = "none";
   dealCards();
-
 }
 /*
  * Display the cards on the page
@@ -309,6 +308,7 @@ function dealCards(){
   console.log("dealCards called");
   const dealtCards = document.createElement('ul');
   const container = document.querySelector(".container");
+
   dealtCards.classList = 'deck';
   // add cards to deck
   container.appendChild(dealtCards);
@@ -345,6 +345,10 @@ for(var i = 0; i < levelMode.length; i++){
     cardDetails.classList = 'fa ' + cardList[i];
     placedCard.appendChild(cardDetails);
   }
+    const deck = document.querySelector(".deck");
+    deck.classList.add("easy");
+  deck.classList.add("butterflies");
+  body.classList.add("butterflies");
   }
   if(levelMode[i] === farmyardSelector){
     let cards = farmyardCards;
@@ -362,6 +366,10 @@ for(var i = 0; i < levelMode.length; i++){
     cardDetails.classList = 'fa ' + cardList[i];
     placedCard.appendChild(cardDetails);
   }
+  const deck = document.querySelector(".deck");
+  deck.classList.add("easy");
+deck.classList.add("farmyard");
+body.classList.add("farmyard");
   }
 // medium themes
   if(levelMode[i] === birdSelector){
@@ -380,6 +388,10 @@ for(var i = 0; i < levelMode.length; i++){
     cardDetails.classList = 'fa ' + cardList[i];
     placedCard.appendChild(cardDetails);
   }
+  const deck = document.querySelector(".deck");
+  deck.classList.add("medium");
+deck.classList.add("birds");
+body.classList.add("birds");
 }
   if(levelMode[i] === bugSelector){
     let cards = bugCards;
@@ -397,6 +409,10 @@ for(var i = 0; i < levelMode.length; i++){
     cardDetails.classList = 'fa ' + cardList[i];
     placedCard.appendChild(cardDetails);
   }
+  const deck = document.querySelector(".deck");
+deck.classList.add("medium");
+deck.classList.add("bugs");
+body.classList.add("bugs");
 }
   if(levelMode[i] === reptileSelector){
     let cards = reptileCards;
@@ -414,6 +430,10 @@ for(var i = 0; i < levelMode.length; i++){
     cardDetails.classList = 'fa ' + cardList[i];
     placedCard.appendChild(cardDetails);
   }
+  const deck = document.querySelector(".deck");
+deck.classList.add("medium");
+deck.classList.add("reptiles");
+body.classList.add("reptiles");
 }
 // hard themes
   if(levelMode[i] === dionsaurSelector){
@@ -432,6 +452,11 @@ for(var i = 0; i < levelMode.length; i++){
     cardDetails.classList = 'fa ' + cardList[i];
     placedCard.appendChild(cardDetails);
   }
+  const deck = document.querySelector(".deck");
+deck.classList.add("hard");
+deck.classList.add("dinosaur");
+body.classList.add("dinosaurs");
+
 }
   if(levelMode[i] === endangeredSelector){
     let cards = endangeredCards;
@@ -449,6 +474,11 @@ for(var i = 0; i < levelMode.length; i++){
     cardDetails.classList = 'fa ' + cardList[i];
     placedCard.appendChild(cardDetails);
   }
+  const deck = document.querySelector(".deck");
+deck.classList.add("hard");
+deck.classList.add("endangered");
+body.classList.add("endangered");
+
 }
   if(levelMode[i] === woodlandSelector){
     let cards = woodlandCards;
@@ -466,6 +496,11 @@ for(var i = 0; i < levelMode.length; i++){
     cardDetails.classList = 'fa ' + cardList[i];
     placedCard.appendChild(cardDetails);
   }
+  const deck = document.querySelector(".deck");
+deck.classList.add("hard");
+deck.classList.add("woodland");
+body.classList.add("woodland");
+
 }
 // difficult themes
   if(levelMode[i] === sealifeSelector){
@@ -484,6 +519,11 @@ for(var i = 0; i < levelMode.length; i++){
     cardDetails.classList = 'fa ' + cardList[i];
     placedCard.appendChild(cardDetails);
   }
+  const deck = document.querySelector(".deck");
+deck.classList.add("difficult");
+deck.classList.add("sealife");
+body.classList.add("sealife");
+
 }
 }
     dealtCards.addEventListener('click', respondToTheClick);

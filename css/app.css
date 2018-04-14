@@ -17,7 +17,7 @@ body {
 }
 
 body {
-    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    /* background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
     font-family: 'Coda', cursive;
 }
 
@@ -176,9 +176,11 @@ h1 {
  */
 
 .deck {
-    width: 660px;
-    min-height: 680px;
-    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    min-width: 640px;
+    min-height: 350px;
+    max-width: 760px;
+    max-height: 640px;
+    /* background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%); */
     padding: 32px;
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
@@ -188,7 +190,81 @@ h1 {
     align-items: center;
     margin: 0 0 3em;
 }
-
+.deck.easy {
+  /* background-image: url('C:/Users/rhove/OneDrive/Documents/web-development-LAPTOP-SQS5A76R/FEND/Second/memory-game/img/backgrounds/butterflies.png'); */
+  width: 680px;
+  height: 350px;
+  background: linear-gradient(60deg, rgba(89, 192, 89, 0.5) 0%, rgba(65, 170, 65, 0.5) 100%);
+}
+.deck.medium {
+  width: 640px;
+  height: 500px;
+  background: linear-gradient(60deg, rgba(223, 184, 58, 0.5) 0%, rgba(231, 203, 110, 0.5) 100%);
+}
+.deck.hard {
+  width: 640px;
+  height: 640px;
+  background: linear-gradient(60deg, rgba(229, 129, 93, 0.5) 0%, rgba(235, 160, 132, 0.5) 100%);
+}
+.deck.difficult {
+  width: 760px;
+  height: 640px;
+  background: linear-gradient(60deg, rgba(240, 45, 45, 0.5) 0%, rgba(200, 14, 14, 0.5) 100%);
+}
+body.butterflies {
+  background: #61D7FF url('../img/backgrounds/butterflies.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+body.farmyard {
+  background: #61D7FF url('../img/backgrounds/farmyard.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+body.birds {
+  background: #ffffff url('../img/backgrounds/butterflies.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+body.bugs {
+  background: #ffffff url('../img/backgrounds/butterflies.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+body.reptiles {
+  background: #ffffff url('../img/backgrounds/butterflies.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+body.dinosaurs {
+  background: #ffffff url('../img/backgrounds/butterflies.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+body.endangered {
+  background: #ffffff url('../img/backgrounds/butterflies.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+body.woodland {
+  background: #ffffff url('../img/backgrounds/butterflies.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+body.sealife {
+  background: #ffffff url('../img/backgrounds/butterflies.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 .deck .card {
     height: 125px;
     width: 125px;
