@@ -20,7 +20,25 @@ body {
     background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns*/
     font-family: 'Coda', cursive;
 }
+a:link {
+  color: black;
+  background-color: transparent;
+  /* text-decoration: none; */
+}
+a:visited {
+  color: #303030;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:active {
+  transform: translateY(-4px);
 
+}
 /* level selection modal styling */
 /* The Modal (background) */
 .modal {
@@ -166,6 +184,15 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+}
+.heading {
+  background-color: rgba(250, 250, 250, 0.5);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 h1 {
@@ -366,6 +393,13 @@ body.sealife {
     float: right;
     cursor: pointer;
 }
-/* .fa-star {
-  background-image: url('C:/Users/rhove/OneDrive/Documents/web-development-LAPTOP-SQS5A76R/FEND/Second/memory-game/img/symbols/black-star-filled.png');
-} */
+.footer{
+  background-color: rgba(250, 250, 250, 0.5);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0;
+}

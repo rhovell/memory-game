@@ -246,21 +246,27 @@ createStars();
 createMovecounter();
 createRestartButton();
 // moves javascript link to bottom of body
-  const container = document.querySelector(".container");
-  const body = document.querySelector("body");
+const body = document.querySelector("body");
 $('#js').insertAfter(body);
 
 // create container div
 function createContainer(){
   const container = document.createElement('div');
+  container.classList = 'container';
+  const headingContainer = document.createElement('div');
+  headingContainer.classList = "heading"
+  const heading = document.createElement("header");
+  // heading.classList = "heading";
+container.appendChild(headingContainer);
 // add container div to body
-container.classList = 'container';
+headingContainer.appendChild(heading);
 }
 function createStars(){
   const scores = document.createElement('section');
   const starRating = document.createElement('ul');
   const container = document.querySelector(".container");
-container.appendChild(scores);
+  const headingContainer = document.querySelector(".heading");
+headingContainer.appendChild(scores);
 scores.classList = 'score-panel';
 starRating.classList = 'stars';
 for(var i = 0; i < starRatings.length; i++){
