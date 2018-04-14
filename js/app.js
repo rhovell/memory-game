@@ -17,7 +17,7 @@ var birdCards = ['humming-bird', 'humming-bird', 'kiwi', 'kiwi', 'ostrich', 'ost
 'parrot', 'penguin', 'penguin', 'tucan', 'tucan'];
 var bugCards = ['bee', 'bee', 'beetle', 'beetle', 'cricket', 'cricket', 'dragonfly', 'dragonfly',
 'ladybird', 'ladybird', 'snail', 'snail'];
-var reptilesCards = ['chameleon', 'chameleon', 'cobra', 'cobra', 'frog', 'frog', 'lizard', 'lizard',
+var reptileCards = ['chameleon', 'chameleon', 'cobra', 'cobra', 'frog', 'frog', 'lizard', 'lizard',
 'newt', 'newt', 'turtle', 'turtle'];
 // hard level arrays
 var dinosaurCards = ['ankylosaurus', 'ankylosaurus', 'corythosaurus', 'corythosaurus', 'diplodocos', 'diplodocos', 'parasaurolophus', 'parasaurolophus',
@@ -26,7 +26,9 @@ var endangeredCards = ['baboon', 'baboon', 'bear', 'bear', 'elephant', 'elephant
 'lion', 'lion', 'panda', 'panda', 'platypus', 'platypus', 'polar-bear', 'polar-bear'];
 var woodlandCards = ['badger', 'badger', 'deer', 'deer', 'fox', 'fox', 'hedgehog', 'hedgehog',
 'mouse', 'mouse', 'owl', 'owl', 'rabbit', 'rabbit', 'squirrel', 'squirrel'];
-
+// difficult level arrays
+var sealifeCards = ['clownfish', 'clownfish', 'dolphin', 'doplin', 'hermit-crab', 'hermit-crab', 'killer-whale', 'killer-whale', 'octopus', 'octopus',
+ 'puffafish', 'puffafish', 'shark', 'shark', 'squid', 'squid', 'starfish', 'starfish', 'whale', 'whale']
 // level variables
 const levelOne = document.getElementById('easyButton');
 const levelOneThemes = document.getElementsByClassName('easy');
@@ -120,8 +122,8 @@ function levelSelectionChange(e){
 
 function switchDecks(e){
   let me = event.target.classList;
-  console.log(event.target);
-  console.log("switchDecks called");
+  // console.log(event.target);
+  // console.log("switchDecks called");
   // easy themes
   if (me.contains('butterflies')) {
     let choosen = document.getElementById('selectButterflies');
@@ -208,6 +210,7 @@ if (me.contains('sealife')) {
   console.log(levelMode);
 }
   levelModal.style.display = "none";
+  dealCards();
 
 }
 /*
@@ -243,7 +246,6 @@ createContainer();
 createStars();
 createMovecounter();
 createRestartButton();
-dealCards();
 // moves javascript link to bottom of body
   const container = document.querySelector(".container");
   const body = document.querySelector("body");
@@ -304,27 +306,188 @@ function restartGame(){
 // console.log("js moved");
 // create deck ul list
 function dealCards(){
-const dealtCards = document.createElement('ul');
-const container = document.querySelector(".container");
-dealtCards.classList = 'deck';
-// add cards to deck
-container.appendChild(dealtCards);
-// shuffle cards
-cardList = shuffle(cards);
-let placedCard;
-let cardDetails;
-// place li card elements
-for (var i = 0; i < cards.length; i++) {
-  let placedCard = document.createElement('li');
-  placedCard.classList = 'card';
-  dealtCards.appendChild(placedCard);
-  // place card details
-  let cardDetails = document.createElement('i');
-  cardDetails.classList = 'fa ' + cardList[i];
-  placedCard.appendChild(cardDetails);
+  console.log("dealCards called");
+  const dealtCards = document.createElement('ul');
+  const container = document.querySelector(".container");
+  dealtCards.classList = 'deck';
+  // add cards to deck
+  container.appendChild(dealtCards);
+  // easy themes
+  let butterflySelector = "selectButterflies";
+  let farmyardSelector = "selectFarmyard";
+  // medium themes
+  let birdSelector = "selectBirds";
+  let bugSelector = "selectBugs";
+  let reptileSelector = "selectReptiles";
+  // hard themes
+  let dionsaurSelector = "selectDinosaurs";
+  let endangeredSelector = "selectEndangered";
+  let woodlandSelector = "selectWoodland";
+  // difficult themes
+  let sealifeSelector = "selectSealife";
+
+  // shuffle cards for chosen deck
+  // easy themes
+for(var i = 0; i < levelMode.length; i++){
+  if(levelMode[i] === butterflySelector){
+    let cards = butterflyCards;
+    console.log(cards);
+    cardList = shuffle(cards);
+  let placedCard;
+  let cardDetails;
+  // place li card elements
+  for (var i = 0; i < cards.length; i++) {
+    let placedCard = document.createElement('li');
+    placedCard.classList = 'card';
+    dealtCards.appendChild(placedCard);
+    // place card details
+    let cardDetails = document.createElement('i');
+    cardDetails.classList = 'fa ' + cardList[i];
+    placedCard.appendChild(cardDetails);
+  }
+  }
+  if(levelMode[i] === farmyardSelector){
+    let cards = farmyardCards;
+    console.log(cards);
+    cardList = shuffle(cards);
+  let placedCard;
+  let cardDetails;
+  // place li card elements
+  for (var i = 0; i < cards.length; i++) {
+    let placedCard = document.createElement('li');
+    placedCard.classList = 'card';
+    dealtCards.appendChild(placedCard);
+    // place card details
+    let cardDetails = document.createElement('i');
+    cardDetails.classList = 'fa ' + cardList[i];
+    placedCard.appendChild(cardDetails);
+  }
+  }
+// medium themes
+  if(levelMode[i] === birdSelector){
+    let cards = birdCards;
+    console.log(cards);
+    cardList = shuffle(cards);
+  let placedCard;
+  let cardDetails;
+  // place li card elements
+  for (var i = 0; i < cards.length; i++) {
+    let placedCard = document.createElement('li');
+    placedCard.classList = 'card';
+    dealtCards.appendChild(placedCard);
+    // place card details
+    let cardDetails = document.createElement('i');
+    cardDetails.classList = 'fa ' + cardList[i];
+    placedCard.appendChild(cardDetails);
+  }
 }
-  dealtCards.addEventListener('click', respondToTheClick);
+  if(levelMode[i] === bugSelector){
+    let cards = bugCards;
+    console.log(cards);
+    cardList = shuffle(cards);
+  let placedCard;
+  let cardDetails;
+  // place li card elements
+  for (var i = 0; i < cards.length; i++) {
+    let placedCard = document.createElement('li');
+    placedCard.classList = 'card';
+    dealtCards.appendChild(placedCard);
+    // place card details
+    let cardDetails = document.createElement('i');
+    cardDetails.classList = 'fa ' + cardList[i];
+    placedCard.appendChild(cardDetails);
+  }
 }
+  if(levelMode[i] === reptileSelector){
+    let cards = reptileCards;
+    console.log(cards);
+    cardList = shuffle(cards);
+  let placedCard;
+  let cardDetails;
+  // place li card elements
+  for (var i = 0; i < cards.length; i++) {
+    let placedCard = document.createElement('li');
+    placedCard.classList = 'card';
+    dealtCards.appendChild(placedCard);
+    // place card details
+    let cardDetails = document.createElement('i');
+    cardDetails.classList = 'fa ' + cardList[i];
+    placedCard.appendChild(cardDetails);
+  }
+}
+// hard themes
+  if(levelMode[i] === dionsaurSelector){
+    let cards = dinosaurCards;
+    console.log(cards);
+    cardList = shuffle(cards);
+  let placedCard;
+  let cardDetails;
+  // place li card elements
+  for (var i = 0; i < cards.length; i++) {
+    let placedCard = document.createElement('li');
+    placedCard.classList = 'card';
+    dealtCards.appendChild(placedCard);
+    // place card details
+    let cardDetails = document.createElement('i');
+    cardDetails.classList = 'fa ' + cardList[i];
+    placedCard.appendChild(cardDetails);
+  }
+}
+  if(levelMode[i] === endangeredSelector){
+    let cards = endangeredCards;
+    console.log(cards);
+    cardList = shuffle(cards);
+  let placedCard;
+  let cardDetails;
+  // place li card elements
+  for (var i = 0; i < cards.length; i++) {
+    let placedCard = document.createElement('li');
+    placedCard.classList = 'card';
+    dealtCards.appendChild(placedCard);
+    // place card details
+    let cardDetails = document.createElement('i');
+    cardDetails.classList = 'fa ' + cardList[i];
+    placedCard.appendChild(cardDetails);
+  }
+}
+  if(levelMode[i] === woodlandSelector){
+    let cards = woodlandCards;
+    console.log(cards);
+    cardList = shuffle(cards);
+  let placedCard;
+  let cardDetails;
+  // place li card elements
+  for (var i = 0; i < cards.length; i++) {
+    let placedCard = document.createElement('li');
+    placedCard.classList = 'card';
+    dealtCards.appendChild(placedCard);
+    // place card details
+    let cardDetails = document.createElement('i');
+    cardDetails.classList = 'fa ' + cardList[i];
+    placedCard.appendChild(cardDetails);
+  }
+}
+// difficult themes
+  if(levelMode[i] === sealifeSelector){
+    let cards = sealifeCards;
+    console.log(cards);
+    cardList = shuffle(cards);
+  let placedCard;
+  let cardDetails;
+  // place li card elements
+  for (var i = 0; i < cards.length; i++) {
+    let placedCard = document.createElement('li');
+    placedCard.classList = 'card';
+    dealtCards.appendChild(placedCard);
+    // place card details
+    let cardDetails = document.createElement('i');
+    cardDetails.classList = 'fa ' + cardList[i];
+    placedCard.appendChild(cardDetails);
+  }
+}
+}
+    dealtCards.addEventListener('click', respondToTheClick);
+  }
 /* respondToTheClick process explanation
 - target li elements only
 + add open and show classes to selected card
