@@ -11,6 +11,7 @@ let levelMode = [];
 
 // easy level arrays
 var butterflyCards = ['blue', 'blue', 'red', 'red', 'orange', 'orange', 'yellow', 'yellow'];
+// var butterflyCardsImage = ['blue.png', 'blue.png', 'red.png', 'red.png', 'orange.png', 'orange.png', 'yellow.png', 'yellow.png'];
 var farmyardCards = ['chicken', 'chicken', 'cow', 'cow', 'pig', 'pig', 'sheep', 'sheep'];
 // medium level arrays
 var birdCards = ['humming-bird', 'humming-bird', 'kiwi', 'kiwi', 'ostrich', 'ostrich', 'parrot',
@@ -27,7 +28,7 @@ var endangeredCards = ['baboon', 'baboon', 'bear', 'bear', 'elephant', 'elephant
 var woodlandCards = ['badger', 'badger', 'deer', 'deer', 'fox', 'fox', 'hedgehog', 'hedgehog',
 'mouse', 'mouse', 'owl', 'owl', 'rabbit', 'rabbit', 'squirrel', 'squirrel'];
 // difficult level arrays
-var sealifeCards = ['clownfish', 'clownfish', 'dolphin', 'doplin', 'hermit-crab', 'hermit-crab', 'killer-whale', 'killer-whale', 'octopus', 'octopus',
+var sealifeCards = ['clownfish', 'clownfish', 'dolphin', 'dolphin', 'hermit-crab', 'hermit-crab', 'killer-whale', 'killer-whale', 'octopus', 'octopus',
  'puffafish', 'puffafish', 'shark', 'shark', 'squid', 'squid', 'starfish', 'starfish', 'whale', 'whale']
 // level variables
 const levelOne = document.getElementById('easyButton');
@@ -55,11 +56,7 @@ const themeSelectionOne = document.querySelector('.selectPack.one');
 const themeSelectionTwo = document.querySelector('.selectPack.two');
 const themeSelectionThree = document.querySelector('.selectPack.three');
 const themeSelectionFour = document.querySelector('.selectPack.four');
-// themeSelectionOne.addEventListener("click", switchDecks);
-// themeSelectionTwo.addEventListener("click", switchDecks);
-// themeSelectionThree.addEventListener("click", switchDecks);
-// themeSelectionFour.addEventListener("click", switchDecks);
-// console.log(themeSelection)
+
 levelOne.addEventListener("click", levelSelectionChange);
 levelTwo.addEventListener("click", levelSelectionChange);
 levelThree.addEventListener("click", levelSelectionChange);
@@ -76,6 +73,7 @@ document.onload = levelModal.style.display = "block";
 introPopup();
 
 function levelSelectionChange(e){
+  const body = document.querySelector("body");
   if (e.target.classList.contains('easy')) {
     levelSelects.style.display = "none";
     themeSelects.style.display = "block";
@@ -85,6 +83,7 @@ function levelSelectionChange(e){
     let choices = e.target.id;
     choosen.style.display = "block";
     levelMode.push(choices);
+    body.classList.add("easy");
 }
   if (e.target.classList.contains('medium')) {
     levelSelects.style.display = "none";
@@ -95,6 +94,7 @@ function levelSelectionChange(e){
     let choices = e.target.id;
     choosen.style.display = "block";
     levelMode.push(choices);
+    body.classList.add("medium");
 }
   if (e.target.classList.contains('hard')) {
     levelSelects.style.display = "none";
@@ -105,17 +105,18 @@ function levelSelectionChange(e){
     let choices = e.target.id;
     choosen.style.display = "block";
     levelMode.push(choices);
+    body.classList.add("hard");
 }
   if (e.target.classList.contains('difficult')) {
     levelSelects.style.display = "none";
     themeSelects.style.display = "block";
     let choosen = document.getElementById('difficultThemeSelection');
     choosen.classList.add('lvlChoice');
-
     let choice = document.querySelector('.lvlChoice');
     let choices = e.target.id;
     choosen.style.display = "block";
     levelMode.push(choices);
+    body.classList.add("difficult");
 }
 }
 
@@ -132,7 +133,7 @@ function switchDecks(e){
     let choices = choice.id;
     // choosen.style.display = "block";
     levelMode.push(choices);
-    console.log(levelMode);
+    // console.log(levelMode);
 }
   if (me.contains('farmyard')) {
     let choosen = document.getElementById('selectFarmyard');
@@ -141,7 +142,7 @@ function switchDecks(e){
     let choices = choice.id;
     // choosen.style.display = "block";
     levelMode.push(choices);
-    console.log(levelMode);
+    // console.log(levelMode);
 }
 // medium themes
   if (me.contains('birds')) {
@@ -151,7 +152,7 @@ function switchDecks(e){
     let choices = choice.id;
     // choosen.style.display = "block";
     levelMode.push(choices);
-    console.log(levelMode);
+    // console.log(levelMode);
 }
   if (me.contains('bugs')) {
     let choosen = document.getElementById('selectBugs');
@@ -160,7 +161,7 @@ function switchDecks(e){
     let choices = choice.id;
     // choosen.style.display = "block";
     levelMode.push(choices);
-    console.log(levelMode);
+    // console.log(levelMode);
 }
   if (me.contains('reptiles')) {
     let choosen = document.getElementById('selectReptiles');
@@ -169,7 +170,7 @@ function switchDecks(e){
     let choices = choice.id;
     // choosen.style.display = "block";
     levelMode.push(choices);
-    console.log(levelMode);
+    // console.log(levelMode);
 }
 // hard themes
 if (me.contains('dinosaurs')) {
@@ -179,7 +180,7 @@ if (me.contains('dinosaurs')) {
   let choices = choice.id;
   // choosen.style.display = "block";
   levelMode.push(choices);
-  console.log(levelMode);
+  // console.log(levelMode);
 }
 if (me.contains('endangered')) {
   let choosen = document.getElementById('selectEndangered');
@@ -188,7 +189,7 @@ if (me.contains('endangered')) {
   let choices = choice.id;
   // choosen.style.display = "block";
   levelMode.push(choices);
-  console.log(levelMode);
+  // console.log(levelMode);
 }
 if (me.contains('woodland')) {
   let choosen = document.getElementById('selectWoodland');
@@ -197,7 +198,7 @@ if (me.contains('woodland')) {
   let choices = choice.id;
   // choosen.style.display = "block";
   levelMode.push(choices);
-  console.log(levelMode);
+  // console.log(levelMode);
 }
 // difficult themeSelects
 if (me.contains('sealife')) {
@@ -207,7 +208,7 @@ if (me.contains('sealife')) {
   let choices = choice.id;
   // choosen.style.display = "block";
   levelMode.push(choices);
-  console.log(levelMode);
+  // console.log(levelMode);
 }
   levelModal.style.display = "none";
   dealCards();
@@ -241,81 +242,89 @@ function shuffle(array){
 + li class = "card" elements
 + i class = cardList array items
 + addEventListener to li elements*/
-createContainer();
-createStars();
-createMovecounter();
-createRestartButton();
-// moves javascript link to bottom of body
-const body = document.querySelector("body");
-$('#js').insertAfter(body);
+
 
 // create container div
+const deck = document.querySelector(".deck");
 function createContainer(){
+  const body = document.querySelector("body");
+  const bodyNameLevel = body.classList[0];
   const container = document.createElement('div');
   container.classList = 'container';
+  body.insertBefore(container, levelModal);
+  // console.log("container built");
   const headingContainer = document.createElement('div');
   headingContainer.classList = "heading"
   const heading = document.createElement("header");
-  // heading.classList = "heading";
-container.appendChild(headingContainer);
-// add container div to body
-headingContainer.appendChild(heading);
+  heading.innerText = "Matching Game";
+  const levelLog = document.createElement("SPAN");
+  console.log(body.classList);
+  levelLog.innerText = "Difficulty: " + bodyNameLevel;
+  container.appendChild(headingContainer);
+  // add container div to body
+  headingContainer.appendChild(heading);
+  headingContainer.appendChild(levelLog);
+  // console.log("header added");
 }
 function createStars(){
   const scores = document.createElement('section');
   const starRating = document.createElement('ul');
   const container = document.querySelector(".container");
   const headingContainer = document.querySelector(".heading");
-headingContainer.appendChild(scores);
-scores.classList = 'score-panel';
-starRating.classList = 'stars';
-for(var i = 0; i < starRatings.length; i++){
-const starList = document.createElement('li');
-starRating.appendChild(starList);
-const stars = document.createElement('I');
-starList.appendChild(stars);
-stars.classList = 'fa fa-star';
-scores.appendChild(starRating);
-}
+  headingContainer.appendChild(scores);
+  scores.classList = 'score-panel';
+  starRating.classList = 'stars';
+    for(var i = 0; i < starRatings.length; i++){
+    const starList = document.createElement('li');
+    starRating.appendChild(starList);
+    const stars = document.createElement('I');
+    starList.appendChild(stars);
+    stars.classList = 'fa fa-star';
+    scores.appendChild(starRating);
+    }
 }
 
 function createMovecounter(){
   const scores = document.querySelector(".score-panel");
-const moveCounter = document.createElement('span');
-scores.appendChild(moveCounter);
-// console.log("add span element");
-moveCounter.classList = 'moves';
-// console.log("add class moves");
-moveCounter.textContent = "0";
-// console.log("add textContent");
-// console.log("add m")
-const moveText = document.createElement('span');
-moveText.textContent = " Moves";
-scores.appendChild(moveText);
+  const moveCounter = document.createElement('span');
+  scores.appendChild(moveCounter);
+  // console.log("add span element");
+  moveCounter.classList = 'moves';
+  // console.log("add class moves");
+  moveCounter.textContent = "0";
+  // console.log("add textContent");
+  // console.log("add m")
+  const moveText = document.createElement('span');
+  moveText.textContent = " Moves";
+  scores.appendChild(moveText);
 }
 function createRestartButton(){
   const scores = document.querySelector(".score-panel");
-const restartButton = document.createElement('div');
-scores.appendChild(restartButton);
-restartButton.classList = 'restart';
-const restart = document.createElement('I');
-restart.classList = 'fa fa-repeat';
-restartButton.appendChild(restart);
-restartButton.addEventListener("click", restartGame);
+  const restartButton = document.createElement('div');
+  scores.appendChild(restartButton);
+  restartButton.classList = 'restart';
+  const restart = document.createElement('I');
+  restart.classList = 'fa fa-repeat';
+  restartButton.appendChild(restart);
+  restartButton.addEventListener("click", restartGame);
 }
 function restartGame(){
   // call to restart game - forces page reload
-  console.log("restart game called")
+  // console.log("restart game called")
   location.reload(true);
 }
-// console.log("js moved");
 // create deck ul list
 function dealCards(){
-  console.log("dealCards called");
+  createContainer();
+  createStars();
+  createMovecounter();
+  createRestartButton();
+  // moves javascript link to bottom of body
+  const body = document.querySelector("body");
+  $('#js').insertAfter(body);
   const dealtCards = document.createElement('ul');
-  const container = document.querySelector(".container");
-
   dealtCards.classList = 'deck';
+  const container = document.querySelector(".container");
   // add cards to deck
   container.appendChild(dealtCards);
   // easy themes
@@ -326,214 +335,513 @@ function dealCards(){
   let bugSelector = "selectBugs";
   let reptileSelector = "selectReptiles";
   // hard themes
-  let dionsaurSelector = "selectDinosaurs";
+  let dinosaurSelector = "selectDinosaurs";
   let endangeredSelector = "selectEndangered";
   let woodlandSelector = "selectWoodland";
   // difficult themes
   let sealifeSelector = "selectSealife";
-
-  // shuffle cards for chosen deck
-  // easy themes
+  // call to shuffle cards for chosen deck
+  // for statement for ALL decks
 for(var i = 0; i < levelMode.length; i++){
+  // check which deck has been selected, switch decks
+  // easy decks
   if(levelMode[i] === butterflySelector){
     let cards = butterflyCards;
-    console.log(cards);
     cardList = shuffle(cards);
-  let placedCard;
-  let cardDetails;
-  // place li card elements
+    let placedCard;
+    let cardDetails;
+    // place li card elements
   for (var i = 0; i < cards.length; i++) {
     let placedCard = document.createElement('li');
     placedCard.classList = 'card';
     dealtCards.appendChild(placedCard);
-    // place card details
-    let cardDetails = document.createElement('i');
-    cardDetails.classList = 'fa ' + cardList[i];
+    // place card image details
+    let cardDetails = document.createElement('IMG');
+    cardDetails.classList = "fa cardSymbols butterfly-" + cardList[i];
+    cardDetails.id = cardList[i] + "-" + cardList.indexOf(cardList[i]);
+    cardDetails.src;
+    cardDetails.toArray;
+    // place image source dependant on card class
+    let redSelect = "butterfly-red";
+    let blueSelect = "butterfly-blue";
+    let yellowSelect = "butterfly-yellow";
+    let orangeSelect = "butterfly-orange";
+      if(cardDetails.classList[2] === redSelect){
+        cardDetails.src = 'img/game-sets/easy/butterflies/red.png';
+      }
+      if(cardDetails.classList[2] === blueSelect){
+        cardDetails.src = 'img/game-sets/easy/butterflies/blue.png';
+      }
+      if(cardDetails.classList[2] === yellowSelect){
+        cardDetails.src = 'img/game-sets/easy/butterflies/yellow.png';
+      }
+      if(cardDetails.classList[2] === orangeSelect){
+        cardDetails.src = 'img/game-sets/easy/butterflies/orange.png';
+      }
     placedCard.appendChild(cardDetails);
+    // console.log("cardDetails IMG element placed");
   }
+  // add level details to deck and body
     const deck = document.querySelector(".deck");
     deck.classList.add("easy");
-  deck.classList.add("butterflies");
-  body.classList.add("butterflies");
+    deck.classList.add("butterflies");
+    body.classList.add("butterflies");
+    // end of butterfly deck
   }
+  // farmyard deck
   if(levelMode[i] === farmyardSelector){
     let cards = farmyardCards;
-    console.log(cards);
     cardList = shuffle(cards);
-  let placedCard;
-  let cardDetails;
-  // place li card elements
+    let placedCard;
+    let cardDetails;
+    // place li card elements
   for (var i = 0; i < cards.length; i++) {
     let placedCard = document.createElement('li');
     placedCard.classList = 'card';
     dealtCards.appendChild(placedCard);
-    // place card details
-    let cardDetails = document.createElement('i');
-    cardDetails.classList = 'fa ' + cardList[i];
-    placedCard.appendChild(cardDetails);
-  }
-  const deck = document.querySelector(".deck");
-  deck.classList.add("easy");
-deck.classList.add("farmyard");
-body.classList.add("farmyard");
-  }
-// medium themes
+    // place card image details
+    let cardDetails = document.createElement('IMG');
+    cardDetails.classList = "fa cardSymbols farmyard-" + cardList[i];
+    cardDetails.id = cardList[i] + "-" + cardList.indexOf(cardList[i]);
+    cardDetails.src;
+    cardDetails.toArray;
+    // place image source dependant on card class
+    let chickenSelect = "farmyard-chicken";
+    let cowSelect = "farmyard-cow";
+    let pigSelect = "farmyard-pig";
+    let sheepSelect = "farmyard-sheep";
+      if(cardDetails.classList[2] === chickenSelect){
+        cardDetails.src = 'img/game-sets/easy/farmyard/chicken.png';
+      }
+      if(cardDetails.classList[2] === cowSelect){
+        cardDetails.src = 'img/game-sets/easy/farmyard/cow.png';
+      }
+      if(cardDetails.classList[2] === pigSelect){
+        cardDetails.src = 'img/game-sets/easy/farmyard/pig.png';
+      }
+      if(cardDetails.classList[2] === sheepSelect){
+        cardDetails.src = 'img/game-sets/easy/farmyard/sheep.png';
+      }
+      placedCard.appendChild(cardDetails);
+      // console.log("cardDetails IMG element placed");
+    }
+    // add level details to deck and body
+      const deck = document.querySelector(".deck");
+      deck.classList.add("easy");
+      deck.classList.add("farmyard");
+      body.classList.add("farmyard");
+      // end of butterfly deck
+    }
+    // end of easy themes
+    // medium decks
   if(levelMode[i] === birdSelector){
     let cards = birdCards;
-    console.log(cards);
     cardList = shuffle(cards);
-  let placedCard;
-  let cardDetails;
-  // place li card elements
+    let placedCard;
+    let cardDetails;
+    // place li card elements
   for (var i = 0; i < cards.length; i++) {
     let placedCard = document.createElement('li');
     placedCard.classList = 'card';
     dealtCards.appendChild(placedCard);
-    // place card details
-    let cardDetails = document.createElement('i');
-    cardDetails.classList = 'fa ' + cardList[i];
-    placedCard.appendChild(cardDetails);
-  }
-  const deck = document.querySelector(".deck");
-  deck.classList.add("medium");
-deck.classList.add("birds");
-body.classList.add("birds");
-}
+    // place card image details
+    let cardDetails = document.createElement('IMG');
+    cardDetails.classList = "fa cardSymbols birds-" + cardList[i];
+    cardDetails.id = cardList[i] + "-" + cardList.indexOf(cardList[i]);
+    cardDetails.src;
+    cardDetails.toArray;
+    // place image source dependant on card class
+    let hummSelect = "birds-hummingbird";
+    let kiwiSelect = "birds-kiwi";
+    let ostrichSelect = "birds-ostrich";
+    let parrotSelect = "birds-parrot";
+    let penguinSelect = "birds-penguin";
+    let tucanSelect = "birds-tucan";
+      if(cardDetails.classList[2] === hummSelect){
+        cardDetails.src = 'img/game-sets/medium/birds/humming-bird.png';
+      }
+      if(cardDetails.classList[2] === kiwiSelect){
+        cardDetails.src = 'img/game-sets/medium/birds/kiwi.png';
+      }
+      if(cardDetails.classList[2] === ostrichSelect){
+        cardDetails.src = 'img/game-sets/medium/birds/ostrich.png';
+      }
+      if(cardDetails.classList[2] === parrotSelect){
+        cardDetails.src = 'img/game-sets/medium/birds/parrot.png';
+      }
+      if(cardDetails.classList[2] === penguinSelect){
+        cardDetails.src = 'img/game-sets/medium/birds/penguin.png';
+      }
+      if(cardDetails.classList[2] === tucanSelect){
+        cardDetails.src = 'img/game-sets/medium/birds/tucan.png';
+      }
+      placedCard.appendChild(cardDetails);
+      // console.log("cardDetails IMG element placed");
+    }
+    // add level details to deck and body
+      const deck = document.querySelector(".deck");
+      deck.classList.add("medium");
+      deck.classList.add("birds");
+      body.classList.add("birds");
+      // end of butterfly deck
+    }
+// end of birds themes
+// bug themes
   if(levelMode[i] === bugSelector){
     let cards = bugCards;
-    console.log(cards);
     cardList = shuffle(cards);
-  let placedCard;
-  let cardDetails;
-  // place li card elements
+    let placedCard;
+    let cardDetails;
+    // place li card elements
   for (var i = 0; i < cards.length; i++) {
     let placedCard = document.createElement('li');
     placedCard.classList = 'card';
     dealtCards.appendChild(placedCard);
-    // place card details
-    let cardDetails = document.createElement('i');
-    cardDetails.classList = 'fa ' + cardList[i];
-    placedCard.appendChild(cardDetails);
-  }
-  const deck = document.querySelector(".deck");
-deck.classList.add("medium");
-deck.classList.add("bugs");
-body.classList.add("bugs");
-}
+    // place card image details
+    let cardDetails = document.createElement('IMG');
+    cardDetails.classList = "fa cardSymbols bugs-" + cardList[i];
+    cardDetails.id = cardList[i] + "-" + cardList.indexOf(cardList[i]);
+    cardDetails.src;
+    cardDetails.toArray;
+    // place image source dependant on card class
+    let beeSelect = "bugs-bee";
+    let beetleSelect = "bugs-beetle";
+    let cricketSelect = "bugs-cricket";
+    let dragonflySelect = "bugs-dragonfly";
+    let ladybirdSelect = "bugs-ladybird";
+    let snailSelect = "bugs-snail";
+      if(cardDetails.classList[2] === beeSelect){
+        cardDetails.src = 'img/game-sets/medium/bugs/bee.png';
+      }
+      if(cardDetails.classList[2] === beetleSelect){
+        cardDetails.src = 'img/game-sets/medium/bugs/beetle.png';
+      }
+      if(cardDetails.classList[2] === cricketSelect){
+        cardDetails.src = 'img/game-sets/medium/bugs/cricket.png';
+      }
+      if(cardDetails.classList[2] === dragonflySelect){
+        cardDetails.src = 'img/game-sets/medium/bugs/dragonfly.png';
+      }
+      if(cardDetails.classList[2] === ladybirdSelect){
+        cardDetails.src = 'img/game-sets/medium/bugs/bee.png';
+      }
+      if(cardDetails.classList[2] === snailSelect){
+        cardDetails.src = 'img/game-sets/medium/bugs/snail.png';
+      }
+      placedCard.appendChild(cardDetails);
+      // console.log("cardDetails IMG element placed");
+    }
+    // add level details to deck and body
+      const deck = document.querySelector(".deck");
+      deck.classList.add("medium");
+      deck.classList.add("bugs");
+      body.classList.add("bugs");
+      // end of bugs deck
+    }
+
   if(levelMode[i] === reptileSelector){
     let cards = reptileCards;
-    console.log(cards);
     cardList = shuffle(cards);
-  let placedCard;
-  let cardDetails;
-  // place li card elements
+    let placedCard;
+    let cardDetails;
+    // place li card elements
   for (var i = 0; i < cards.length; i++) {
     let placedCard = document.createElement('li');
     placedCard.classList = 'card';
     dealtCards.appendChild(placedCard);
-    // place card details
-    let cardDetails = document.createElement('i');
-    cardDetails.classList = 'fa ' + cardList[i];
-    placedCard.appendChild(cardDetails);
-  }
-  const deck = document.querySelector(".deck");
-deck.classList.add("medium");
-deck.classList.add("reptiles");
-body.classList.add("reptiles");
-}
-// hard themes
-  if(levelMode[i] === dionsaurSelector){
-    let cards = dinosaurCards;
-    console.log(cards);
-    cardList = shuffle(cards);
-  let placedCard;
-  let cardDetails;
-  // place li card elements
-  for (var i = 0; i < cards.length; i++) {
-    let placedCard = document.createElement('li');
-    placedCard.classList = 'card';
-    dealtCards.appendChild(placedCard);
-    // place card details
-    let cardDetails = document.createElement('i');
-    cardDetails.classList = 'fa ' + cardList[i];
-    placedCard.appendChild(cardDetails);
-  }
-  const deck = document.querySelector(".deck");
-deck.classList.add("hard");
-deck.classList.add("dinosaur");
-body.classList.add("dinosaurs");
-
-}
-  if(levelMode[i] === endangeredSelector){
-    let cards = endangeredCards;
-    console.log(cards);
-    cardList = shuffle(cards);
-  let placedCard;
-  let cardDetails;
-  // place li card elements
-  for (var i = 0; i < cards.length; i++) {
-    let placedCard = document.createElement('li');
-    placedCard.classList = 'card';
-    dealtCards.appendChild(placedCard);
-    // place card details
-    let cardDetails = document.createElement('i');
-    cardDetails.classList = 'fa ' + cardList[i];
-    placedCard.appendChild(cardDetails);
-  }
-  const deck = document.querySelector(".deck");
-deck.classList.add("hard");
-deck.classList.add("endangered");
-body.classList.add("endangered");
-
-}
-  if(levelMode[i] === woodlandSelector){
-    let cards = woodlandCards;
-    console.log(cards);
-    cardList = shuffle(cards);
-  let placedCard;
-  let cardDetails;
-  // place li card elements
-  for (var i = 0; i < cards.length; i++) {
-    let placedCard = document.createElement('li');
-    placedCard.classList = 'card';
-    dealtCards.appendChild(placedCard);
-    // place card details
-    let cardDetails = document.createElement('i');
-    cardDetails.classList = 'fa ' + cardList[i];
-    placedCard.appendChild(cardDetails);
-  }
-  const deck = document.querySelector(".deck");
-deck.classList.add("hard");
-deck.classList.add("woodland");
-body.classList.add("woodland");
-
-}
-// difficult themes
-  if(levelMode[i] === sealifeSelector){
-    let cards = sealifeCards;
-    console.log(cards);
-    cardList = shuffle(cards);
-  let placedCard;
-  let cardDetails;
-  // place li card elements
-  for (var i = 0; i < cards.length; i++) {
-    let placedCard = document.createElement('li');
-    placedCard.classList = 'card';
-    dealtCards.appendChild(placedCard);
-    // place card details
-    let cardDetails = document.createElement('i');
-    cardDetails.classList = 'fa ' + cardList[i];
-    placedCard.appendChild(cardDetails);
-  }
-  const deck = document.querySelector(".deck");
-deck.classList.add("difficult");
-deck.classList.add("sealife");
-body.classList.add("sealife");
-
-}
-}
+    // place card image details
+    let cardDetails = document.createElement('IMG');
+    cardDetails.classList = "fa cardSymbols reptile-" + cardList[i];
+    cardDetails.id = cardList[i] + "-" + cardList.indexOf(cardList[i]);
+    cardDetails.src;
+    cardDetails.toArray;
+    // place image source dependant on card class
+    let chamSelect = "reptile-chameleon";
+    let cobraSelect = "reptile-cobra";
+    let frogSelect = "reptile-frog";
+    let lizardSelect = "reptile-lizard";
+    let newtSelect = "reptile-newt";
+    let turtleSelect = "reptile-turtle";
+      if(cardDetails.classList[2] === chamSelect){
+        cardDetails.src = 'img/game-sets/medium/reptiles/chameleon.png';
+      }
+      if(cardDetails.classList[2] === cobraSelect){
+        cardDetails.src = 'img/game-sets/medium/reptiles/cobra.png';
+      }
+      if(cardDetails.classList[2] === frogSelect){
+        cardDetails.src = 'img/game-sets/medium/reptiles/frog.png';
+      }
+      if(cardDetails.classList[2] === lizardSelect){
+        cardDetails.src = 'img/game-sets/medium/reptiles/lizard.png';
+      }
+      if(cardDetails.classList[2] === newtSelect){
+        cardDetails.src = 'img/game-sets/medium/reptiles/newt.png';
+      }
+      if(cardDetails.classList[2] === turtleSelect){
+        cardDetails.src = 'img/game-sets/medium/reptiles/turtle.png';
+      }
+      placedCard.appendChild(cardDetails);
+      // console.log("cardDetails IMG element placed");
+    }
+    // add level details to deck and body
+      const deck = document.querySelector(".deck");
+      deck.classList.add("medium");
+      deck.classList.add("reptiles");
+      body.classList.add("reptiles");
+      // end of reptiles deck
+    }
+    // hard themes
+    // dinosaur deck
+    if(levelMode[i] === dinosaurSelector){
+      let cards = dinosaurCards;
+      cardList = shuffle(cards);
+      let placedCard;
+      let cardDetails;
+      // place li card elements
+    for (var i = 0; i < cards.length; i++) {
+      let placedCard = document.createElement('li');
+      placedCard.classList = 'card';
+      dealtCards.appendChild(placedCard);
+      // place card image details
+      let cardDetails = document.createElement('IMG');
+      cardDetails.classList = "fa cardSymbols dinosaur-" + cardList[i];
+      cardDetails.id = cardList[i] + "-" + cardList.indexOf(cardList[i]);
+      cardDetails.src;
+      cardDetails.toArray;
+      // place image source dependant on card class
+      let ankSelect = "dinosaur-ankylosaurus";
+      let corySelect = "dinosaur-corythosaurus";
+      let diplSelect = "dinosaur-diplodocus";
+      let paraSelect = "dinosaur-parasaurolophus";
+      let pteSelect = "dinosaur-pterodactyl";
+      let stegSelect = "dinosaur-stegosaurus";
+      let triSelect = "dinosaur-triceratops";
+      let veloSelect = "dinosaur-velociraptor";
+        if(cardDetails.classList[2] === ankSelect){
+          cardDetails.src = 'img/game-sets/hard/dinosaurs/ankylosaurus.png';
+        }
+        if(cardDetails.classList[2] === corySelect){
+          cardDetails.src = 'img/game-sets/hard/dinosaurs/corythosaurus.png';
+        }
+        if(cardDetails.classList[2] === diplSelect){
+          cardDetails.src = 'img/game-sets/hard/dinosaurs/diplodocos.png';
+        }
+        if(cardDetails.classList[2] === paraSelect){
+          cardDetails.src = 'img/game-sets/hard/dinosaurs/parasaurolophus.png';
+        }
+        if(cardDetails.classList[2] === pteSelect){
+          cardDetails.src = 'img/game-sets/hard/dinosaurs/pterodactyl.png';
+        }
+        if(cardDetails.classList[2] === stegSelect){
+          cardDetails.src = 'img/game-sets/hard/dinosaurs/stegosaurus.png';
+        }
+        if(cardDetails.classList[2] === triSelect){
+          cardDetails.src = 'img/game-sets/hard/dinosaurs/triceratops.png';
+        }
+        if(cardDetails.classList[2] === veloSelect){
+          cardDetails.src = 'img/game-sets/hard/dinosaurs/velociraptor.png';
+        }
+        placedCard.appendChild(cardDetails);
+        // console.log("cardDetails IMG element placed");
+      }
+      // add level details to deck and body
+        const deck = document.querySelector(".deck");
+        deck.classList.add("hard");
+        deck.classList.add("dinosaurs");
+        body.classList.add("dinosaurs");
+        // end of dinosaur deck
+      }
+      // endangered decks
+      if(levelMode[i] === endangeredSelector){
+        let cards = endangeredCards;
+        cardList = shuffle(cards);
+        let placedCard;
+        let cardDetails;
+        // place li card elements
+      for (var i = 0; i < cards.length; i++) {
+        let placedCard = document.createElement('li');
+        placedCard.classList = 'card';
+        dealtCards.appendChild(placedCard);
+        // place card image details
+        let cardDetails = document.createElement('IMG');
+        cardDetails.classList = "fa cardSymbols endangered-" + cardList[i];
+        cardDetails.id = cardList[i] + "-" + cardList.indexOf(cardList[i]);
+        cardDetails.src;
+        cardDetails.toArray;
+        // place image source dependant on card class
+        let babSelect = "endangered-baboon";
+        let bearSelect = "endangered-bear";
+        let eleSelect = "endangered-elephant";
+        let hyenaSelect = "endangered-hyena";
+        let lionSelect = "endangered-lion";
+        let pandaSelect = "endangered-panda";
+        let platSelect = "endangered-platypus";
+        let polaSelect = "endangered-polar-bear";
+          if(cardDetails.classList[2] === babSelect){
+            cardDetails.src = 'img/game-sets/hard/endangered/baboon.png';
+          }
+          if(cardDetails.classList[2] === bearSelect){
+            cardDetails.src = 'img/game-sets/hard/endangered/bear.png';
+          }
+          if(cardDetails.classList[2] === eleSelect){
+            cardDetails.src = 'img/game-sets/hard/endangered/elephant.png';
+          }
+          if(cardDetails.classList[2] === hyenaSelect){
+            cardDetails.src = 'img/game-sets/hard/endangered/hyena.png';
+          }
+          if(cardDetails.classList[2] === lionSelect){
+            cardDetails.src = 'img/game-sets/hard/endangered/lion.png';
+          }
+          if(cardDetails.classList[2] === pandaSelect){
+            cardDetails.src = 'img/game-sets/hard/endangered/panda.png';
+          }
+          if(cardDetails.classList[2] === platSelect){
+            cardDetails.src = 'img/game-sets/hard/endangered/platypus.png';
+          }
+          if(cardDetails.classList[2] === polaSelect){
+            cardDetails.src = 'img/game-sets/hard/endangered/polar-bear.png';
+          }
+          placedCard.appendChild(cardDetails);
+          // console.log("cardDetails IMG element placed");
+        }
+        // add level details to deck and body
+          const deck = document.querySelector(".deck");
+          deck.classList.add("hard");
+          deck.classList.add("endangered");
+          body.classList.add("endangered");
+          // end of endangered deck
+        }
+        // woodland decks
+        if(levelMode[i] === woodlandSelector){
+          let cards = woodlandCards;
+          cardList = shuffle(cards);
+          let placedCard;
+          let cardDetails;
+          // place li card elements
+        for (var i = 0; i < cards.length; i++) {
+          let placedCard = document.createElement('li');
+          placedCard.classList = 'card';
+          dealtCards.appendChild(placedCard);
+          // place card image details
+          let cardDetails = document.createElement('IMG');
+          cardDetails.classList = "fa cardSymbols woodland-" + cardList[i];
+          cardDetails.id = cardList[i] + "-" + cardList.indexOf(cardList[i]);
+          cardDetails.src;
+          cardDetails.toArray;
+          // place image source dependant on card class
+          let badgerSelect = "woodland-badger";
+          let deerSelect = "woodland-deer";
+          let foxSelect = "woodland-fox";
+          let hedgehogSelect = "woodland-hedgehog";
+          let mouseSelect = "woodland-mouse";
+          let owlSelect = "woodland-owl";
+          let rabbitSelect = "woodland-rabbit";
+          let squirrelSelect = "woodland-squirrel";
+            if(cardDetails.classList[2] === badgerSelect){
+              cardDetails.src = 'img/game-sets/hard/woodland/badger.png';
+            }
+            if(cardDetails.classList[2] === deerSelect){
+              cardDetails.src = 'img/game-sets/hard/woodland/deer.png';
+            }
+            if(cardDetails.classList[2] === foxSelect){
+              cardDetails.src = 'img/game-sets/hard/woodland/fox.png';
+            }
+            if(cardDetails.classList[2] === hedgehogSelect){
+              cardDetails.src = 'img/game-sets/hard/woodland/hedgehog.png';
+            }
+            if(cardDetails.classList[2] === mouseSelect){
+              cardDetails.src = 'img/game-sets/hard/woodland/mouse.png';
+            }
+            if(cardDetails.classList[2] === owlSelect){
+              cardDetails.src = 'img/game-sets/hard/woodland/owl.png';
+            }
+            if(cardDetails.classList[2] === rabbitSelect){
+              cardDetails.src = 'img/game-sets/hard/woodland/rabbit.png';
+            }
+            if(cardDetails.classList[2] === squirrelSelect){
+              cardDetails.src = 'img/game-sets/hard/woodland/squirrel.png';
+            }
+            placedCard.appendChild(cardDetails);
+            // console.log("cardDetails IMG element placed");
+          }
+          // add level details to deck and body
+            const deck = document.querySelector(".deck");
+            deck.classList.add("hard");
+            deck.classList.add("woodland");
+            body.classList.add("woodland");
+            // end of endangered deck
+          }
+          // sealife decks
+          if(levelMode[i] === sealifeSelector){
+            let cards = sealifeCards;
+            cardList = shuffle(cards);
+            let placedCard;
+            let cardDetails;
+            // place li card elements
+          for (var i = 0; i < cards.length; i++) {
+            let placedCard = document.createElement('li');
+            placedCard.classList = 'card';
+            dealtCards.appendChild(placedCard);
+            // place card image details
+            let cardDetails = document.createElement('IMG');
+            cardDetails.classList = "fa cardSymbols sealife-" + cardList[i];
+            cardDetails.id = cardList[i] + "-" + cardList.indexOf(cardList[i]);
+            cardDetails.src;
+            cardDetails.toArray;
+            // place image source dependant on card class
+            let clownSelect = "sealife-clownfish";
+            let dolphinSelect = "sealife-dolphin";
+            let hermitSelect = "sealife-hermit-crab";
+            let kwhaleSelect = "sealife-killer-whale";
+            let octopusSelect = "sealife-octopus";
+            let puffaSelect = "sealife-puffafish";
+            let sharkSelect = "sealife-shark";
+            let squidSelect = "sealife-squid";
+            let stfishSelect = "sealife-starfish";
+            let whaleSelect = "sealife-whale";
+              if(cardDetails.classList[2] === clownSelect){
+                cardDetails.src = 'img/game-sets/difficult/sealife/clownfish.png';
+              }
+              if(cardDetails.classList[2] === dolphinSelect){
+                cardDetails.src = 'img/game-sets/difficult/sealife/dolphin.png';
+              }
+              if(cardDetails.classList[2] === hermitSelect){
+                cardDetails.src = 'img/game-sets/difficult/sealife/hermit-crab.png';
+              }
+              if(cardDetails.classList[2] === kwhaleSelect){
+                cardDetails.src = 'img/game-sets/difficult/sealife/killer-whale.png';
+              }
+              if(cardDetails.classList[2] === octopusSelect){
+                cardDetails.src = 'img/game-sets/difficult/sealife/octopus.png';
+              }
+              if(cardDetails.classList[2] === puffaSelect){
+                cardDetails.src = 'img/game-sets/difficult/sealife/puffafish.png';
+              }
+              if(cardDetails.classList[2] === sharkSelect){
+                cardDetails.src = 'img/game-sets/difficult/sealife/shark.png';
+              }
+              if(cardDetails.classList[2] === squidSelect){
+                cardDetails.src = 'img/game-sets/difficult/sealife/squid.png';
+              }
+              if(cardDetails.classList[2] === stfishSelect){
+                cardDetails.src = 'img/game-sets/difficult/sealife/starfish.png';
+              }
+              if(cardDetails.classList[2] === whaleSelect){
+                cardDetails.src = 'img/game-sets/difficult/sealife/whale.png';
+              }
+              placedCard.appendChild(cardDetails);
+              // console.log("cardDetails IMG element placed");
+            }
+            // add level details to deck and body
+              const deck = document.querySelector(".deck");
+              deck.classList.add("difficult");
+              deck.classList.add("sealife");
+              body.classList.add("sealife");
+              // end of endangered deck
+            }
     dealtCards.addEventListener('click', respondToTheClick);
   }
+}
 /* respondToTheClick process explanation
 - target li elements only
 + add open and show classes to selected card
@@ -544,24 +852,31 @@ body.classList.add("sealife");
 // function to call all other functions when card is clicked
 function respondToTheClick(e) {
 // console.log("card selected");
-// console.log("check if the target that is clicked is the li");
 // check if the target that is clicked is the li
+if (openCards.length < 2){
   if (e.target.tagName === 'LI') {
+    console.log("check if the target that is clicked is the li");
 // toggles open and show class
-// console.log("toggles open and show class");
+console.log("toggles open and show class");
     e.target.classList.add('open','show');
 // fucntion variables
     let choice = document.querySelector('.card.open.show');
-    let choices = e.target.firstChild.classList[1];
+    let choices = e.target.firstChild.classList[2];
+    let choiceImage = $(".open.show").find(".cardSymbols");
+    // let childI = document.getElementById('cardSymbols');
+    // choiceImage.style.display = "block";
+    // let image = choice.children['image'];
+    // body > div.container > ul > li.card.open.show > i > div
 // end of function variables
     choices.toArray;
+
 // remove event target
 // console.log("remove event target");
     choice.removeEventListener('click', respondToTheClick);
 // add first selection to opencards array
     openCards.push(choices);
-// console.log("card added to openCards array");
-// console.log("openCards array = " + openCards);
+console.log("card added to openCards array");
+console.log("openCards array = " + openCards);
 // perform check function
     check(cards);
     moveCount();
@@ -569,6 +884,7 @@ function respondToTheClick(e) {
     if(matchedCards.length === 16){
       win();
     }
+  }
   }
 }
 
@@ -620,14 +936,14 @@ function match(){
   openSelects.removeClass("open show");
   openSelects.addClass("match hold");
   // openSelects.addClass("hold");
-console.log("remove open show classes and add match");
-console.log("openCards array = " + openCards);
+// console.log("remove open show classes and add match");
+// console.log("openCards array = " + openCards);
   let match = document.querySelector(".card.match");
   let matches = match.firstChild.classList[1];
   matches.toArray;
   match.removeEventListener('click', respondToTheClick);
-console.log("removeEventListener from matched cards");
-console.log("clear open cards array")
+// console.log("removeEventListener from matched cards");
+// console.log("clear open cards array")
 for(let i = 0; i < openCards.length; i++){
   matchedCards.push(matches);
 }
@@ -636,7 +952,7 @@ holdCard = setTimeout(function (){
 },3000);
 // $(".card.match").addClass("hold");
 openCards.splice(0, 2);
-console.log("matchedCards array = " + matchedCards);
+// console.log("matchedCards array = " + matchedCards);
 }
 
 /* clear process explanation
@@ -661,18 +977,21 @@ function clear(){
 // console.log("openCards emptied");
 // console.log("openCards array = " + openCards);
   }, 2010);
+
 }
 
-let moveCounter = document.querySelector('.moves');
-let moves = moveCounter.innerText;
 function moveCount(){
-  console.log("moveCount function called")
-  console.log(moves);
+  let moveCounter = document.querySelector('.moves');
+  let moves = moveCounter.innerText;
+  // console.log("moveCount function called")
+  // console.log(moves);
   moves++;
   moveCounter.innerText = moves;
 }
 
 function rating(){
+  let moveCounter = document.querySelector('.moves');
+  let moves = moveCounter.innerText;
   let stars = $(".stars .fa");
   let halfStars = $(".stars .far")
   if(moves === 18){

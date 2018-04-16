@@ -63,7 +63,7 @@ a:active {
     height: 100%;
     text-align: center;
     font: 1.2em;
-    margin: 10em 2em 5em 2em;
+    margin: 3em 2em 5em 2em;
 }
 
 .level-selection {
@@ -225,6 +225,23 @@ body.butterflies {
   background-position: center;
   background-size: cover;
 }
+.cardSymbols {
+  /* width: 200%; */
+  /* display: none; */
+}
+.card img {
+  display: none;
+  width: 4em;
+  height: 3em;
+  margin: auto;
+}
+.card.open.show img {
+  display: block;
+}
+.card.hold img {
+  display: block;
+
+}
 body.farmyard {
   background: #61D7FF url('../img/backgrounds/farmyard.png');
   background-repeat: no-repeat;
@@ -250,7 +267,7 @@ body.reptiles {
   background-size: cover;
 }
 body.dinosaurs {
-  background: url('../img/backgrounds/dionsaurs.jpg');
+  background: url('../img/backgrounds/dinosaurs.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -277,13 +294,13 @@ body.sealife {
 .deck .card {
     height: 125px;
     width: 125px;
-    font-size: 0;
+    /* font-size: 0; */
     color: #ffffff;
     border-radius: 8px;
     cursor: pointer;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
 }
 .deck .card.open {

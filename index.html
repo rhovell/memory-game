@@ -12,15 +12,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-
-    <div class="container">
-        <header class = "heading">
-            <h1>Matching Game</h1>
-        </header>
-    </div>
-<!-- The Modal -->
+<!-- Start game modal -->
 <div id = "levelModal" class = "modal">
-
   <!-- Modal content -->
   <div class = "level-modal-content">
     <div class = "level-selection" id = "levelContent">
@@ -66,7 +59,6 @@
        <!-- </div> -->
       </div>
       <div class = "medium themes" id = "mediumThemeSelection">
-        <!-- <div class = "mediumThemes"> -->
         <div class = "intro">Medium Decks</div>
           <div class = "selectPack one birds" id = "selectBirds" onclick = "switchDecks()"><h5>Birds</h5>
             <img src = "img\game-sets\medium\birds\tucan.png" alt = "Birds" class = "pack-select birds" id = "birdsI">
@@ -77,37 +69,31 @@
           <div class = "selectPack three reptiles" id = "selectReptiles" onclick = "switchDecks()"><h5>Reptiles</h5>
             <img src = "img\game-sets\medium\reptiles\chameleon.png" alt = "Reptiles" class = "pack-select reptiles" id = "reptilesI">
           </div>
-        <!-- </div> -->
       </div>
       <div class = "hard themes" id = "hardThemeSelection">
-        <!-- <div class = "mediumThemes"> -->
         <div class = "intro">Hard Decks</div>
           <div class = "selectPack one dinosaurs" id = "selectDinosaurs" onclick = "switchDecks()"><h5>Dinosaurs</h5>
             <img src = "img\game-sets\hard\dinosaurs\diplodocos.png" alt = "Dionsaurs" class = "pack-select dinosaurs" id = "dinosaursI">
-</div>
+          </div>
           <div class = "selectPack two endangered" id = "selectEndangered" onclick = "switchDecks()"><h5>Endangered Species</h5>
             <img src = "img\game-sets\hard\endangered\panda.png" alt = "Endangered Species" class = "pack-select endangered" id = "endangeredI">
-</div>
+          </div>
           <div class = "selectPack three woodland" id = "selectWoodland" onclick = "switchDecks()"><h5>Woodland Creatures</h5>
             <img src = "img\game-sets\hard\woodland\fox.png" alt = "Woodland" class = "pack-select woodland" id = "woodlandI">
-</div>
-        <!-- </div> -->
+          </div>
       </div>
       <div class = "difficult themes" id = "difficultThemeSelection">
-        <!-- <div class = "mediumThemes"> -->
         <div class = "intro">Difficult Decks</div>
           <div class = "selectPack one sealife" id = "selectSealife" onclick = "switchDecks()"><h5>Sealife</h5>
             <img src = "img\game-sets\difficult\sealife\killer-whale.png" alt = "Sealife" class = "pack-select sealife" id = "sealifeI">
-</div>
+          </div>
           <div class = "selectPack two tbc" id = "selectTbc"><h5>Coming Soon...</h5>
             <img src = "img\symbols\black-star-1.png" alt = "Coming Soon" class = "pack-select tbc" id = "tbcI">
-</div>
-        <!-- </div> -->
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
 </div>
 
 <footer>
