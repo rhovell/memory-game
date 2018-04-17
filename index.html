@@ -27,8 +27,7 @@
     <div class = "level medium" id = "levelSelectM">
       <p class = "level-desc medium" id = "mediumP">Medium - 6 Pairs</p>
       <button id = "mediumButton" class = "button mediumButton">
-        <img src = "img\symbols\gold-star-1.png" alt = "Medium - 6 Pairs"  class = "level-select medium" id = "mediumI-1">
-        <img src = "img\symbols\gold-star-1.png" alt = "Medium - 6 Pairs" class = "level-select medium" id = "mediumI-2">
+        <img src = "img\symbols\gold-star-2.png" alt = "Medium - 6 Pairs"  class = "level-select medium" id = "mediumI">
       </button>
     </div>
     <div class = "level hard" id = "levelSelectH">
@@ -93,6 +92,28 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class = "congrats">Congratulations!
+</div>
+<div class = "winModal" id = "win-modal">
+  <div class = "win-modal-content">
+    <div class = "winning-score">
+      <span class = "you-win">You won!</span>
+      <div class = "scoreStars">You scored: <span class = "starScore" id = "printStars"></span> Stars!</div>
+      <div class = "scoreMoves">You finished the game in <span class = "moveScore" id = "printMoves"></span> moves!</div>
+
+    <div class = "restartGame">
+      <div class = "restartRequest">Would you like to play again?</div><i class = "fa fa-repeat" onclick="restartGame()"></i></div>
+  </div>
+  <!-- to be added -->
+  <!-- <div class = "scoreTime">You completed the game in: <div class = "timeScore"><div class = "minutesCount" id = "printMinutes"></div> Minutes and <div class = "secondCount" id = "printSeconds"></div> Seconds!</div>
+</div> -->
+    <!-- <div class = "winModal chooseLevel">
+      Pick a new level or deck
+      <i class = "fa fa-repeat"></i>
+    </div> -->
   </div>
 </div>
 

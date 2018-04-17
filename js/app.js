@@ -258,7 +258,7 @@ function createContainer(){
   const heading = document.createElement("header");
   heading.innerText = "Matching Game";
   const levelLog = document.createElement("SPAN");
-  console.log(body.classList);
+  // console.log(body.classList);
   levelLog.innerText = "Difficulty: " + bodyNameLevel;
   container.appendChild(headingContainer);
   // add container div to body
@@ -274,6 +274,7 @@ function createStars(){
   headingContainer.appendChild(scores);
   scores.classList = 'score-panel';
   starRating.classList = 'stars';
+  starRating.id = "starId";
     for(var i = 0; i < starRatings.length; i++){
     const starList = document.createElement('li');
     starRating.appendChild(starList);
@@ -451,7 +452,7 @@ for(var i = 0; i < levelMode.length; i++){
     cardDetails.src;
     cardDetails.toArray;
     // place image source dependant on card class
-    let hummSelect = "birds-hummingbird";
+    let hummSelect = "birds-humming-bird";
     let kiwiSelect = "birds-kiwi";
     let ostrichSelect = "birds-ostrich";
     let parrotSelect = "birds-parrot";
@@ -523,7 +524,7 @@ for(var i = 0; i < levelMode.length; i++){
         cardDetails.src = 'img/game-sets/medium/bugs/dragonfly.png';
       }
       if(cardDetails.classList[2] === ladybirdSelect){
-        cardDetails.src = 'img/game-sets/medium/bugs/bee.png';
+        cardDetails.src = 'img/game-sets/medium/bugs/ladybird.png';
       }
       if(cardDetails.classList[2] === snailSelect){
         cardDetails.src = 'img/game-sets/medium/bugs/snail.png';
@@ -536,6 +537,7 @@ for(var i = 0; i < levelMode.length; i++){
       deck.classList.add("medium");
       deck.classList.add("bugs");
       body.classList.add("bugs");
+      console.log(levelMode);
       // end of bugs deck
     }
 
@@ -840,6 +842,8 @@ for(var i = 0; i < levelMode.length; i++){
               // end of endangered deck
             }
     dealtCards.addEventListener('click', respondToTheClick);
+    console.log(levelMode);
+
   }
 }
 /* respondToTheClick process explanation
@@ -855,9 +859,9 @@ function respondToTheClick(e) {
 // check if the target that is clicked is the li
 if (openCards.length < 2){
   if (e.target.tagName === 'LI') {
-    console.log("check if the target that is clicked is the li");
+    // console.log("check if the target that is clicked is the li");
 // toggles open and show class
-console.log("toggles open and show class");
+// console.log("toggles open and show class");
     e.target.classList.add('open','show');
 // fucntion variables
     let choice = document.querySelector('.card.open.show');
@@ -875,15 +879,12 @@ console.log("toggles open and show class");
     choice.removeEventListener('click', respondToTheClick);
 // add first selection to opencards array
     openCards.push(choices);
-console.log("card added to openCards array");
-console.log("openCards array = " + openCards);
+// console.log("card added to openCards array");
+// console.log("openCards array = " + openCards);
 // perform check function
     check(cards);
     moveCount();
-    rating();
-    if(matchedCards.length === 16){
-      win();
-    }
+    // rating();
   }
   }
 }
@@ -918,6 +919,7 @@ function check(event) {
 // console.log("openCards array = " + openCards);
     clear();
     },1001);
+
   }
 }
 /* match process explanation
@@ -928,31 +930,60 @@ function check(event) {
 - for every item in the openCards array, add I class[1] to matchedCards array
 - after 3 seconds remove match class
 - empty openCards array*/
-
+// let deck = document.querySelector("body");
+let easySelector = "easyI";
+let mediumSelector = "mediumI";
+let hardSelector = "hardI";
+let difficultSelector = "difficultI";
+let card = document.querySelector(".card");
 // match function
 function match(){
-// console.log("match called");
   let openSelects = $(".open.show");
   openSelects.removeClass("open show");
   openSelects.addClass("match hold");
-  // openSelects.addClass("hold");
-// console.log("remove open show classes and add match");
-// console.log("openCards array = " + openCards);
+  openSelects.addClass("hold");
   let match = document.querySelector(".card.match");
-  let matches = match.firstChild.classList[1];
+  let matches = match.firstChild.classList[2];
   matches.toArray;
   match.removeEventListener('click', respondToTheClick);
-// console.log("removeEventListener from matched cards");
-// console.log("clear open cards array")
-for(let i = 0; i < openCards.length; i++){
-  matchedCards.push(matches);
-}
+  for(let i = 0; i < openCards.length; i++){
+    matchedCards.push(matches);
+  }
 holdCard = setTimeout(function (){
   $(".card.match").removeClass("match");
 },3000);
-// $(".card.match").addClass("hold");
 openCards.splice(0, 2);
-// console.log("matchedCards array = " + matchedCards);
+
+let winArray = matchedCards.length;
+let easySelector = "easyI";
+let mediumSelector = "mediumI";
+let hardSelector = "hardI";
+let difficultSelector = "difficultI";
+let card = document.querySelector(".card");
+// let cardList = cards.length;
+
+  for(let i = 0; i < matchedCards.length; i++){
+    if(levelMode[i] === easySelector){
+      if(winArray === 8){
+        win();
+      }
+    }
+    if(levelMode[i] === mediumSelector){
+      if(winArray === 12){
+        win();
+      }
+    }
+    if(levelMode[i] === hardSelector){
+      if(winArray === 16){
+        win();
+      }
+    }
+    if(levelMode[i] === difficultSelector){
+      if(winArray === 20){
+        win();
+      }
+    }
+  }
 }
 
 /* clear process explanation
@@ -980,44 +1011,232 @@ function clear(){
 
 }
 
+// let easySelector = "easyI";
+// let mediumSelector = "mediumI";
+// let hardSelector = "hardI";
+// let difficultSelector = "difficultI";
+// let card = document.querySelector(".card");
 function moveCount(){
   let moveCounter = document.querySelector('.moves');
   let moves = moveCounter.innerText;
+  let starRatings = document.querySelector(".stars");
+  let star = $(".stars").find("I");
+  // let st = star.firstChild
   // console.log("moveCount function called")
   // console.log(moves);
   moves++;
   moveCounter.innerText = moves;
-}
-
-function rating(){
-  let moveCounter = document.querySelector('.moves');
-  let moves = moveCounter.innerText;
-  let stars = $(".stars .fa");
-  let halfStars = $(".stars .far")
+  for( let i = 0; i < starRatings.length; i++){
+  if(levelMode[i] === easySelector){
+  if(moves === 14){
+    star[2].classList = "fas fa-star-half";
+  }
+  if(moves === 16){
+    star[2].classList = "far fa-star";
+  }
   if(moves === 18){
-    stars[2].classList = "fa fa-star-half";
+    star[1].classList = "fas fa-star-half";
+  }
+  if(moves === 20){
+    star[1].classList = "far fa-star";
   }
   if(moves === 22){
-    stars[2].classList = "far fa-star";
+    star[0].classList = "fas fa-star-half";
+  }
+  if(moves === 24){
+    star[0].classList = "far fa-star";
+  }
+}
+  if(levelMode[i] === mediumSelector){
+  if(moves === 22){
+    star[2].classList = "fas fa-star-half";
+  }
+  if(moves === 24){
+    star[2].classList = "far fa-star";
   }
   if(moves === 26){
-    stars[1].classList = "fa fa-star-half";
+    star[1].classList = "fas fa-star-half";
+  }
+  if(moves === 28){
+    star[1].classList = "far fa-star";
   }
   if(moves === 30){
-    stars[1].classList = "far fa-star";
+    star[0].classList = "fas fa-star-half";
+  }
+  if(moves === 32){
+    star[0].classList = "far fa-star";
+  }
+}
+  if(levelMode[i] === hardSelector){
+  if(moves === 26){
+    star[2].classList = "fas fa-star-half";
+  }
+  if(moves === 28){
+    star[2].classList = "far fa-star";
+  }
+  if(moves === 30){
+    star[1].classList = "fas fa-star-half";
+  }
+  if(moves === 32){
+    star[1].classList = "far fa-star";
   }
   if(moves === 34){
-    stars[0].classList = "fa fa-star-half";
+    star[0].classList = "fas fa-star-half";
+  }
+  if(moves === 36){
+    star[0].classList = "far fa-star";
+  }
+}
+  if(levelMode[i] === difficultSelector){
+  if(moves === 30){
+    star[2].classList = "fas fa-star-half";
+  }
+  if(moves === 32){
+    star[2].classList = "far fa-star";
+  }
+  if(moves === 34){
+    star[1].classList = "fas fa-star-half";
   }
   if(moves === 38){
-    stars[0].classList = "far fa-star";
+    star[1].classList = "far fa-star";
   }
+  if(moves === 40){
+    star[0].classList = "fas fa-star-half";
+  }
+  if(moves === 42){
+    star[0].classList = "far fa-star";
+  }
+}
+}
 }
 
 function win(){
+  let winModal = document.querySelector(".winModal");
+  let congrats = document.querySelector(".congrats");
+  let scoringPanel = document.querySelector(".winning-score");
+  let scoringMoves = document.querySelector("#printMoves");
+  let scoringStars = document.querySelector("#printStars");
+  // let moveCounter = document.querySelector('.moves');
+  // let starCounter = document.querySelector('#starId').innerText;
     console.log("win animation called");
-    // add pop up window with you win and restart options
+    congrats.classList.add("live");
+    congatAni = setTimeout(function playCongats(){
+      winModal.style.display = "block";
+
+      congrats.classList.remove("live");
+      scoringPanel.style.display = "grid";
+    }, 2000);
+    let moveCounter = document.querySelector('.moves');
+    let moves = moveCounter.innerText;
+
+    scoringMoves.innerText = moves;
+    // scoringStars.innerText = starCounter;
+
+    for(let i = 0; i < levelMode.length; i++){
+    if(levelMode[i] === easySelector){
+      let oneStar = 22;
+      let oneHalfStar = 20;
+      let twoStar = 18;
+      let twoHalfStar = 16;
+      let threeStar = 14;
+    if(moves > oneStar){
+    scoringStars.innerHTML = "<i class = 'fas fa-star'></i>";
+  }
+    if(moves >= oneStar){
+    scoringStars.innerHTML = "<i class = 'fa fa-star'></i>";
+  }
+    if(moves >= oneHalfStar){
+    scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fas fa-star'></i>";
+  }
+    if(moves >= twoStar){
+    scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'>";
+  }
+    if(moves >= twoHalfStar){
+    scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i><i class = 'fas fa-star'></i>";
+  }
+    if(moves < threeStar){
+    scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i><i class = 'fa fa-star'></i>";
+  }
 }
+    if(levelMode[i] === mediumSelector){
+      let oneStar = 30;
+      let oneHalfStar = 28;
+      let twoStar = 26;
+      let twoHalfStar = 24;
+      let threeStar = 22;
+    if(moves > oneStar){
+    scoringStars.innerHTML = "<i class = 'fas fa-star'></i>";
+  }
+    if(moves >= oneStar){
+    scoringStars.innerHTML = "<i class = 'fa fa-star'></i>";
+  }
+    if(moves >= oneHalfStar){
+    scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fas fa-star'></i>";
+  }
+    if(moves >= twoStar){
+    scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'>";
+  }
+    if(moves >= twoHalfStar){
+    scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i><i class = 'fas fa-star'></i>";
+  }
+    if(moves < threeStar){
+    scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i><i class = 'fa fa-star'></i>";
+  }
+}
+    if(levelMode[i] === hardSelector){
+      let oneStar = 34;
+      let oneHalfStar = 32;
+      let twoStar = 30;
+      let twoHalfStar = 28;
+      let threeStar = 26;
+    if(moves > oneStar){
+    scoringStars.innerHTML = "<i class = 'fas fa-star'></i>";
+  }
+    if(moves >= oneStar){
+    scoringStars.innerHTML = "<i class = 'fa fa-star'></i>";
+  }
+    if(moves >= oneHalfStar){
+    scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fas fa-star'></i>";
+  }
+    if(moves >= twoStar){
+    scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'>";
+  }
+    if(moves >= twoHalfStar){
+    scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i><i class = 'fas fa-star'></i>";
+  }
+    if(moves < threeStar){
+    scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i><i class = 'fa fa-star'></i>";
+  }
+}
+    if(levelMode[i] === difficultSelector){
+      let oneStar = 38;
+      let oneHalfStar = 36;
+      let twoStar = 34;
+      let twoHalfStar = 32;
+      let threeStar = 30;
+    if(moves > oneStar){
+    scoringStars.innerHTML = "<i class = 'fas fa-star'></i>";
+  }
+    if(moves >= oneStar){
+    scoringStars.innerHTML = "<i class = 'fa fa-star'></i>";
+  }
+    if(moves >= oneHalfStar){
+    scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fas fa-star'></i>";
+  }
+    if(moves >= twoStar){
+    scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'>";
+  }
+    if(moves >= twoHalfStar){
+    scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i><i class = 'fas fa-star'></i>";
+  }
+    if(moves < threeStar){
+    scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i><i class = 'fa fa-star'></i>";
+  }
+}
+}
+}
+    // add pop up window with you win and restart options
+
 /* set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
  *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
