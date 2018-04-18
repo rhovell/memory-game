@@ -254,14 +254,15 @@ function createContainer(){
   // console.log("container built");
   const headingContainer = document.createElement('div');
   headingContainer.classList = "heading"
+  container.appendChild(headingContainer);
   const heading = document.createElement("header");
-  heading.innerText = "Matching Game";
-  const levelLog = document.createElement("SPAN");
+  heading.innerHTML = "<h1>Matching Game</h1>";
+  headingContainer.appendChild(heading);
+  const levelLog = document.createElement("p");
+  levelLog.classList = "difficulty-class";
   // console.log(body.classList);
   levelLog.innerText = "Difficulty: " + bodyNameLevel;
-  container.appendChild(headingContainer);
   // add container div to body
-  headingContainer.appendChild(heading);
   headingContainer.appendChild(levelLog);
   // console.log("header added");
 }
@@ -277,7 +278,7 @@ function createStars(){
     for(var i = 0; i < starRatings.length; i++){
     const starList = document.createElement('li');
     starRating.appendChild(starList);
-    const stars = document.createElement('I');
+    const stars = document.createElement('p');
     starList.appendChild(stars);
     stars.classList = 'fa fa-star';
     scores.appendChild(starRating);
@@ -286,24 +287,27 @@ function createStars(){
 
 function createMovecounter(){
   const scores = document.querySelector(".score-panel");
-  const moveCounter = document.createElement('span');
+  const moveCounter = document.createElement('div');
   scores.appendChild(moveCounter);
-  // console.log("add span element");
-  moveCounter.classList = 'moves';
-  // console.log("add class moves");
-  moveCounter.textContent = "0";
+  const moveNumber = document.createElement('SPAN');
+  moveNumber.textContent = "0";
+  moveNumber.classList = 'moves';
+  moveCounter.appendChild(moveNumber);
+  const moveText = document.createElement('SPAN');
+  moveText.textContent = " Moves";
+  moveCounter.appendChild(moveText);
+  console.log("add P  movecounter element");
   // console.log("add textContent");
   // console.log("add m")
-  const moveText = document.createElement('span');
-  moveText.textContent = " Moves";
-  scores.appendChild(moveText);
+  // console.log("add class moves");
+  console.log("add span element");
 }
 function createRestartButton(){
   const scores = document.querySelector(".score-panel");
   const restartButton = document.createElement('div');
   scores.appendChild(restartButton);
   restartButton.classList = 'restart';
-  const restart = document.createElement('I');
+  const restart = document.createElement('p');
   restart.classList = 'fa fa-repeat';
   restartButton.appendChild(restart);
   restartButton.addEventListener("click", restartGame);
@@ -1021,7 +1025,7 @@ function moveCount(){
   let moveCounter = document.querySelector('.moves');
   let moves = moveCounter.innerText;
   let starRatings = document.querySelector(".stars");
-  let star = $(".stars").find("I");
+  let star = $(".stars").find("p");
   // let st = star.firstChild
   // console.log("moveCount function called")
   // console.log(moves);
