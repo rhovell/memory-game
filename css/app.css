@@ -45,14 +45,16 @@ a:active {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    left: 10%;
-    top: 10%;
-    width: 80%;
-    height: 80%;
+    left: 30%;
+    top: 30%;
+    width: auto;
+    min-width: 583px;
+    height: auto;
     overflow: hidden;
     background: linear-gradient(to bottom, rgba(97, 215, 255, 0.5), rgba(73, 188, 16, 0.5));
     border: 3px ridge rgba(97, 215, 255, 1);
     color: white;
+    margin: auto;
 }
 
 /* Modal Content/Box */
@@ -64,7 +66,7 @@ a:active {
     height: 100%;
     text-align: center;
     font: 1.2em;
-    margin: 1em;
+    /* margin: 1em; */
 }
 
 .level-selection {
@@ -102,13 +104,7 @@ a:active {
   grid-row-start: 2;
   grid-row-end: 3;
 }
-.level-select.medium {
-  /* width: 45%; */
-  height: 3em;
-  display: inline-block;
-  /* padding: 2em 0 2em 0; */
-  margin: 0;
-}
+
 .level-selection button {
   background: transparent;
   border: none;
@@ -121,26 +117,20 @@ a:active {
 .level-selection img {
   height: 3em;
 }
-.level-desc {
-  font: 1em cursive;
-  /* font: font-style font-variant font-weight font-size/line-height
-  font-family|caption|icon|menu|message-box|small-caption|status-bar|initial|inherit; */
+.pack-select.tbc {
+  width: 2.3em;
 }
-
 .theme-selection {
   display: none;
-}
-.theme-selection-area {
-  display: grid;
-  flex-wrap: wrap;
   grid-template-columns: 33% 33% 33%;
   grid-column-start: 1;
   grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 3;
+  flex-wrap: wrap;
 }
 .selectPack {
-  width: 33%;
+  width: 100%;
   display: inline-block;
   cursor: pointer;
 }
@@ -178,14 +168,12 @@ a:active {
   grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 2;
-  width: 100%;
 }
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
 }
 .heading {
   background-color: rgba(250, 250, 250, 0.5);
@@ -232,7 +220,7 @@ body.butterflies {
 }
 .card img {
   display: none;
-  width: 4em;
+  width: 3em;
   height: 3em;
   margin: auto;
 }
@@ -317,20 +305,21 @@ body.sealife {
 .easy .card {
     background: rgba(89, 192, 89, 1);
 }
-.easy .card.hold {
-  background: rgba(53, 141, 53, 1);
-  cursor: default;
-}
 .easy .card.open {
-    background: rgba(74, 186, 74, 1);
+  background: rgba(74, 186, 74, 1);
 }
 .easy .card.match {
   animation-name: easy-right-animation;
   cursor: default;
+  animation-duration: 1s;
+}
+.easy .card.hold {
+  background: rgba(53, 141, 53, 1);
+  cursor: default;
 }
 .easy .card.wrong {
    animation-name: easy-wrong-animation;
-   animation-duration: 1.5s;
+   animation-duration: 1s;
 }
 @-webkit-keyframes easy-right-animation {
   from {background-color: rgba(74, 186, 74, 1);}
@@ -371,10 +360,11 @@ body.sealife {
 .medium .card.match {
   animation-name: medium-right-animation;
   cursor: default;
+  animation-duration: 1s;
 }
 .medium .card.wrong {
    animation-name: medium-wrong-animation;
-   animation-duration: 1.5s;
+   animation-duration: 1s;
 }
 @-webkit-keyframes medium-right-animation {
   from {background-color: rgba(255, 166, 71, 1);}
@@ -411,6 +401,7 @@ body.sealife {
 .hard .card.match {
   animation-name: hard-right-animation;
   cursor: default;
+  animation-duration: 1s;
 }
 .hard .card.hold {
   background: rgba(240, 0, 0, 1);
@@ -418,7 +409,7 @@ body.sealife {
 }
 .hard .card.wrong {
    animation-name: hard-wrong-animation;
-   animation-duration: 1.5s;
+   animation-duration: 1s;
 }
 @-webkit-keyframes hard-right-animation {
   from {background-color: rgba(255, 46, 46, 1);}
@@ -459,10 +450,11 @@ body.sealife {
 .difficult .card.match {
   animation-name: difficult-right-animation;
   cursor: default;
+  animation-duration: 1s;
 }
 .difficult .card.wrong {
    animation-name: difficult-wrong-animation;
-   animation-duration: 1.5s;
+   animation-duration: 1s;
 }
 @-webkit-keyframes difficult-right-animation {
   from {background-color: rgba(255, 102, 102, 1);}
@@ -485,9 +477,7 @@ body.sealife {
 	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
 }
 
-.pack-select.tbc {
-  width: 3em;
-}
+
 /*
  * Styles for the Score Panel
 */
@@ -596,6 +586,7 @@ body.sealife {
   grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 3;
+  min-width: 65px;
 }
 .scoreMoves {
   grid-column-start: 1;
@@ -614,10 +605,11 @@ body.sealife {
   grid-column-end: 4;
   grid-row-start: 4;
   grid-row-end: 5;
-  cursor: pointer;
 }
 
-
+.fa.fa-repeat {
+  cursor: pointer;
+}
 .footer{
   background-color: rgba(250, 250, 250, 0.5);
   width: 100%;
