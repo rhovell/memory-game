@@ -26,7 +26,7 @@ var endangeredCards = ['baboon', 'baboon', 'bear', 'bear', 'elephant', 'elephant
 'lion', 'lion', 'panda', 'panda', 'platypus', 'platypus', 'polar-bear', 'polar-bear'];
 var woodlandCards = ['badger', 'badger', 'deer', 'deer', 'fox', 'fox', 'hedgehog', 'hedgehog',
 'mouse', 'mouse', 'owl', 'owl', 'rabbit', 'rabbit', 'squirrel', 'squirrel'];
-// difficult level arrays
+// expert level arrays
 var sealifeCards = ['clownfish', 'clownfish', 'dolphin', 'dolphin', 'hermit-crab', 'hermit-crab', 'killer-whale', 'killer-whale', 'octopus', 'octopus',
  'puffafish', 'puffafish', 'shark', 'shark', 'squid', 'squid', 'starfish', 'starfish', 'whale', 'whale']
 // level variables
@@ -42,9 +42,9 @@ const levelThree = document.getElementById('hardButton');
 const levelThreeThemes = document.getElementsByClassName('hard');
 const levelThreeChoices = document.querySelector('.hardThemeSelection');
 
-const levelFour = document.getElementById('difficultButton');
-const levelFourThemes = document.getElementsByClassName('difficult');
-const levelFourChoices = document.querySelector('.difficultThemeSelection');
+const levelFour = document.getElementById('expertButton');
+const levelFourThemes = document.getElementsByClassName('expert');
+const levelFourChoices = document.querySelector('.expertThemeSelection');
 
 const levelButton = document.querySelector(".button");
 const levelSelects = document.querySelector('#levelContent');
@@ -106,16 +106,16 @@ function levelSelectionChange(e){
     levelMode.push(choices);
     body.classList.add("hard");
 }
-  if (e.target.classList.contains('difficult')) {
+  if (e.target.classList.contains('expert')) {
     levelSelects.style.display = "none";
     themeSelects.style.display = "block";
-    let choosen = document.getElementById('difficultThemeSelection');
+    let choosen = document.getElementById('expertThemeSelection');
     choosen.classList.add('lvlChoice');
     let choice = document.querySelector('.lvlChoice');
     let choices = e.target.id;
     choosen.style.display = "grid";
     levelMode.push(choices);
-    body.classList.add("difficult");
+    body.classList.add("expert");
 }
 }
 
@@ -199,7 +199,7 @@ if (me.contains('woodland')) {
   levelMode.push(choices);
   // console.log(levelMode);
 }
-// difficult themeSelects
+// expert themeSelects
 if (me.contains('sealife')) {
   let choosen = document.getElementById('selectSealife');
   choosen.classList.add('lvlChoice');
@@ -338,7 +338,7 @@ function dealCards(){
   let dinosaurSelector = "selectDinosaurs";
   let endangeredSelector = "selectEndangered";
   let woodlandSelector = "selectWoodland";
-  // difficult themes
+  // expert themes
   let sealifeSelector = "selectSealife";
   // call to shuffle cards for chosen deck
   // for statement for ALL decks
@@ -801,41 +801,41 @@ for(var i = 0; i < levelMode.length; i++){
             let stfishSelect = "sealife-starfish";
             let whaleSelect = "sealife-whale";
               if(cardDetails.classList[2] === clownSelect){
-                cardDetails.src = 'img/game-sets/difficult/sealife/clownfish.png';
+                cardDetails.src = 'img/game-sets/expert/sealife/clownfish.png';
               }
               if(cardDetails.classList[2] === dolphinSelect){
-                cardDetails.src = 'img/game-sets/difficult/sealife/dolphin.png';
+                cardDetails.src = 'img/game-sets/expert/sealife/dolphin.png';
               }
               if(cardDetails.classList[2] === hermitSelect){
-                cardDetails.src = 'img/game-sets/difficult/sealife/hermit-crab.png';
+                cardDetails.src = 'img/game-sets/expert/sealife/hermit-crab.png';
               }
               if(cardDetails.classList[2] === kwhaleSelect){
-                cardDetails.src = 'img/game-sets/difficult/sealife/killer-whale.png';
+                cardDetails.src = 'img/game-sets/expert/sealife/killer-whale.png';
               }
               if(cardDetails.classList[2] === octopusSelect){
-                cardDetails.src = 'img/game-sets/difficult/sealife/octopus.png';
+                cardDetails.src = 'img/game-sets/expert/sealife/octopus.png';
               }
               if(cardDetails.classList[2] === puffaSelect){
-                cardDetails.src = 'img/game-sets/difficult/sealife/puffafish.png';
+                cardDetails.src = 'img/game-sets/expert/sealife/puffafish.png';
               }
               if(cardDetails.classList[2] === sharkSelect){
-                cardDetails.src = 'img/game-sets/difficult/sealife/shark.png';
+                cardDetails.src = 'img/game-sets/expert/sealife/shark.png';
               }
               if(cardDetails.classList[2] === squidSelect){
-                cardDetails.src = 'img/game-sets/difficult/sealife/squid.png';
+                cardDetails.src = 'img/game-sets/expert/sealife/squid.png';
               }
               if(cardDetails.classList[2] === stfishSelect){
-                cardDetails.src = 'img/game-sets/difficult/sealife/starfish.png';
+                cardDetails.src = 'img/game-sets/expert/sealife/starfish.png';
               }
               if(cardDetails.classList[2] === whaleSelect){
-                cardDetails.src = 'img/game-sets/difficult/sealife/whale.png';
+                cardDetails.src = 'img/game-sets/expert/sealife/whale.png';
               }
               placedCard.appendChild(cardDetails);
               // console.log("cardDetails IMG element placed");
             }
             // add level details to deck and body
               const deck = document.querySelector(".deck");
-              deck.classList.add("difficult");
+              deck.classList.add("expert");
               deck.classList.add("sealife");
               body.classList.add("sealife");
               // end of endangered deck
@@ -933,7 +933,7 @@ function check(event) {
 let easySelector = "easyI";
 let mediumSelector = "mediumI";
 let hardSelector = "hardI";
-let difficultSelector = "difficultI";
+let expertSelector = "expertI";
 let card = document.querySelector(".card");
 // match function
 function match(){
@@ -960,7 +960,7 @@ winCall();
    let easySelector = "easyI";
    let mediumSelector = "mediumI";
    let hardSelector = "hardI";
-   let difficultSelector = "difficultI";
+   let expertSelector = "expertI";
    let card = document.querySelector(".card");
    // let cardList = cards.length;
 
@@ -980,7 +980,7 @@ winCall();
            win();
          }
        }
-       if(levelMode[i] === difficultSelector){
+       if(levelMode[i] === expertSelector){
          if(winArray === 20){
            win();
          }
@@ -1016,7 +1016,7 @@ function moveCount(){
   let easySelector = "easyI";
   let mediumSelector = "mediumI";
   let hardSelector = "hardI";
-  let difficultSelector = "difficultI";
+  let expertSelector = "expertI";
   let card = document.querySelector(".card");
   let moveCounter = document.querySelector('.moves');
   let moves = moveCounter.innerText;
@@ -1081,7 +1081,7 @@ function moveCount(){
     star[0].classList = "fas fa-star-half";
   }
 }
-  if(levelMode[i] === difficultSelector){
+  if(levelMode[i] === expertSelector){
   if(moves === 17){
     star[2].classList = "fas fa-star-half";
   }
@@ -1111,7 +1111,7 @@ function win(){
   let easySelector = "easyI";
   let mediumSelector = "mediumI";
   let hardSelector = "hardI";
-  let difficultSelector = "difficultI";
+  let expertSelector = "expertI";
   let card = document.querySelector(".card");
   // let moveCounter = document.querySelector('.moves');
   // let starCounter = document.querySelector('#starId').innerText;
@@ -1197,7 +1197,7 @@ function win(){
           if(moves > oneStar){
           scoringStars.innerHTML = "<i class = 'fas fa-star-half'></i>";
           }
-        }    if(levelMode[i] === difficultSelector){
+        }    if(levelMode[i] === expertSelector){
               let threeStar = 16;
               let twoHalfStar = 17;
               let twoStar = 18;

@@ -98,7 +98,7 @@ a:active {
   grid-row-start: 2;
   grid-row-end: 3;
 }
-.level.difficult {
+.level.expert {
   grid-column-start: 4;
   grid-column-end: 5;
   grid-row-start: 2;
@@ -283,13 +283,10 @@ body.sealife {
 .deck .card {
     height: 125px;
     width: 125px;
-    /* font-size: 0; */
-    color: #ffffff;
     border-radius: 8px;
     cursor: pointer;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
 }
 .deck .card.open {
@@ -297,31 +294,33 @@ body.sealife {
     cursor: default;
 }
 /* styling for easy decks */
-.deck.easy {
+/* styling for butterfly deck */
+.deck.butterflies {
   width: 680px;
   height: 350px;
   background: linear-gradient(60deg, rgba(89, 192, 89, 0.5) 0%, rgba(65, 170, 65, 0.5) 100%);
 }
-.easy .card {
+.butterflies .card {
     background: rgba(89, 192, 89, 1);
 }
-.easy .card.open {
+/* Card animation styling */
+.butterflies .card.open {
   background: rgba(74, 186, 74, 1);
 }
-.easy .card.match {
-  animation-name: easy-right-animation;
+.butterflies .card.match {
+  animation-name: butterflies-right-animation;
   cursor: default;
   animation-duration: 1s;
 }
-.easy .card.hold {
+.butterflies .card.hold {
   background: rgba(53, 141, 53, 1);
   cursor: default;
 }
-.easy .card.wrong {
-   animation-name: easy-wrong-animation;
+.butterflies .card.wrong {
+   animation-name: butterflies-wrong-animation;
    animation-duration: 1s;
 }
-@-webkit-keyframes easy-right-animation {
+@-webkit-keyframes butterflies-right-animation {
   from {background-color: rgba(74, 186, 74, 1);}
   to {background-color: rgba(53, 141, 53, 1);}
 	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
@@ -330,9 +329,7 @@ body.sealife {
 	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
 	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
 }
-/* Card animation styling */
-/* The animation code */
-@-webkit-keyframes easy-wrong-animation {
+@-webkit-keyframes butterflies-wrong-animation {
   from {background-color: red;}
   to {background-color: rgba(89, 192, 89, 1);}
 	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
@@ -341,33 +338,168 @@ body.sealife {
 	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
 	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
 }
-/* styling for medium decks */
-.deck.medium {
+/* styling for farmyard deck */
+.deck.farmyard {
+  width: 680px;
+  height: 350px;
+  background: linear-gradient(60deg, rgba(89, 192, 89, 0.5) 0%, rgba(65, 170, 65, 0.5) 100%);
+}
+.farmyard .card {
+    background: rgba(89, 192, 89, 1);
+}
+/* Card animation styling */
+.farmyard .card.open {
+  background: rgba(241, 210, 101, 1);
+}
+.farmyard .card.match {
+  animation-name: farmyard-right-animation;
+  cursor: default;
+  animation-duration: 1s;
+}
+.farmyard .card.hold {
+  background: rgba(217, 171, 2, 1);
+  cursor: default;
+}
+.farmyard .card.wrong {
+   animation-name: farmyard-wrong-animation;
+   animation-duration: 1s;
+}
+@-webkit-keyframes farmyard-right-animation {
+  from {background-color: rgba(241, 210, 101, 1);}
+  to {background-color: rgba(217, 171, 2, 1);}
+	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+@-webkit-keyframes farmyard-wrong-animation {
+  from {background-color: red;}
+  to {background-color: rgba(89, 192, 89, 1);}
+	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+/* end of easy decks */
+/* medium decks styling */
+/* birds deck styling */
+.deck.birds {
+  width: 680px;
+  height: 450px;
+  background: linear-gradient(60deg, rgba(41, 187, 255, 0.5) 0%, rgba(26, 182, 255, 0.5) 100%);
+}
+.birds .card {
+    background: rgba(41, 187, 255, 1);
+}
+/* Card animation styling */
+.birds .card.open {
+  background: rgba(128, 215, 255, 1);
+}
+.birds .card.match {
+  animation-name: birds-right-animation;
+  cursor: default;
+  animation-duration: 1s;
+}
+.birds .card.hold {
+  background: rgba(0, 136, 199, 1);
+  cursor: default;
+}
+.birds .card.wrong {
+   animation-name: birds-wrong-animation;
+   animation-duration: 1s;
+}
+@-webkit-keyframes birds-right-animation {
+  from {background-color: rgba(128, 215, 255, 1);}
+  to {background-color: rgba(0, 136, 199, 1);}
+	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+@-webkit-keyframes birds-wrong-animation {
+  from {background-color: red;}
+  to {background-color: rgba(41, 187, 255, 1);}
+	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+/* styling for bug deck */
+.deck.bugs {
+  width: 680px;
+  height: 450px;
+  background: linear-gradient(60deg, rgba(14, 16, 16, 0.5) 0%, rgba(255, 134, 5, 0.5) 100%);
+}
+.bugs .card {
+    background: rgba(14, 16, 16, 1);
+}
+/* Card animation styling */
+.bugs .card.open {
+    background: rgba(156, 181, 79, 1);
+}
+.bugs .card.hold {
+  background: rgba(103, 157, 12, 1);
+  cursor: default;
+}
+.bugs .card.match {
+  animation-name: bugs-right-animation;
+  cursor: default;
+  animation-duration: 1s;
+}
+.bugs .card.wrong {
+   animation-name: bugs-wrong-animation;
+   animation-duration: 1s;
+}
+@-webkit-keyframes bugs-right-animation {
+  from {background-color: rgba(156, 181, 79, 1);}
+  to {background-color: rgba(103, 157, 12, 1);}
+	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+@-webkit-keyframes bugs-wrong-animation {
+  from {background-color: red;}
+  to {background-color: rgba(14, 16, 16, 1);}
+	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+/* reptile deck stling */
+.deck.reptiles {
   width: 680px;
   height: 450px;
   background: linear-gradient(60deg, rgba(255, 147, 31, 0.5) 0%, rgba(255, 134, 5, 0.5) 100%);
 }
-.medium .card {
+.reptiles .card {
     background: rgba(255, 147, 31, 1);
 }
-.medium .card.open {
-    background: rgba(255, 166, 71, 1);
+/* Card animation styling */
+.reptiles .card.open {
+    background: rgba(255, 173, 41, 1);
 }
-.medium .card.hold {
+.reptiles .card.hold {
   background: rgba(240, 84, 0, 1);
   cursor: default;
 }
-.medium .card.match {
-  animation-name: medium-right-animation;
+.reptiles .card.match {
+  animation-name: reptiles-right-animation;
   cursor: default;
   animation-duration: 1s;
 }
-.medium .card.wrong {
-   animation-name: medium-wrong-animation;
+.reptiles .card.wrong {
+   animation-name: reptiles-wrong-animation;
    animation-duration: 1s;
 }
-@-webkit-keyframes medium-right-animation {
-  from {background-color: rgba(255, 166, 71, 1);}
+@-webkit-keyframes reptiles-right-animation {
+  from {background-color: rgba(255, 173, 41, 1);}
   to {background-color: rgba(240, 84, 0, 1);}
 	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
 	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
@@ -375,9 +507,7 @@ body.sealife {
 	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
 	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
 }
-/* Card animation styling */
-/* The animation code */
-@-webkit-keyframes medium-wrong-animation {
+@-webkit-keyframes reptiles-wrong-animation {
   from {background-color: red;}
   to {background-color: rgba(255, 147, 31, 1);}
 	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
@@ -387,89 +517,177 @@ body.sealife {
 	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
 }
 /* styling for hard decks */
-.deck.hard {
+/* dinosaur deck styling */
+.deck.dinosaurs {
   width: 640px;
   height: 580px;
-  background: linear-gradient(60deg, rgba(255, 5, 5, 0.5) 0%, rgba(214, 0, 0, 0.5) 100%);
+  background: linear-gradient(60deg, rgba(255, 67, 15, 0.5) 0%, rgba(255, 99, 56, 0.5) 100%);
 }
-.hard .card {
-    background: rgba(255, 5, 5, 1);
+.dinosaurs .card {
+    background: rgba(255, 67, 15, 1);
 }
-.hard .card.open {
+/* Card animation styling */
+.dinosaurs .card.open {
+    background: rgba(255, 116, 46, 1);
+}
+.dinosaurs .card.match {
+  animation-name: dinosaurs-right-animation;
+  cursor: default;
+  animation-duration: 1s;
+}
+.dinosaurs .card.hold {
+  background: rgba(189, 41, 0, 1);
+  cursor: default;
+}
+.dinosaurs .card.wrong {
+   animation-name: dinosaurs-wrong-animation;
+   animation-duration: 1s;
+}
+@-webkit-keyframes dinosaurs-right-animation {
+  from {background-color: rgba(255, 116, 46, 1);}
+  to {background-color: rgba(189, 41, 0, 1);}
+	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+@-webkit-keyframes dinosaurs-wrong-animation {
+  from {background-color: red;}
+  to {background-color: rgba(255, 67, 15, 1);}
+	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+/* endangered deck styling */
+.deck.endangered {
+  width: 640px;
+  height: 580px;
+  background: linear-gradient(60deg, rgba(235, 0, 0, 0.5) 0%, rgba(251, 19, 19, 0.5) 100%);
+}
+.endangered .card {
+    background: rgba(235, 0, 0, 1);
+}
+/* Card animation styling */
+.endangered .card.open {
     background: rgba(255, 46, 46, 1);
 }
-.hard .card.match {
-  animation-name: hard-right-animation;
+.endangered .card.match {
+  animation-name: endangered-right-animation;
   cursor: default;
   animation-duration: 1s;
 }
-.hard .card.hold {
-  background: rgba(240, 0, 0, 1);
+.endangered .card.hold {
+  background: rgba(189, 0, 0, 1);
   cursor: default;
 }
-.hard .card.wrong {
-   animation-name: hard-wrong-animation;
+.endangered .card.wrong {
+   animation-name: endangered-wrong-animation;
    animation-duration: 1s;
 }
-@-webkit-keyframes hard-right-animation {
+@-webkit-keyframes endangered-right-animation {
   from {background-color: rgba(255, 46, 46, 1);}
-  to {background-color: rgba(240, 0, 0, 1);}
+  to {background-color: rgba(189, 0, 0, 1);}
 	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
 	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
 	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
 	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
 	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+@-webkit-keyframes endangered-wrong-animation {
+  from {background-color: rgba(255, 46, 46, 1);}
+  to {background-color: rgba(235, 0, 0, 1);}
+	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+/* woodland deck styling */
+.deck.woodland {
+  width: 640px;
+  height: 580px;
+  background: linear-gradient(60deg, rgba(48, 134, 40, 0.5) 0%, rgba(38, 173, 26, 0.5) 100%);
+}
+.woodland .card {
+    background: rgba(48, 134, 40, 1);
 }
 /* Card animation styling */
-/* The animation code */
-@-webkit-keyframes hard-wrong-animation {
-  from {background-color: rgba(199, 0, 0, 1);}
-  to {background-color: rgba(255, 5, 5, 1);}
+.woodland .card.open {
+    background: rgba(62, 173, 52, 1);
+}
+.woodland .card.match {
+  animation-name: woodland-right-animation;
+  cursor: default;
+  animation-duration: 1s;
+}
+.woodland .card.hold {
+  background: rgba(42, 118, 35, 1);
+  cursor: default;
+}
+.woodland .card.wrong {
+   animation-name: woodland-wrong-animation;
+   animation-duration: 1s;
+}
+@-webkit-keyframes woodland-right-animation {
+  from {background-color: rgba(62, 173, 52, 1);}
+  to {background-color: rgba(42, 118, 35, 1);}
 	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
 	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
 	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
 	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
 	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
 }
-/* styling for difficult decks */
-.deck.difficult {
+@-webkit-keyframes woodland-wrong-animation {
+  from {background-color: red;}
+  to {background-color: rgba(48, 134, 40, 1);}
+	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+/* styling for expert decks */
+/* sealife deck styling */
+.deck.expert {
   width: 760px;
   height: 640px;
-  background: linear-gradient(60deg, rgba(240, 0, 0, 0.5) 0%, rgba(204, 0, 0, 0.5) 100%);
+  background: linear-gradient(60deg, rgba(23, 142, 151, 0.5) 0%, rgba(7, 147, 157, 0.5) 100%);
 }
-.difficult .card {
-    background: rgba(240, 0, 0, 1);
+.sealife .card {
+    background: rgba(23, 142, 151, 1);
 }
-.difficult .card.hold {
-  background: rgba(199, 0, 0, 1);
-  cursor: default;
+/* Card animation styling */
+.sealife .card.open {
+    background: rgba(31, 197, 209, 1);
 }
-.difficult .card.open {
-    background: rgba(255, 102, 102, 1);
-}
-.difficult .card.match {
-  animation-name: difficult-right-animation;
+.sealife .card.match {
+  animation-name: sealife-right-animation;
   cursor: default;
   animation-duration: 1s;
 }
-.difficult .card.wrong {
-   animation-name: difficult-wrong-animation;
+.sealife .card.hold {
+  background: rgba(26, 163, 173, 1);
+  cursor: default;
+}
+.sealife .card.wrong {
+   animation-name: sealife-wrong-animation;
    animation-duration: 1s;
 }
-@-webkit-keyframes difficult-right-animation {
-  from {background-color: rgba(255, 102, 102, 1);}
-  to {background-color: rgba(199, 0, 0, 1);}
+@-webkit-keyframes sealife-right-animation {
+  from {background-color: rgba(31, 197, 209, 1);}
+  to {background-color: rgba(26, 163, 173, 1);}
 	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
 	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
 	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
 	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
 	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
 }
-/* Card animation styling */
-/* The animation code */
-@-webkit-keyframes difficult-wrong-animation {
-  from {background-color: rgba(143, 0, 0, 1);}
-  to {background-color: rgba(240, 0, 0, 1);}
+@-webkit-keyframes sealife-wrong-animation {
+  from {background-color: red;}
+  to {background-color: rgba(23, 142, 151, 1);}
 	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
 	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
 	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
@@ -481,7 +699,9 @@ body.sealife {
 /*
  * Styles for the Score Panel
 */
-
+.heading {
+  margin-bottom: 1em;
+}
 .score-panel {
     text-align: left;
     width: 345px;
@@ -617,6 +837,6 @@ body.sealife {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* position: fixed; */
+  position: fixed;
   bottom: 0;
 }
