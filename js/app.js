@@ -1,8 +1,7 @@
 /*
  * Create a list that holds all of your cards
  */
-let cards = [fa-diamond, fa-paper-plane-o, fa-anchor, fa-bolt, fa-cube, fa-leaf, fa-bicycle, fa-bomb];
-
+var cards = ['fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube', 'fa-leaf', 'fa-bicycle', 'fa-bomb', 'fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube', 'fa-leaf', 'fa-bicycle', 'fa-bomb'];
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -25,9 +24,25 @@ let cards = [fa-diamond, fa-paper-plane-o, fa-anchor, fa-bolt, fa-cube, fa-leaf,
     return array;
 });
 
+function respondToTheClick() {
+};
+// shuffle cards
+cardList = shuffle(cards);
+// add cards to deck
+container.appendChild(dealtCards);
+// add card elements and class details
+for (let i = 0; i < cards.length; i++) {
+  const placedCard = document.createElement('li');
+  placedCard.classList = 'card';
+  const cardDetails = document.createElement('i');
+  cardDetails.classList = 'fa ' + cardList[i];
+  dealtCards.appendChild(placedCard);
+  placedCard.appendChild(cardDetails);
+}
+// add event listener to all cards
+dealtCards.addEventListener('click', respondToTheClick);
 
-/*
- * set up the event listener for a card. If a card is clicked:
+/* set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
  *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
  *  - if the list already has another card, check to see if the two cards match
