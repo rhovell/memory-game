@@ -4,12 +4,98 @@
     <meta charset="utf-8">
     <title>Matching Game</title>
     <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet prefetch" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+    integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/responsive-styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
+<!-- Start game modal -->
+<div id = "levelModal" class = "modal">
+  <!-- Modal content -->
+  <div class = "level-modal-content">
+    <div class = "level-selection" id = "levelContent">
+      <p class = "intro">Hello! Welcome to the Animal Memory Card Game! Please select your level below...</p>
+      <div class = "level easy" id = "levelSelectE">
+        <p class = "level-desc easy" id = "easyP">Easy - 4 Pairs</p>
+        <button id = "easyButton" class = "button easyButton">
+          <img src = "https:\\rachel-hovell-designs.000webhostapp.com\memory-game\symbols\gold-star-1.png" alt = "Easy - 4 Pairs" class = "level-select easy" id = "easyI">
+        </button>
+      </div>
+    <div class = "level medium" id = "levelSelectM">
+      <p class = "level-desc medium" id = "mediumP">Medium - 6 Pairs</p>
+      <button id = "mediumButton" class = "button mediumButton">
+        <img src = "https:\\rachel-hovell-designs.000webhostapp.com\memory-game\symbols\gold-star-2.png" alt = "Medium - 6 Pairs"  class = "level-select medium" id = "mediumI">
+      </button>
+    </div>
+    <div class = "level hard" id = "levelSelectH">
+      <p class = "level-desc hard" id = "hardP">Hard - 8 Pairs</p>
+      <button id = "hardButton" class = "button hardButton">
+        <img src = "https:\\rachel-hovell-designs.000webhostapp.com\memory-game\symbols\gold-star-3.png" alt = "Hard - 8 Pairs"  class = "level-select hard" id = "hardI">
+      </button>
+    </div>
+    <div class = "level expert" id = "levelSelectD">
+      <p class = "level-desc expert" id = "expertP">Expert - 10 Pairs</p>
+      <button id = "expertButton" class = "button expertButton">
+        <img src = "https:\\rachel-hovell-designs.000webhostapp.com\memory-game\symbols\gold-star-4.png" alt = "Difficlut - 10 Pairs"  class = "level-select expert" id = "expertI">
+      </button>
+    </div>
+  </div>
+  <div class = "theme-selection" id = "themeContent">
+    <p class = "intro">Which deck would you like to play with?</p>
+    <div class = "theme-selection-area">
+      <div class = "easy themes" id = "easyThemeSelection">
+        <!-- <div class = "easyThemes"> -->
+        <div class = "intro">Easy Decks</div>
+         <div class = "selectPack one butterflies" id = "selectButterflies" onclick = "switchDecks()"><h5>Butterflies</h5>
+           <img src = "https:\\rachel-hovell-designs.000webhostapp.com\memory-game\game-sets\easy\butterflies\blue.png" alt = "Butterflies" class = "pack-select butterflies" id = "butterflyI">
+         </div>
+         <div class = "selectPack two farmyard" id = "selectFarmyard" onclick = "switchDecks()"><h5>Farmyard</h5>
+           <img src = "https:\\rachel-hovell-designs.000webhostapp.com\memory-game\game-sets\easy\farmyard\cow.png" alt = "Farmyard" class = "pack-select farmyard" id = "farmyardI">
+        </div>
+       <!-- </div> -->
+      </div>
+      <div class = "medium themes" id = "mediumThemeSelection">
+        <div class = "intro">Medium Decks</div>
+          <div class = "selectPack one birds" id = "selectBirds" onclick = "switchDecks()"><h5>Birds</h5>
+            <img src = "https:\\rachel-hovell-designs.000webhostapp.com\memory-game\game-sets\medium\birds\tucan.png" alt = "Birds" class = "pack-select birds" id = "birdsI">
+          </div>
+          <div class = "selectPack two bugs" id = "selectBugs" onclick = "switchDecks()"><h5>A Bug's Life</h5>
+            <img src = "https:\\rachel-hovell-designs.000webhostapp.com\memory-game\game-sets\medium\bugs\snail.png" alt = "A Bugs Life" class = "pack-select bugs" id = "bugsI">
+          </div>
+          <div class = "selectPack three reptiles" id = "selectReptiles" onclick = "switchDecks()"><h5>Reptiles</h5>
+            <img src = "https:\\rachel-hovell-designs.000webhostapp.com\memory-game\game-sets\medium\reptiles\chameleon.png" alt = "Reptiles" class = "pack-select reptiles" id = "reptilesI">
+          </div>
+      </div>
+      <div class = "hard themes" id = "hardThemeSelection">
+        <div class = "intro">Hard Decks</div>
+          <div class = "selectPack one dinosaurs" id = "selectDinosaurs" onclick = "switchDecks()"><h5>Dinosaurs</h5>
+            <img src = "https:\\rachel-hovell-designs.000webhostapp.com\memory-game\game-sets\hard\dinosaurs\diplodocos.png" alt = "Dionsaurs" class = "pack-select dinosaurs" id = "dinosaursI">
+          </div>
+          <div class = "selectPack two endangered" id = "selectEndangered" onclick = "switchDecks()"><h5>Endangered Species</h5>
+            <img src = "https:\\rachel-hovell-designs.000webhostapp.com\memory-game\game-sets\hard\endangered\panda.png" alt = "Endangered Species" class = "pack-select endangered" id = "endangeredI">
+          </div>
+          <div class = "selectPack three woodland" id = "selectWoodland" onclick = "switchDecks()"><h5>Woodland Creatures</h5>
+            <img src = "https:\\rachel-hovell-designs.000webhostapp.com\memory-game\game-sets\hard\woodland\fox.png" alt = "Woodland" class = "pack-select woodland" id = "woodlandI">
+          </div>
+      </div>
+      <div class = "expert themes" id = "expertThemeSelection">
+        <div class = "intro">Expert Decks</div>
+          <div class = "selectPack one sealife" id = "selectSealife" onclick = "switchDecks()"><h5>Sealife</h5>
+            <img src = "https:\\rachel-hovell-designs.000webhostapp.com\memory-game\game-sets\expert\sealife\killer-whale.png" alt = "Sealife" class = "pack-select sealife" id = "sealifeI">
+          </div>
+          <div class = "selectPack two tbc" id = "selectTbc"><h5>Coming Soon...</h5>
+            <img src = "https:\\rachel-hovell-designs.000webhostapp.com\memory-game\symbols\black-star-1.png" alt = "Coming Soon" class = "pack-select tbc" id = "tbcI">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
     <div class="container">
         <header>
@@ -29,9 +115,39 @@
         		<i class="fa fa-repeat"></i>
         	</div>
         </section>
+<div class = "congrats">Congratulations!
+</div>
+<div class = "winModal" id = "win-modal">
+  <div class = "win-modal-content">
+    <div class = "winning-score">
+      <span class = "you-win">You won!</span>
+      <div class = "scoreStars">You scored: <span class = "starScore" id = "printStars"></span> Stars!</div>
+      <div class = "scoreMoves">You finished the game in <span class = "moveScore" id = "printMoves"></span> moves!</div>
 
-    </div>
+    <div class = "restartGame">
+      <div class = "restartRequest">Would you like to play again?</div><i class = "fa fa-repeat" onclick="restartGame()"></i></div>
+  </div>
+  <!-- to be added -->
+  <!-- <div class = "scoreTime">You completed the game in: <div class = "timeScore"><div class = "minutesCount" id = "printMinutes"></div> Minutes and <div class = "secondCount" id = "printSeconds"></div> Seconds!</div>
+</div> -->
+    <!-- <div class = "winModal chooseLevel">
+      Pick a new level or deck
+      <i class = "fa fa-repeat"></i>
+    </div> -->
+  </div>
+</div>
 
+<footer>
+  <div class = "footer">
+    <div class = "imageCredits">
+  Symbols and backgrounds designed by <a href = "https://www.freepik.com/" alt = "Freepik" target="_blank">Freepik</a>
+    (Symbols from <a href = "https://www.flaticon.com/" alt = "Flaticon" target="_blank">Flaticon</a>)
+  </div>
+  <div class = "designerCredit">Game built and designed by
+    <a href = "http://rachel-hovell-designs.000webhostapp.com/" alt = "Rachel's Web Design" target="_blank">Rachel's Web Design</a>
+  </div>
+</div>
+</footer>
     <script src="js/app.js" id = "js"></script>
 </body>
 </html>
