@@ -371,16 +371,16 @@ for(var i = 0; i < levelMode.length; i++){
     let yellowSelect = "butterfly-yellow";
     let orangeSelect = "butterfly-orange";
       if(cardDetails.classList[2] === redSelect){
-        cardDetails.src = 'img/game-sets/easy/butterflies/red.png';
+        cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/easy/butterflies/red.png';
       }
       if(cardDetails.classList[2] === blueSelect){
-        cardDetails.src = 'img/game-sets/easy/butterflies/blue.png';
+        cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/easy/butterflies/blue.png';
       }
       if(cardDetails.classList[2] === yellowSelect){
-        cardDetails.src = 'img/game-sets/easy/butterflies/yellow.png';
+        cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/easy/butterflies/yellow.png';
       }
       if(cardDetails.classList[2] === orangeSelect){
-        cardDetails.src = 'img/game-sets/easy/butterflies/orange.png';
+        cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/easy/butterflies/orange.png';
       }
     placedCard.appendChild(cardDetails);
     // console.log("cardDetails IMG element placed");
@@ -415,16 +415,16 @@ for(var i = 0; i < levelMode.length; i++){
     let pigSelect = "farmyard-pig";
     let sheepSelect = "farmyard-sheep";
       if(cardDetails.classList[2] === chickenSelect){
-        cardDetails.src = 'img/game-sets/easy/farmyard/chicken.png';
+        cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/easy/farmyard/chicken.png';
       }
       if(cardDetails.classList[2] === cowSelect){
-        cardDetails.src = 'img/game-sets/easy/farmyard/cow.png';
+        cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/easy/farmyard/cow.png';
       }
       if(cardDetails.classList[2] === pigSelect){
-        cardDetails.src = 'img/game-sets/easy/farmyard/pig.png';
+        cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/easy/farmyard/pig.png';
       }
       if(cardDetails.classList[2] === sheepSelect){
-        cardDetails.src = 'img/game-sets/easy/farmyard/sheep.png';
+        cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/easy/farmyard/sheep.png';
       }
       placedCard.appendChild(cardDetails);
       // console.log("cardDetails IMG element placed");
@@ -462,22 +462,22 @@ for(var i = 0; i < levelMode.length; i++){
     let penguinSelect = "birds-penguin";
     let tucanSelect = "birds-tucan";
       if(cardDetails.classList[2] === hummSelect){
-        cardDetails.src = 'img/game-sets/medium/birds/humming-bird.png';
+        cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/medium/birds/humming-bird.png';
       }
       if(cardDetails.classList[2] === kiwiSelect){
-        cardDetails.src = 'img/game-sets/medium/birds/kiwi.png';
+        cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/medium/birds/kiwi.png';
       }
       if(cardDetails.classList[2] === ostrichSelect){
-        cardDetails.src = 'img/game-sets/medium/birds/ostrich.png';
+        cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/medium/birds/ostrich.png';
       }
       if(cardDetails.classList[2] === parrotSelect){
-        cardDetails.src = 'img/game-sets/medium/birds/parrot.png';
+        cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/medium/birds/parrot.png';
       }
       if(cardDetails.classList[2] === penguinSelect){
-        cardDetails.src = 'img/game-sets/medium/birds/penguin.png';
+        cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/medium/birds/penguin.png';
       }
       if(cardDetails.classList[2] === tucanSelect){
-        cardDetails.src = 'img/game-sets/medium/birds/tucan.png';
+        cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/medium/birds/tucan.png';
       }
       placedCard.appendChild(cardDetails);
       // console.log("cardDetails IMG element placed");
@@ -515,22 +515,22 @@ for(var i = 0; i < levelMode.length; i++){
     let ladybirdSelect = "bugs-ladybird";
     let snailSelect = "bugs-snail";
       if(cardDetails.classList[2] === beeSelect){
-        cardDetails.src = 'img/game-sets/medium/bugs/bee.png';
+        cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/medium/bugs/bee.png';
       }
       if(cardDetails.classList[2] === beetleSelect){
-        cardDetails.src = 'img/game-sets/medium/bugs/beetle.png';
+        cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/medium/bugs/beetle.png';
       }
       if(cardDetails.classList[2] === cricketSelect){
-        cardDetails.src = 'img/game-sets/medium/bugs/cricket.png';
+        cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/medium/bugs/cricket.png';
       }
       if(cardDetails.classList[2] === dragonflySelect){
-        cardDetails.src = 'img/game-sets/medium/bugs/dragonfly.png';
+        cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/medium/bugs/dragonfly.png';
       }
       if(cardDetails.classList[2] === ladybirdSelect){
-        cardDetails.src = 'img/game-sets/medium/bugs/ladybird.png';
+        cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/medium/bugs/ladybird.png';
       }
       if(cardDetails.classList[2] === snailSelect){
-        cardDetails.src = 'img/game-sets/medium/bugs/snail.png';
+        cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/medium/bugs/snail.png';
       }
       placedCard.appendChild(cardDetails);
       // console.log("cardDetails IMG element placed");
@@ -568,22 +568,22 @@ for(var i = 0; i < levelMode.length; i++){
     let newtSelect = "reptile-newt";
     let turtleSelect = "reptile-turtle";
       if(cardDetails.classList[2] === chamSelect){
-        cardDetails.src = 'img/game-sets/medium/reptiles/chameleon.png';
+        cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/medium/reptiles/chameleon.png';
       }
       if(cardDetails.classList[2] === cobraSelect){
-        cardDetails.src = 'img/game-sets/medium/reptiles/cobra.png';
+        cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/medium/reptiles/cobra.png';
       }
       if(cardDetails.classList[2] === frogSelect){
-        cardDetails.src = 'img/game-sets/medium/reptiles/frog.png';
+        cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/medium/reptiles/frog.png';
       }
       if(cardDetails.classList[2] === lizardSelect){
-        cardDetails.src = 'img/game-sets/medium/reptiles/lizard.png';
+        cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/medium/reptiles/lizard.png';
       }
       if(cardDetails.classList[2] === newtSelect){
-        cardDetails.src = 'img/game-sets/medium/reptiles/newt.png';
+        cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/medium/reptiles/newt.png';
       }
       if(cardDetails.classList[2] === turtleSelect){
-        cardDetails.src = 'img/game-sets/medium/reptiles/turtle.png';
+        cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/medium/reptiles/turtle.png';
       }
       placedCard.appendChild(cardDetails);
       // console.log("cardDetails IMG element placed");
@@ -623,28 +623,28 @@ for(var i = 0; i < levelMode.length; i++){
       let triSelect = "dinosaur-triceratops";
       let veloSelect = "dinosaur-velociraptor";
         if(cardDetails.classList[2] === ankSelect){
-          cardDetails.src = 'img/game-sets/hard/dinosaurs/ankylosaurus.png';
+          cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/hard/dinosaurs/ankylosaurus.png';
         }
         if(cardDetails.classList[2] === corySelect){
-          cardDetails.src = 'img/game-sets/hard/dinosaurs/corythosaurus.png';
+          cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/hard/dinosaurs/corythosaurus.png';
         }
         if(cardDetails.classList[2] === diplSelect){
-          cardDetails.src = 'img/game-sets/hard/dinosaurs/diplodocos.png';
+          cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/hard/dinosaurs/diplodocos.png';
         }
         if(cardDetails.classList[2] === paraSelect){
-          cardDetails.src = 'img/game-sets/hard/dinosaurs/parasaurolophus.png';
+          cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/hard/dinosaurs/parasaurolophus.png';
         }
         if(cardDetails.classList[2] === pteSelect){
-          cardDetails.src = 'img/game-sets/hard/dinosaurs/pterodactyl.png';
+          cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/hard/dinosaurs/pterodactyl.png';
         }
         if(cardDetails.classList[2] === stegSelect){
-          cardDetails.src = 'img/game-sets/hard/dinosaurs/stegosaurus.png';
+          cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/hard/dinosaurs/stegosaurus.png';
         }
         if(cardDetails.classList[2] === triSelect){
-          cardDetails.src = 'img/game-sets/hard/dinosaurs/triceratops.png';
+          cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/hard/dinosaurs/triceratops.png';
         }
         if(cardDetails.classList[2] === veloSelect){
-          cardDetails.src = 'img/game-sets/hard/dinosaurs/velociraptor.png';
+          cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/hard/dinosaurs/velociraptor.png';
         }
         placedCard.appendChild(cardDetails);
         // console.log("cardDetails IMG element placed");
@@ -683,28 +683,28 @@ for(var i = 0; i < levelMode.length; i++){
         let platSelect = "endangered-platypus";
         let polaSelect = "endangered-polar-bear";
           if(cardDetails.classList[2] === babSelect){
-            cardDetails.src = 'img/game-sets/hard/endangered/baboon.png';
+            cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/hard/endangered/baboon.png';
           }
           if(cardDetails.classList[2] === bearSelect){
-            cardDetails.src = 'img/game-sets/hard/endangered/bear.png';
+            cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/hard/endangered/bear.png';
           }
           if(cardDetails.classList[2] === eleSelect){
-            cardDetails.src = 'img/game-sets/hard/endangered/elephant.png';
+            cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/hard/endangered/elephant.png';
           }
           if(cardDetails.classList[2] === hyenaSelect){
-            cardDetails.src = 'img/game-sets/hard/endangered/hyena.png';
+            cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/hard/endangered/hyena.png';
           }
           if(cardDetails.classList[2] === lionSelect){
-            cardDetails.src = 'img/game-sets/hard/endangered/lion.png';
+            cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/hard/endangered/lion.png';
           }
           if(cardDetails.classList[2] === pandaSelect){
-            cardDetails.src = 'img/game-sets/hard/endangered/panda.png';
+            cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/hard/endangered/panda.png';
           }
           if(cardDetails.classList[2] === platSelect){
-            cardDetails.src = 'img/game-sets/hard/endangered/platypus.png';
+            cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/hard/endangered/platypus.png';
           }
           if(cardDetails.classList[2] === polaSelect){
-            cardDetails.src = 'img/game-sets/hard/endangered/polar-bear.png';
+            cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/hard/endangered/polar-bear.png';
           }
           placedCard.appendChild(cardDetails);
           // console.log("cardDetails IMG element placed");
@@ -743,28 +743,28 @@ for(var i = 0; i < levelMode.length; i++){
           let rabbitSelect = "woodland-rabbit";
           let squirrelSelect = "woodland-squirrel";
             if(cardDetails.classList[2] === badgerSelect){
-              cardDetails.src = 'img/game-sets/hard/woodland/badger.png';
+              cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/hard/woodland/badger.png';
             }
             if(cardDetails.classList[2] === deerSelect){
-              cardDetails.src = 'img/game-sets/hard/woodland/deer.png';
+              cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/hard/woodland/deer.png';
             }
             if(cardDetails.classList[2] === foxSelect){
-              cardDetails.src = 'img/game-sets/hard/woodland/fox.png';
+              cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/hard/woodland/fox.png';
             }
             if(cardDetails.classList[2] === hedgehogSelect){
-              cardDetails.src = 'img/game-sets/hard/woodland/hedgehog.png';
+              cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/hard/woodland/hedgehog.png';
             }
             if(cardDetails.classList[2] === mouseSelect){
-              cardDetails.src = 'img/game-sets/hard/woodland/mouse.png';
+              cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/hard/woodland/mouse.png';
             }
             if(cardDetails.classList[2] === owlSelect){
-              cardDetails.src = 'img/game-sets/hard/woodland/owl.png';
+              cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/hard/woodland/owl.png';
             }
             if(cardDetails.classList[2] === rabbitSelect){
-              cardDetails.src = 'img/game-sets/hard/woodland/rabbit.png';
+              cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/hard/woodland/rabbit.png';
             }
             if(cardDetails.classList[2] === squirrelSelect){
-              cardDetails.src = 'img/game-sets/hard/woodland/squirrel.png';
+              cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/hard/woodland/squirrel.png';
             }
             placedCard.appendChild(cardDetails);
             // console.log("cardDetails IMG element placed");
@@ -805,34 +805,34 @@ for(var i = 0; i < levelMode.length; i++){
             let stfishSelect = "sealife-starfish";
             let whaleSelect = "sealife-whale";
               if(cardDetails.classList[2] === clownSelect){
-                cardDetails.src = 'img/game-sets/expert/sealife/clownfish.png';
+                cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/expert/sealife/clownfish.png';
               }
               if(cardDetails.classList[2] === dolphinSelect){
-                cardDetails.src = 'img/game-sets/expert/sealife/dolphin.png';
+                cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/expert/sealife/dolphin.png';
               }
               if(cardDetails.classList[2] === hermitSelect){
-                cardDetails.src = 'img/game-sets/expert/sealife/hermit-crab.png';
+                cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/expert/sealife/hermit-crab.png';
               }
               if(cardDetails.classList[2] === kwhaleSelect){
-                cardDetails.src = 'img/game-sets/expert/sealife/killer-whale.png';
+                cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/expert/sealife/killer-whale.png';
               }
               if(cardDetails.classList[2] === octopusSelect){
-                cardDetails.src = 'img/game-sets/expert/sealife/octopus.png';
+                cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/expert/sealife/octopus.png';
               }
               if(cardDetails.classList[2] === puffaSelect){
-                cardDetails.src = 'img/game-sets/expert/sealife/puffafish.png';
+                cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/expert/sealife/puffafish.png';
               }
               if(cardDetails.classList[2] === sharkSelect){
-                cardDetails.src = 'img/game-sets/expert/sealife/shark.png';
+                cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/expert/sealife/shark.png';
               }
               if(cardDetails.classList[2] === squidSelect){
-                cardDetails.src = 'img/game-sets/expert/sealife/squid.png';
+                cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/expert/sealife/squid.png';
               }
               if(cardDetails.classList[2] === stfishSelect){
-                cardDetails.src = 'img/game-sets/expert/sealife/starfish.png';
+                cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/expert/sealife/starfish.png';
               }
               if(cardDetails.classList[2] === whaleSelect){
-                cardDetails.src = 'img/game-sets/expert/sealife/whale.png';
+                cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/expert/sealife/whale.png';
               }
               placedCard.appendChild(cardDetails);
               // console.log("cardDetails IMG element placed");

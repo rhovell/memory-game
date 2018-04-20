@@ -11,20 +11,20 @@ html {
 html,
 body {
     width: 100%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
     margin: 0;
     padding: 0;
 }
 
 body {
     font-family: 'Coda', cursive;
-    font-size: 1.2em;
+    font-size: 1em;
     background-color: rgba(40, 39, 37, 1);
 }
 a:link {
   color: black;
   background-color: transparent;
-  /* text-decoration: none; */
 }
 a:visited {
   color: #303030;
@@ -38,7 +38,6 @@ a:hover {
 }
 a:active {
   transform: translateY(-4px);
-
 }
 /* level selection modal styling */
 /* The Modal (background) */
@@ -46,24 +45,22 @@ a:active {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    left: 20%;
-    top: 10%;
-    width: 60%;
-    /* min-width: 583px; */
     height: auto;
     overflow: hidden;
     background: linear-gradient(to bottom, rgba(97, 215, 255, 0.5), rgba(73, 188, 16, 0.5));
     border: 3px ridge rgba(97, 215, 255, 1);
     color: white;
     margin: auto;
+    width: 90%;
+    top: 5%;
+    height: auto;
+    left: 5%;
 }
-
+.level-desc {
+  margin-bottom: 0.2em;
+}
 /* Modal Content/Box */
 .level-modal-content {
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 90%;
-    height: 100%;
     text-align: center;
     margin: 1em;
 }
@@ -72,17 +69,13 @@ a:active {
   display: grid;
   flex-wrap: wrap;
   grid-template-columns: auto;
-  margin: 0.5em 0 1em 0;
 }
 .level-selection .intro {
   grid-column-start: 1;
-  grid-column-end: 2;
+  grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 2;
-}
-
-.level {
-  width: 100%;
+  margin: 0;
 }
 .level.easy {
   grid-column-start: 1;
@@ -91,35 +84,52 @@ a:active {
   grid-row-end: 3;
 }
 .level.medium {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.level.hard {
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 3;
   grid-row-end: 4;
 }
-.level.hard {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 4;
-  grid-row-end: 5;
-}
 .level.expert {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 5;
-  grid-row-end: 6;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+.level {
+  width: 100%;
 }
 
 .level-selection button {
   background: transparent;
   border: none;
   cursor: pointer;
-  padding-bottom: 1em;
+  /* padding-bottom: 1em; */
+  margin: auto;
+  justify-content: center;
 }
 .level-selection button:hover {
   background-color: rgba(97, 215, 255, 0.4);
 }
+.level-selection button:active {
+  transform: translateY(-4px);
+}
 .level-selection img {
-  height: 3em;
+  height: 2em;
+  width: auto;
+}
+.level-selection .hard img {
+  height: 4em;
+  width: auto;
+}
+.level-selection .expert img {
+  height: 4em;
+  width: auto;
 }
 .pack-select.tbc {
   width: 2.3em;
@@ -127,28 +137,44 @@ a:active {
 .theme-selection {
   display: none;
   grid-template-columns: auto;
-  /* grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 3; */
   flex-wrap: wrap;
 }
 .selectPack {
   width: 100%;
-  display: inline-block;
   cursor: pointer;
 }
 .selectPack:hover {
   background-color: rgba(97, 215, 255, 0.4);
 }
+.selectPack:active {
+  transform: translateY(-4px);
+}
 .themes {
   display: none;
 }
-.theme-selection-area .intro {
+.easy .theme-selection-area .intro {
   grid-column-start: 1;
-  grid-column-end: 2;
+  grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 2;
+}
+.theme-selection-area .intro {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.easy .selectPack.one {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.easy .selectPack.two {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 .selectPack.one {
   grid-column-start: 1;
@@ -157,27 +183,46 @@ a:active {
   grid-row-end: 3;
 }
 .selectPack.two {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 3;
-  grid-row-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 .selectPack.three {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.expert .theme-selection-area .intro {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.expert .selectPack.one {
   grid-column-start: 1;
   grid-column-end: 2;
-  grid-row-start: 4;
-  grid-row-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
-h1 {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-    margin-bottom: 0;
+.expert .selectPack.two {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+h1 {
+    /* font-family: 'Open Sans', sans-serif; */
+    font-weight: 300;
+    margin-bottom: 0;
+    margin-top: 0.2em;
 }
 .heading {
   background-color: rgba(250, 250, 250, 0.5);
@@ -186,35 +231,33 @@ h1 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 10%;
-  font-size: 1.6em;
+  margin-bottom: 1%;
+  font-size: 0.8em;
 }
+
 /*
  * Styles for the Score Panel
 */
 .score-panel {
-    text-align: center;
-    width: 500px;
-    display: grid;
-    flex-wrap: wrap;
-    grid-template-columns: 33% 33% 33%;
-    vertical-align: middle;
+  text-align: center;
+  width: 70%;
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: 33% 33% 33%;
+  margin: 0;
 }
 .score-panel .stars {
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-    margin: 0 5px 0 0;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
+  padding: 0;
+  margin: 0 5px 0 0;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
-
 .score-panel .stars li {
-    list-style: none;
-    display: inline-block;
-  }
+  list-style: none;
+  display: inline-block;
+}
 .moves {
   grid-column-start: 2;
   grid-column-end: 3;
@@ -223,54 +266,41 @@ h1 {
 }
 .score-panel div {
   margin: auto;
-
 }
 .score-panel .restart {
-    float: right;
-    cursor: pointer;
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 2;
+  float: right;
+  cursor: pointer;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 .difficulty-class {
-  margin: 0.5em 0em 0.5em 0;
+  margin: 0;
 }
-
-
 /*
  * Styles for the deck of cards
  */
 
 .deck {
-    /* min-width: 640px;
-    min-height: 350px;
-    max-width: 760px;
-    max-height: 640px; */
-    /* background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%); */
-    padding: 32px;
+    padding: 1.5em;
+    padding-bottom: 10px;
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    /* margin: 0 0 3em; */
+    margin: 0 0 3em;
 }
-body.butterflies {
-  background: #61D7FF url('../img/backgrounds/butterflies.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+.card {
+  margin: 0 0 0.5em 0;
 }
-.cardSymbols {
-  /* width: 200%; */
-  /* display: none; */
-}
+
 .card img {
   display: none;
-  width: 3em;
-  height: 3em;
+  width: 50%;
+  height: 50%;
   margin: auto;
 }
 .card.open.show img {
@@ -278,85 +308,41 @@ body.butterflies {
 }
 .card.hold img {
   display: block;
-
-}
-body.farmyard {
-  background: #61D7FF url('../img/backgrounds/farmyard.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-body.birds {
-  background: url('../img/backgrounds/birds.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-body.bugs {
-  background: url('../img/backgrounds/bugs.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-body.reptiles {
-  background: url('../img/backgrounds/reptiles.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-body.dinosaurs {
-  background: url('../img/backgrounds/dinosaurs.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-body.endangered {
-  background: url('../img/backgrounds/endangered.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-body.woodland {
-  background: url('../img/backgrounds/woodland.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-body.sealife {
-  background: url('../img/backgrounds/sealife.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 /* styling for all decks */
 .deck .card {
-    /* height: 125px;
-    width: 125px; */
-    height: 250px;
-    width: 250px;
-    border-radius: 8px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
 }
 .deck .card.open {
-    transform: rotateY(0);
-    cursor: default;
+  transform: rotateY(0);
+  cursor: default;
 }
 /* styling for easy decks */
 /* styling for butterfly deck */
 .deck.easy {
-  /* height: 680px;
-  width: 350px; */
-  height: 1150px;
-  width: 600px;
+  height: auto;
+  width: 70%;
+}
+.deck.easy .card {
+    height: 4.5em;
+    width: 4.5em;
+}
+body.butterflies {
+  background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/butterflies.png');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  background-attachment: fixed;
 }
 .deck.butterflies {
   background: linear-gradient(60deg, rgba(89, 192, 89, 0.5) 0%, rgba(65, 170, 65, 0.5) 100%);
 }
 .butterflies .card {
-    background: rgba(89, 192, 89, 1);
+  background: rgba(89, 192, 89, 1);
 }
 /* Card animation styling */
 .butterflies .card.open {
@@ -394,13 +380,18 @@ body.sealife {
 	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
 }
 /* styling for farmyard deck */
+body.farmyard {
+  background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/farmyard.png');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  background-attachment: fixed;
+}
 .deck.farmyard {
-  width: 680px;
-  height: 350px;
   background: linear-gradient(60deg, rgba(89, 192, 89, 0.5) 0%, rgba(65, 170, 65, 0.5) 100%);
 }
 .farmyard .card {
-    background: rgba(89, 192, 89, 1);
+  background: rgba(89, 192, 89, 1);
 }
 /* Card animation styling */
 .farmyard .card.open {
@@ -416,8 +407,8 @@ body.sealife {
   cursor: default;
 }
 .farmyard .card.wrong {
-   animation-name: farmyard-wrong-animation;
-   animation-duration: 1s;
+  animation-name: farmyard-wrong-animation;
+  animation-duration: 1s;
 }
 @-webkit-keyframes farmyard-right-animation {
   from {background-color: rgba(241, 210, 101, 1);}
@@ -439,14 +430,27 @@ body.sealife {
 }
 /* end of easy decks */
 /* medium decks styling */
+.deck.medium {
+  height: 90%;
+  width: 90%;
+}
+.deck.medium .card {
+    height: 4.5em;
+    width: 4.5em;
+}
 /* birds deck styling */
+body.birds {
+  background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/birds.jpg');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  background-attachment: fixed;
+}
 .deck.birds {
-  width: 680px;
-  height: 450px;
   background: linear-gradient(60deg, rgba(41, 187, 255, 0.5) 0%, rgba(26, 182, 255, 0.5) 100%);
 }
 .birds .card {
-    background: rgba(41, 187, 255, 1);
+  background: rgba(41, 187, 255, 1);
 }
 /* Card animation styling */
 .birds .card.open {
@@ -462,8 +466,8 @@ body.sealife {
   cursor: default;
 }
 .birds .card.wrong {
-   animation-name: birds-wrong-animation;
-   animation-duration: 1s;
+  animation-name: birds-wrong-animation;
+  animation-duration: 1s;
 }
 @-webkit-keyframes birds-right-animation {
   from {background-color: rgba(128, 215, 255, 1);}
@@ -484,17 +488,22 @@ body.sealife {
 	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
 }
 /* styling for bug deck */
+body.bugs {
+  background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/bugs.jpg');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  background-attachment: fixed;
+}
 .deck.bugs {
-  width: 680px;
-  height: 450px;
   background: linear-gradient(60deg, rgba(14, 16, 16, 0.5) 0%, rgba(255, 134, 5, 0.5) 100%);
 }
 .bugs .card {
-    background: rgba(14, 16, 16, 1);
+  background: rgba(14, 16, 16, 1);
 }
 /* Card animation styling */
 .bugs .card.open {
-    background: rgba(156, 181, 79, 1);
+  background: rgba(156, 181, 79, 1);
 }
 .bugs .card.hold {
   background: rgba(103, 157, 12, 1);
@@ -528,17 +537,22 @@ body.sealife {
 	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
 }
 /* reptile deck stling */
+body.reptiles {
+  background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/reptiles.jpg');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  background-attachment: fixed;
+}
 .deck.reptiles {
-  width: 680px;
-  height: 450px;
   background: linear-gradient(60deg, rgba(255, 147, 31, 0.5) 0%, rgba(255, 134, 5, 0.5) 100%);
 }
 .reptiles .card {
-    background: rgba(255, 147, 31, 1);
+  background: rgba(255, 147, 31, 1);
 }
 /* Card animation styling */
 .reptiles .card.open {
-    background: rgba(255, 173, 41, 1);
+  background: rgba(255, 173, 41, 1);
 }
 .reptiles .card.hold {
   background: rgba(240, 84, 0, 1);
@@ -550,8 +564,8 @@ body.sealife {
   animation-duration: 1s;
 }
 .reptiles .card.wrong {
-   animation-name: reptiles-wrong-animation;
-   animation-duration: 1s;
+  animation-name: reptiles-wrong-animation;
+  animation-duration: 1s;
 }
 @-webkit-keyframes reptiles-right-animation {
   from {background-color: rgba(255, 173, 41, 1);}
@@ -572,18 +586,31 @@ body.sealife {
 	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
 }
 /* styling for hard decks */
+.deck.hard {
+  height: 90%;
+  width: 95%;
+}
+.deck.hard .card {
+    height: 3.8em;
+    width: 3.8em;
+}
 /* dinosaur deck styling */
+body.dinosaurs {
+  background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/dinosaurs.jpg');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  background-attachment: fixed;
+}
 .deck.dinosaurs {
-  width: 640px;
-  height: 580px;
   background: linear-gradient(60deg, rgba(255, 67, 15, 0.5) 0%, rgba(255, 99, 56, 0.5) 100%);
 }
 .dinosaurs .card {
-    background: rgba(255, 67, 15, 1);
+  background: rgba(255, 67, 15, 1);
 }
 /* Card animation styling */
 .dinosaurs .card.open {
-    background: rgba(255, 116, 46, 1);
+  background: rgba(255, 116, 46, 1);
 }
 .dinosaurs .card.match {
   animation-name: dinosaurs-right-animation;
@@ -595,8 +622,8 @@ body.sealife {
   cursor: default;
 }
 .dinosaurs .card.wrong {
-   animation-name: dinosaurs-wrong-animation;
-   animation-duration: 1s;
+  animation-name: dinosaurs-wrong-animation;
+  animation-duration: 1s;
 }
 @-webkit-keyframes dinosaurs-right-animation {
   from {background-color: rgba(255, 116, 46, 1);}
@@ -617,17 +644,23 @@ body.sealife {
 	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
 }
 /* endangered deck styling */
+body.endangered {
+  background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/endangered.jpg');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .deck.endangered {
-  width: 640px;
-  height: 580px;
   background: linear-gradient(60deg, rgba(235, 0, 0, 0.5) 0%, rgba(251, 19, 19, 0.5) 100%);
 }
 .endangered .card {
-    background: rgba(235, 0, 0, 1);
+  background: rgba(235, 0, 0, 1);
 }
 /* Card animation styling */
 .endangered .card.open {
-    background: rgba(255, 46, 46, 1);
+  background: rgba(255, 46, 46, 1);
 }
 .endangered .card.match {
   animation-name: endangered-right-animation;
@@ -639,8 +672,8 @@ body.sealife {
   cursor: default;
 }
 .endangered .card.wrong {
-   animation-name: endangered-wrong-animation;
-   animation-duration: 1s;
+  animation-name: endangered-wrong-animation;
+  animation-duration: 1s;
 }
 @-webkit-keyframes endangered-right-animation {
   from {background-color: rgba(255, 46, 46, 1);}
@@ -661,17 +694,23 @@ body.sealife {
 	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
 }
 /* woodland deck styling */
+body.woodland {
+  background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/woodland.jpg');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .deck.woodland {
-  width: 640px;
-  height: 580px;
   background: linear-gradient(60deg, rgba(48, 134, 40, 0.5) 0%, rgba(38, 173, 26, 0.5) 100%);
 }
 .woodland .card {
-    background: rgba(48, 134, 40, 1);
+  background: rgba(48, 134, 40, 1);
 }
 /* Card animation styling */
 .woodland .card.open {
-    background: rgba(62, 173, 52, 1);
+  background: rgba(62, 173, 52, 1);
 }
 .woodland .card.match {
   animation-name: woodland-right-animation;
@@ -683,8 +722,8 @@ body.sealife {
   cursor: default;
 }
 .woodland .card.wrong {
-   animation-name: woodland-wrong-animation;
-   animation-duration: 1s;
+  animation-name: woodland-wrong-animation;
+  animation-duration: 1s;
 }
 @-webkit-keyframes woodland-right-animation {
   from {background-color: rgba(62, 173, 52, 1);}
@@ -705,18 +744,31 @@ body.sealife {
 	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
 }
 /* styling for expert decks */
-/* sealife deck styling */
 .deck.expert {
-  width: 760px;
-  height: 640px;
+  height: 90%;
+  width: 95%;
+}
+.deck.expert .card {
+    height: 3.5em;
+    width: 3.5em;
+}
+/* sealife deck styling */
+body.sealife {
+  background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/sealife.jpg');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.deck.sealife {
   background: linear-gradient(60deg, rgba(23, 142, 151, 0.5) 0%, rgba(7, 147, 157, 0.5) 100%);
 }
 .sealife .card {
-    background: rgba(23, 142, 151, 1);
+  background: rgba(23, 142, 151, 1);
 }
 /* Card animation styling */
 .sealife .card.open {
-    background: rgba(31, 197, 209, 1);
+  background: rgba(31, 197, 209, 1);
 }
 .sealife .card.match {
   animation-name: sealife-right-animation;
@@ -728,8 +780,8 @@ body.sealife {
   cursor: default;
 }
 .sealife .card.wrong {
-   animation-name: sealife-wrong-animation;
-   animation-duration: 1s;
+  animation-name: sealife-wrong-animation;
+  animation-duration: 1s;
 }
 @-webkit-keyframes sealife-right-animation {
   from {background-color: rgba(31, 197, 209, 1);}
@@ -749,40 +801,36 @@ body.sealife {
 	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
 	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
 }
-
-
-
 /* winning modal styling */
 .congrats {
   font-size: 0;
   display: none;
 }
 .congrats.live {
-  font-size: 3em;
+  font-size: 1.8em;
   display: block;
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   top: 30%;
-  left: 37%;
+  left: 15%;
   background: transparent;
-
 }
 .winModal {
   display: none;
   width: auto;
-  min-width: 320px;
-  min-height: 170px;
+  width: 90%;
+  min-height: 150px;
   height: auto;
-  /* background: transparent; */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  top: 40%;
-  left: 40%;
+  top: 20%;
+  left: 5%;
   margin: auto;
-  font-size: 1.2em;
+  /* font-size: 1em; */
   background: linear-gradient(to bottom, rgba(97, 215, 255, 0.9), rgba(73, 188, 16, 0.9));
   border: 3px ridge rgba(97, 215, 255, 1);
   overflow: hidden;
+  padding: 1em;
 }
 .win-modal-content {
   width: auto;
@@ -790,26 +838,15 @@ body.sealife {
   background-color: transparent;
   margin: auto;
   text-align: center;
-  /* top: 10%
-  left: 10%;
-  z-index: 1;
-  position: fixed; */
-  /* grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 4; */
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 .winning-score {
-  /* display: none; */
   display: grid;
   grid-template-columns: auto;
   flex-wrap: wrap;
   font-size: 1em;
-
-
 }
 .you-win {
   grid-column-start: 1;
@@ -844,11 +881,10 @@ body.sealife {
 }
 .winModal .restartGame {
   grid-column-start: 1;
-  grid-column-end: 4;
+  grid-column-end: 2;
   grid-row-start: 4;
   grid-row-end: 5;
 }
-
 .fa.fa-repeat {
   cursor: pointer;
   width: 3px;
@@ -862,4 +898,7 @@ body.sealife {
   flex-direction: column;
   position: fixed;
   bottom: 0;
+  /* z-index: -1; */
+  font-size: 0.8em;
+  text-align: center;
 }
