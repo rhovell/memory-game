@@ -28,7 +28,7 @@ var woodlandCards = ['badger', 'badger', 'deer', 'deer', 'fox', 'fox', 'hedgehog
 'mouse', 'mouse', 'owl', 'owl', 'rabbit', 'rabbit', 'squirrel', 'squirrel'];
 // expert level arrays
 var sealifeCards = ['clownfish', 'clownfish', 'dolphin', 'dolphin', 'hermit-crab', 'hermit-crab', 'killer-whale', 'killer-whale', 'octopus', 'octopus',
- 'puffafish', 'puffafish', 'shark', 'shark', 'squid', 'squid', 'starfish', 'starfish', 'whale', 'whale']
+ 'puffafish', 'puffafish', 'shark', 'shark', 'squid', 'squid', 'starfish', 'starfish', 'whale', 'whale'];
 // level variables
 const levelOne = document.getElementById('easyButton');
 const levelOneThemes = document.getElementsByClassName('easy');
@@ -1134,22 +1134,28 @@ function win(){
       let twoStar = 8;
       let oneHalfStar = 9;
       let oneStar = 10;
-      if(moves <= threeStar){
+      if(moves <= 6){
+        console.log("if less than or equal to 6");
         scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i><i class = 'fa fa-star'></i>";
       }
-      if(moves === twoHalfStar){
+      if(moves = twoHalfStar){
+        console.log("if equal to 7");
       scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i><i class = 'fas fa-star-half'></i>";
       }
-      if(moves === twoStar){
+      if(moves = twoStar){
+        console.log("if equal to 8");
       scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i>";
       }
-      if(moves === oneHalfStar){
+      if(moves = oneHalfStar){
+        console.log("if equal to 9");
       scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fas fa-star-half'></i>";
       }
-      if(moves === oneStar){
+      if(moves = oneStar){
+        console.log("if equal to 10");
       scoringStars.innerHTML = "<i class = 'fa fa-star'></i>";
       }
-      if(moves > oneStar){
+      if(moves > 10){
+        console.log("if more than 10");
       scoringStars.innerHTML = "<i class = 'fas fa-star-half'></i>";
       }
     }
