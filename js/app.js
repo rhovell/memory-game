@@ -1,28 +1,34 @@
 /*
- * Create a list that holds all of your cards
  * card holding arrays
  */
-var cards = ['fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube', 'fa-leaf', 'fa-bicycle', 'fa-bomb', 'fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube', 'fa-leaf', 'fa-bicycle', 'fa-bomb'];
 var cards = [];
-// var cardsOriginal = ['fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube', 'fa-leaf', 'fa-bicycle', 'fa-bomb', 'fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube', 'fa-leaf', 'fa-bicycle', 'fa-bomb'];
+var cardsOriginal = ['fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube', 'fa-leaf', 'fa-bicycle',
+'fa-bomb', 'fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube', 'fa-leaf', 'fa-bicycle', 'fa-bomb'];
 var openCards = [];
 var matchedCards = [];
 var starRatings = ['fa fa-star', 'fa fa-star', 'fa fa-star'];
-var levelMode = [];
+let levelMode = [];
 
 // easy level arrays
 var butterflyCards = ['blue', 'blue', 'red', 'red', 'orange', 'orange', 'yellow', 'yellow'];
 var farmyardCards = ['chicken', 'chicken', 'cow', 'cow', 'pig', 'pig', 'sheep', 'sheep'];
 // medium level arrays
-var birdCards = ['humming-bird', 'humming-bird', 'kiwi', 'kiwi', 'ostrich', 'ostrich', 'parrot', 'parrot', 'penguin', 'penguin', 'tucan', 'tucan'];
-var bugCards = ['bee', 'bee', 'beetle', 'beetle', 'cricket', 'cricket', 'dragonfly', 'dragonfly', 'ladybird', 'ladybird', 'snail', 'snail'];
-var reptileCards = ['chameleon', 'chameleon', 'cobra', 'cobra', 'frog', 'frog', 'lizard', 'lizard', 'newt', 'newt', 'turtle', 'turtle'];
+var birdCards = ['humming-bird', 'humming-bird', 'kiwi', 'kiwi', 'ostrich', 'ostrich', 'parrot',
+'parrot', 'penguin', 'penguin', 'tucan', 'tucan'];
+var bugCards = ['bee', 'bee', 'beetle', 'beetle', 'cricket', 'cricket', 'dragonfly', 'dragonfly',
+'ladybird', 'ladybird', 'snail', 'snail'];
+var reptileCards = ['chameleon', 'chameleon', 'cobra', 'cobra', 'frog', 'frog', 'lizard', 'lizard',
+'newt', 'newt', 'turtle', 'turtle'];
 // hard level arrays
-var dinosaurCards = ['ankylosaurus', 'ankylosaurus', 'corythosaurus', 'corythosaurus', 'diplodocos', 'diplodocos', 'parasaurolophus', 'parasaurolophus', 'pterodactyl', 'pterodactyl', 'stegosaurus', 'stegosaurus', 'triceratops', 'triceratops', 'velociraptor', 'velociraptor'];
-var endangeredCards = ['baboon', 'baboon', 'bear', 'bear', 'elephant', 'elephant', 'hyena', 'hyena', 'lion', 'lion', 'panda', 'panda', 'platypus', 'platypus', 'polar-bear', 'polar-bear'];
-var woodlandCards = ['badger', 'badger', 'deer', 'deer', 'fox', 'fox', 'hedgehog', 'hedgehog', 'mouse', 'mouse', 'owl', 'owl', 'rabbit', 'rabbit', 'squirrel', 'squirrel'];
+var dinosaurCards = ['ankylosaurus', 'ankylosaurus', 'corythosaurus', 'corythosaurus', 'diplodocos', 'diplodocos', 'parasaurolophus', 'parasaurolophus',
+'pterodactyl', 'pterodactyl', 'stegosaurus', 'stegosaurus', 'triceratops', 'triceratops', 'velociraptor', 'velociraptor'];
+var endangeredCards = ['baboon', 'baboon', 'bear', 'bear', 'elephant', 'elephant', 'hyena', 'hyena',
+'lion', 'lion', 'panda', 'panda', 'platypus', 'platypus', 'polar-bear', 'polar-bear'];
+var woodlandCards = ['badger', 'badger', 'deer', 'deer', 'fox', 'fox', 'hedgehog', 'hedgehog',
+'mouse', 'mouse', 'owl', 'owl', 'rabbit', 'rabbit', 'squirrel', 'squirrel'];
 // expert level arrays
-var sealifeCards = ['clownfish', 'clownfish', 'dolphin', 'dolphin', 'hermit-crab', 'hermit-crab', 'killer-whale', 'killer-whale', 'octopus', 'octopus', 'puffafish', 'puffafish', 'shark', 'shark', 'squid', 'squid', 'starfish', 'starfish', 'whale', 'whale'];
+var sealifeCards = ['clownfish', 'clownfish', 'dolphin', 'dolphin', 'hermit-crab', 'hermit-crab', 'killer-whale', 'killer-whale', 'octopus', 'octopus',
+ 'puffafish', 'puffafish', 'shark', 'shark', 'squid', 'squid', 'starfish', 'starfish', 'whale', 'whale']
 // level variables
 const levelOne = document.getElementById('easyButton');
 const levelOneThemes = document.getElementsByClassName('easy');
@@ -61,9 +67,8 @@ const levelModal = document.getElementById("levelModal");
 const levelSelections = document.querySelector('.level');
 // theme select starts Game
 function introPopup(){
-  console.log("intro popup");
- levelModal.style.display = "block";
-};
+document.onload = levelModal.style.display = "block";
+}
 introPopup();
 
 function levelSelectionChange(e){
@@ -215,7 +220,7 @@ if (me.contains('sealife')) {
  */
 
 // Shuffle function from http://stackoverflow.com/a/2450976
- document.addEventListener('DOMContentLoaded', function shuffle(array) {
+function shuffle(array){
     var currentIndex = array.length, temporaryValue, randomIndex;
 
     while (currentIndex !== 0) {
@@ -227,76 +232,7 @@ if (me.contains('sealife')) {
     }
 
     return array;
-});
-
-function respondToTheClick() {
-// shuffle cards
-cardList = shuffle(cards);
-// add cards to deck
-container.appendChild(dealtCards);
-// add card elements and class details
-for (let i = 0; i < cards.length; i++) {
-  const placedCard = document.createElement('li');
-  placedCard.classList = 'card';
-  const cardDetails = document.createElement('i');
-  cardDetails.classList = 'fa ' + cardList[i];
-  dealtCards.appendChild(placedCard);
-  placedCard.appendChild(cardDetails);
 }
-// add event listener to all cards
-dealtCards.addEventListener('click', respondToTheClick);
-};
-
-/* set up the event listener for a card. If a card is clicked:
- *  - display the card's symbol (put this functionality in another function that you call from this one)
- *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
- *  - if the list already has another card, check to see if the two cards match
- *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
- *    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
- *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
- *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
- */
-
-// create container div
-const container = document.createElement('div');
-container.classList = 'container';
-// add container div to body
-document.body.append(container);
-// moves javascript link to bottom of body
-$('#js').insertAfter(container);
-// create deck ul list
-const dealtCards = document.createElement('ul');
-dealtCards.classList = 'deck';
-
-function respondToTheClick() {
-
-// shuffle cards
-cardList = shuffle(cards);
-// add cards to deck
-container.appendChild(dealtCards);
-// add card elements and class details
-for (let i = 0; i < cards.length; i++) {
-  const placedCard = document.createElement('li');
-  placedCard.classList = 'card';
-  const cardDetails = document.createElement('i');
-  cardDetails.classList = 'fa ' + cardList[i];
-  dealtCards.appendChild(placedCard);
-  placedCard.appendChild(cardDetails);
-}
-// add event listener to all cards
-dealtCards.addEventListener('click', respondToTheClick);
-
-/* set up the event listener for a card. If a card is clicked:
- *  - display the card's symbol (put this functionality in another function that you call from this one)
- *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
- *  - if the list already has another card, check to see if the two cards match
- *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
- *    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
- *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
- *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
- */
-
-};
 /* Process explanation
 + div class = "container" element
 - move javascript link to bottom of body
