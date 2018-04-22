@@ -19,6 +19,960 @@ body {
 
 body {
     font-family: 'Coda', cursive;
+    font-size: 1em;
+    background-color: rgba(40, 39, 37, 1);
+}
+a:link {
+  color: black;
+  background-color: transparent;
+}
+a:visited {
+  color: #303030;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:active {
+  transform: translateY(-4px);
+}
+/* level selection modal styling */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    height: auto;
+    overflow: hidden;
+    background: linear-gradient(to bottom, rgba(97, 215, 255, 0.5), rgba(73, 188, 16, 0.5));
+    border: 3px ridge rgba(97, 215, 255, 1);
+    color: white;
+    margin: auto;
+    width: 90%;
+    top: 5%;
+    left: 5%;
+}
+.level-desc {
+  margin-bottom: 0.2em;
+}
+/* Modal Content/Box */
+.level-modal-content {
+    text-align: center;
+    margin: 1em;
+}
+
+.level-selection {
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: auto;
+}
+.level-selection .intro {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  margin: 0;
+}
+.level.Easy {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.level.medium {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.level.hard {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+.level.expert {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+.level {
+  width: 100%;
+}
+
+.level-selection button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  /* padding-bottom: 1em; */
+  margin: auto;
+  justify-content: center;
+}
+.level-selection button:hover {
+  background-color: rgba(97, 215, 255, 0.4);
+}
+.level-selection button:active {
+  transform: translateY(4px);
+}
+.level-selection img {
+  height: 2em;
+  width: auto;
+}
+.level-selection .hard img {
+  height: 4em;
+  width: auto;
+}
+.level-selection .expert img {
+  height: 4em;
+  width: auto;
+}
+.pack-select.tbc {
+  width: 2.3em;
+}
+.theme-selection {
+  display: none;
+  grid-template-columns: auto;
+  flex-wrap: wrap;
+}
+.selectPack {
+  width: 100%;
+  cursor: pointer;
+}
+.selectPack:hover {
+  background-color: rgba(97, 215, 255, 0.4);
+}
+.selectPack:active {
+  transform: translateY(4px);
+}
+.themes {
+  display: none;
+}
+.Easy .theme-selection-area .intro {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.theme-selection-area .intro {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.Easy .selectPack.one {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.Easy .selectPack.two {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.selectPack.one {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.selectPack.two {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.selectPack.three {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.expert .theme-selection-area .intro {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.expert .selectPack.one {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.expert .selectPack.two {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+h1 {
+    /* font-family: 'Open Sans', sans-serif; */
+    font-weight: 300;
+    margin-bottom: 0;
+    margin-top: 0.2em;
+}
+.heading {
+  background-color: rgba(250, 250, 250, 0.5);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 1%;
+  font-size: 0.8em;
+}
+
+/*
+ * Styles for the Score Panel
+*/
+.score-panel {
+  text-align: center;
+  width: 70%;
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: 33% 33% 33%;
+  margin: 0;
+}
+.score-panel .stars {
+  padding: 0;
+  margin: 0 5px 0 0;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.score-panel .stars li {
+  list-style: none;
+  display: inline-block;
+}
+.moves {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.score-panel div {
+  margin: auto;
+}
+.score-panel .restart {
+  float: right;
+  cursor: pointer;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.difficulty-class {
+  margin: 0;
+}
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    padding: 1.5em;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+.card {
+  margin: 0 0 0.5em 0;
+}
+
+.card img {
+  display: none;
+  width: 50%;
+  height: 50%;
+  margin: auto;
+}
+.card.open.show img {
+  display: block;
+}
+.card.hold img {
+  display: block;
+}
+/* styling for all decks */
+.deck .card {
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+.deck .card.open {
+  transform: rotateY(0);
+  cursor: default;
+}
+/* styling for easy decks */
+/* styling for butterfly deck */
+.deck.easy {
+  height: auto;
+  width: 70%;
+}
+.deck.easy .card {
+    height: 4.5em;
+    width: 4.5em;
+}
+body.butterflies {
+  background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/butterflies.png');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.deck.butterflies {
+  background: linear-gradient(60deg, rgba(89, 192, 89, 0.5) 0%, rgba(65, 170, 65, 0.5) 100%);
+}
+.butterflies .card {
+  background: rgba(89, 192, 89, 1);
+}
+/* Card animation styling */
+.butterflies .card.open {
+  background: rgba(74, 186, 74, 1);
+}
+.butterflies .card.match {
+  animation-name: butterflies-right-animation;
+  cursor: default;
+  animation-duration: 1s;
+}
+.butterflies .card.hold {
+  background: rgba(53, 141, 53, 1);
+  cursor: default;
+}
+.butterflies .card.wrong {
+   animation-name: butterflies-wrong-animation;
+   animation-duration: 1s;
+}
+@-webkit-keyframes butterflies-right-animation {
+  from {background-color: rgba(74, 186, 74, 1);}
+  to {background-color: rgba(53, 141, 53, 1);}
+	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+@-webkit-keyframes butterflies-wrong-animation {
+  from {background-color: red;}
+  to {background-color: rgba(89, 192, 89, 1);}
+	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+/* styling for farmyard deck */
+body.farmyard {
+  background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/farmyard.png');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.deck.farmyard {
+  background: linear-gradient(60deg, rgba(89, 192, 89, 0.5) 0%, rgba(65, 170, 65, 0.5) 100%);
+}
+.farmyard .card {
+  background: rgba(89, 192, 89, 1);
+}
+/* Card animation styling */
+.farmyard .card.open {
+  background: rgba(241, 210, 101, 1);
+}
+.farmyard .card.match {
+  animation-name: farmyard-right-animation;
+  cursor: default;
+  animation-duration: 1s;
+}
+.farmyard .card.hold {
+  background: rgba(217, 171, 2, 1);
+  cursor: default;
+}
+.farmyard .card.wrong {
+  animation-name: farmyard-wrong-animation;
+  animation-duration: 1s;
+}
+@-webkit-keyframes farmyard-right-animation {
+  from {background-color: rgba(241, 210, 101, 1);}
+  to {background-color: rgba(217, 171, 2, 1);}
+	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+@-webkit-keyframes farmyard-wrong-animation {
+  from {background-color: red;}
+  to {background-color: rgba(89, 192, 89, 1);}
+	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+/* end of easy decks */
+/* medium decks styling */
+.deck.medium {
+  height: 90%;
+  width: 90%;
+}
+.deck.medium .card {
+    height: 4.5em;
+    width: 4.5em;
+}
+/* birds deck styling */
+body.birds {
+  background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/birds.jpg');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.deck.birds {
+  background: linear-gradient(60deg, rgba(41, 187, 255, 0.5) 0%, rgba(26, 182, 255, 0.5) 100%);
+}
+.birds .card {
+  background: rgba(41, 187, 255, 1);
+}
+/* Card animation styling */
+.birds .card.open {
+  background: rgba(128, 215, 255, 1);
+}
+.birds .card.match {
+  animation-name: birds-right-animation;
+  cursor: default;
+  animation-duration: 1s;
+}
+.birds .card.hold {
+  background: rgba(0, 136, 199, 1);
+  cursor: default;
+}
+.birds .card.wrong {
+  animation-name: birds-wrong-animation;
+  animation-duration: 1s;
+}
+@-webkit-keyframes birds-right-animation {
+  from {background-color: rgba(128, 215, 255, 1);}
+  to {background-color: rgba(0, 136, 199, 1);}
+	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+@-webkit-keyframes birds-wrong-animation {
+  from {background-color: red;}
+  to {background-color: rgba(41, 187, 255, 1);}
+	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+/* styling for bug deck */
+body.bugs {
+  background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/bugs.jpg');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.deck.bugs {
+  background: linear-gradient(60deg, rgba(14, 16, 16, 0.5) 0%, rgba(255, 134, 5, 0.5) 100%);
+}
+.bugs .card {
+  background: rgba(14, 16, 16, 1);
+}
+/* Card animation styling */
+.bugs .card.open {
+  background: rgba(156, 181, 79, 1);
+}
+.bugs .card.hold {
+  background: rgba(103, 157, 12, 1);
+  cursor: default;
+}
+.bugs .card.match {
+  animation-name: bugs-right-animation;
+  cursor: default;
+  animation-duration: 1s;
+}
+.bugs .card.wrong {
+   animation-name: bugs-wrong-animation;
+   animation-duration: 1s;
+}
+@-webkit-keyframes bugs-right-animation {
+  from {background-color: rgba(156, 181, 79, 1);}
+  to {background-color: rgba(103, 157, 12, 1);}
+	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+@-webkit-keyframes bugs-wrong-animation {
+  from {background-color: red;}
+  to {background-color: rgba(14, 16, 16, 1);}
+	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+/* reptile deck stling */
+body.reptiles {
+  background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/reptiles.jpg');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.deck.reptiles {
+  background: linear-gradient(60deg, rgba(255, 147, 31, 0.5) 0%, rgba(255, 134, 5, 0.5) 100%);
+}
+.reptiles .card {
+  background: rgba(255, 147, 31, 1);
+}
+/* Card animation styling */
+.reptiles .card.open {
+  background: rgba(255, 173, 41, 1);
+}
+.reptiles .card.hold {
+  background: rgba(240, 84, 0, 1);
+  cursor: default;
+}
+.reptiles .card.match {
+  animation-name: reptiles-right-animation;
+  cursor: default;
+  animation-duration: 1s;
+}
+.reptiles .card.wrong {
+  animation-name: reptiles-wrong-animation;
+  animation-duration: 1s;
+}
+@-webkit-keyframes reptiles-right-animation {
+  from {background-color: rgba(255, 173, 41, 1);}
+  to {background-color: rgba(240, 84, 0, 1);}
+	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+@-webkit-keyframes reptiles-wrong-animation {
+  from {background-color: red;}
+  to {background-color: rgba(255, 147, 31, 1);}
+	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+/* styling for hard decks */
+.deck.hard {
+  height: 90%;
+  width: 95%;
+}
+.deck.hard .card {
+    height: 3.8em;
+    width: 3.8em;
+}
+/* dinosaur deck styling */
+body.dinosaurs {
+  background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/dinosaurs.jpg');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.deck.dinosaurs {
+  background: linear-gradient(60deg, rgba(255, 67, 15, 0.5) 0%, rgba(255, 99, 56, 0.5) 100%);
+}
+.dinosaurs .card {
+  background: rgba(255, 67, 15, 1);
+}
+/* Card animation styling */
+.dinosaurs .card.open {
+  background: rgba(255, 116, 46, 1);
+}
+.dinosaurs .card.match {
+  animation-name: dinosaurs-right-animation;
+  cursor: default;
+  animation-duration: 1s;
+}
+.dinosaurs .card.hold {
+  background: rgba(189, 41, 0, 1);
+  cursor: default;
+}
+.dinosaurs .card.wrong {
+  animation-name: dinosaurs-wrong-animation;
+  animation-duration: 1s;
+}
+@-webkit-keyframes dinosaurs-right-animation {
+  from {background-color: rgba(255, 116, 46, 1);}
+  to {background-color: rgba(189, 41, 0, 1);}
+	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+@-webkit-keyframes dinosaurs-wrong-animation {
+  from {background-color: red;}
+  to {background-color: rgba(255, 67, 15, 1);}
+	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+/* endangered deck styling */
+body.endangered {
+  background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/endangered.jpg');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.deck.endangered {
+  background: linear-gradient(60deg, rgba(235, 0, 0, 0.5) 0%, rgba(251, 19, 19, 0.5) 100%);
+}
+.endangered .card {
+  background: rgba(235, 0, 0, 1);
+}
+/* Card animation styling */
+.endangered .card.open {
+  background: rgba(255, 46, 46, 1);
+}
+.endangered .card.match {
+  animation-name: endangered-right-animation;
+  cursor: default;
+  animation-duration: 1s;
+}
+.endangered .card.hold {
+  background: rgba(189, 0, 0, 1);
+  cursor: default;
+}
+.endangered .card.wrong {
+  animation-name: endangered-wrong-animation;
+  animation-duration: 1s;
+}
+@-webkit-keyframes endangered-right-animation {
+  from {background-color: rgba(255, 46, 46, 1);}
+  to {background-color: rgba(189, 0, 0, 1);}
+	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+@-webkit-keyframes endangered-wrong-animation {
+  from {background-color: rgba(255, 46, 46, 1);}
+  to {background-color: rgba(235, 0, 0, 1);}
+	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+/* woodland deck styling */
+body.woodland {
+  background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/woodland.jpg');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.deck.woodland {
+  background: linear-gradient(60deg, rgba(48, 134, 40, 0.5) 0%, rgba(38, 173, 26, 0.5) 100%);
+}
+.woodland .card {
+  background: rgba(48, 134, 40, 1);
+}
+/* Card animation styling */
+.woodland .card.open {
+  background: rgba(62, 173, 52, 1);
+}
+.woodland .card.match {
+  animation-name: woodland-right-animation;
+  cursor: default;
+  animation-duration: 1s;
+}
+.woodland .card.hold {
+  background: rgba(42, 118, 35, 1);
+  cursor: default;
+}
+.woodland .card.wrong {
+  animation-name: woodland-wrong-animation;
+  animation-duration: 1s;
+}
+@-webkit-keyframes woodland-right-animation {
+  from {background-color: rgba(62, 173, 52, 1);}
+  to {background-color: rgba(42, 118, 35, 1);}
+	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+@-webkit-keyframes woodland-wrong-animation {
+  from {background-color: red;}
+  to {background-color: rgba(48, 134, 40, 1);}
+	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+/* styling for expert decks */
+.deck.expert {
+  height: 90%;
+  width: 95%;
+}
+.deck.expert .card {
+    height: 3.5em;
+    width: 3.5em;
+}
+/* sealife deck styling */
+body.sealife {
+  background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/sealife.jpg');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.deck.sealife {
+  background: linear-gradient(60deg, rgba(23, 142, 151, 0.5) 0%, rgba(7, 147, 157, 0.5) 100%);
+}
+.sealife .card {
+  background: rgba(23, 142, 151, 1);
+}
+/* Card animation styling */
+.sealife .card.open {
+  background: rgba(31, 197, 209, 1);
+}
+.sealife .card.match {
+  animation-name: sealife-right-animation;
+  cursor: default;
+  animation-duration: 1s;
+}
+.sealife .card.hold {
+  background: rgba(26, 163, 173, 1);
+  cursor: default;
+}
+.sealife .card.wrong {
+  animation-name: sealife-wrong-animation;
+  animation-duration: 1s;
+}
+@-webkit-keyframes sealife-right-animation {
+  from {background-color: rgba(31, 197, 209, 1);}
+  to {background-color: rgba(26, 163, 173, 1);}
+	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+@-webkit-keyframes sealife-wrong-animation {
+  from {background-color: red;}
+  to {background-color: rgba(23, 142, 151, 1);}
+	0% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	25% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	50% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
+	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
+}
+/* winning modal styling */
+.congrats {
+  font-size: 0;
+  display: none;
+}
+.congrats.live {
+  font-size: 1.8em;
+  display: block;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  top: 30%;
+  left: 15%;
+  background: transparent;
+}
+.winModal {
+  display: none;
+  width: auto;
+  width: 90%;
+  min-height: 150px;
+  height: auto;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  top: 20%;
+  left: 5%;
+  margin: auto;
+  /* font-size: 1em; */
+  background: linear-gradient(to bottom, rgba(97, 215, 255, 0.9), rgba(73, 188, 16, 0.9));
+  border: 3px ridge rgba(97, 215, 255, 1);
+  overflow: hidden;
+  padding: 1em;
+}
+.win-modal-content {
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.winning-score {
+  display: grid;
+  grid-template-columns: auto;
+  flex-wrap: wrap;
+  font-size: 1em;
+}
+.you-win {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.scoreStars {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.starScore {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  min-width: 65px;
+}
+.youScore {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.starsSpan {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+.scoreMoves {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+.moveScore {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+.winModal .restartGame {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 4;
+  grid-row-end: 5;
+}
+.fa.fa-repeat {
+  cursor: pointer;
+  width: 3px;
+}
+.footer{
+  background-color: rgba(250, 250, 250, 0.5);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0;
+  /* z-index: -1; */
+  font-size: 0.8em;
+  text-align: center;
+}
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Coda', cursive;
+    font-size: 1em;
+    background-color: rgba(40, 39, 37, 1);
+}
+a:link {
+  color: black;
+  background-color: transparent;
+}
+a:visited {
+  color: #303030;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:active {
+  transform: translateY(-4px);
+}
+/* level selection modal styling */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    height: auto;
+    overflow: hidden;
+    background: linear-gradient(to bottom, rgba(97, 215, 255, 0.5), rgba(73, 188, 16, 0.5));
+    border: 3px ridge rgba(97, 215, 255, 1);
+    color: white;
+    margin: auto;
+    width: 90%;
+    top: 5%;
+    left: 5%;
+}
+.level-desc {
+  margin-bottom: 0.2em;
+}
+/* Modal Content/Box */
+.level-modal-content {
+    text-align: center;
+    margin: 1em;
 }
 
 .level-selection {
