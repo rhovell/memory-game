@@ -348,7 +348,7 @@ for(var i = 0; i < levelMode.length; i++){
     // console.log("cardDetails IMG element placed");
   }
   // add level details to deck and body
-    deck.classList.add("Easy");
+    deck.classList.add("easy");
     deck.classList.add("butterflies");
     body.classList.add("butterflies");
     // end of butterfly deck

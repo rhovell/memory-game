@@ -1236,6 +1236,7 @@ h1 {
 .deck.easy {
   height: auto;
   width: 70%;
+  max-width: 220px;
 }
 .deck.easy .card {
     height: 4.5em;

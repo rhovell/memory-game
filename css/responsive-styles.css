@@ -101,6 +101,7 @@
   .deck.easy {
     width: 70%;
     height: 300px;
+    max-width: 580px;
   }
   .deck.easy .card {
       height: 7em;
@@ -250,7 +251,9 @@
   /* styling for easy decks */
   .deck.easy {
     width: 80%;
-    height: 700px;
+    height: 95%;
+    max-width: 900px;
+
   }
   .deck.easy .card {
       height: 11em;
