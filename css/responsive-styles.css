@@ -99,9 +99,9 @@
   /* styling for all decks */
   /* styling for easy decks */
   .deck.easy {
+    height: 90%;
     width: 90%;
-    height: 300px;
-    max-width: 520px;
+    max-width: 580px;
   }
   .deck.easy .card {
       height: 7em;
@@ -109,8 +109,6 @@
   }
   /* medium decks styling */
   .deck.medium {
-    width: 90%;
-    height: 90%;
     max-width: 540px;
   }
   .deck.medium .card {
@@ -119,23 +117,19 @@
   }
   /* styling for hard decks */
   .deck.hard {
-    width: 90%;
-    height: 90%;
     max-width: 520px;
   }
   .deck.hard .card {
-      height: 6.5em;
-      width: 6.5em;
+    height: 6.5em;
+    width: 6.5em;
   }
   /* styling for expert decks */
   .deck.expert {
-    width: 90%;
-    height: 90%;
     max-width: 560px;
   }
   .deck.expert .card {
-      height: 7em;
-      width: 7em;
+    height: 7em;
+    width: 7em;
   }
   /* winning modal styling */
   .congrats {
@@ -253,7 +247,7 @@
   /* styling for all decks */
   /* styling for easy decks */
   .deck.easy {
-    width: 80%;
+    width: 90%;
     height: 95%;
     max-width: 740px;
 

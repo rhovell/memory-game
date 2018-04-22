@@ -1220,12 +1220,18 @@ h1 {
   display: block;
 }
 /* styling for all decks */
-.deck .card {
+.deck {
+  width: 90%;
+  height: 90%;
+}
+.card {
   border-radius: 8px;
   cursor: pointer;
   display: flex;
   justify-content: center;
   box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+  width: 6em;
+  height: 6em;
 }
 .deck .card.open {
   transform: rotateY(0);
@@ -1234,14 +1240,11 @@ h1 {
 /* styling for easy decks */
 /* styling for butterfly deck */
 .deck.easy {
-  height: 90%;
-  /* min-height: 540px; */
-  width: 90%;
   max-width: 260px;
 }
 .deck.easy .card {
-    height: 6em;
-    width: 6em;
+  height: 6em;
+  width: 6em;
 }
 body.butterflies {
   background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/butterflies.png');
@@ -1343,8 +1346,6 @@ body.farmyard {
 /* end of easy decks */
 /* medium decks styling */
 .deck.medium {
-  height: 90%;
-  width: 90%;
   max-width: 380px;
 }
 .deck.medium .card {
@@ -1500,8 +1501,6 @@ body.reptiles {
 }
 /* styling for hard decks */
 .deck.hard {
-  height: 90%;
-  width: 90%;
   max-width: 480px;
 }
 .deck.hard .card {
@@ -1659,13 +1658,12 @@ body.woodland {
 }
 /* styling for expert decks */
 .deck.expert {
-  height: 90%;
   width: 95%;
   max-width: 520px;
 }
 .deck.expert .card {
-    height: 5em;
-    width: 5em;
+    height: 6em;
+    width: 6em;
 }
 /* sealife deck styling */
 body.sealife {
