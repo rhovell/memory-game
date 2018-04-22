@@ -962,9 +962,9 @@ a:active {
     border: 3px ridge rgba(97, 215, 255, 1);
     color: white;
     margin: auto;
-    width: 90%;
+    width: 70%;
     top: 5%;
-    left: 5%;
+    left: 15%;
 }
 .level-desc {
   margin-bottom: 0.2em;
@@ -982,10 +982,11 @@ a:active {
 }
 .level-selection .intro {
   grid-column-start: 1;
-  grid-column-end: 3;
+  grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 2;
-  margin: 0;
+  margin: auto;
+  max-width: 300px;
 }
 .level.Easy {
   grid-column-start: 1;
@@ -994,22 +995,22 @@ a:active {
   grid-row-end: 3;
 }
 .level.medium {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 3;
-}
-.level.hard {
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 3;
   grid-row-end: 4;
 }
+.level.hard {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 4;
+  grid-row-end: 5;
+}
 .level.expert {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 3;
-  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 5;
+  grid-row-end: 6;
 }
 .level {
   width: 100%;
@@ -1104,19 +1105,19 @@ a:active {
   grid-row-start: 2;
   grid-row-end: 3;
 }
-.expert .theme-selection-area .intro {
+.Expert .theme-selection-area .intro {
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 2;
 }
-.expert .selectPack.one {
+.Expert .selectPack.one {
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 3;
 }
-.expert .selectPack.two {
+.Expert .selectPack.two {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 2;

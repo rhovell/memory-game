@@ -138,9 +138,11 @@ introPopup();
 
 function switchDecks(e){
   let me = event.target.classList;
+  console.log(e.target);
   // easy themes
   if (e.target.classList.contains('butterflies')) {
     levelMode.push("selectButterflies");
+    console.log(e.target);
   }
   if (e.target.classList.contains('farmyard')) {
     levelMode.push("selectFarmyard");
