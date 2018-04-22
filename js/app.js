@@ -157,7 +157,7 @@ function switchDecks(e){
   }
   // hard themes
   if (e.target.classList.contains('dinosaurs')) {
-    levelMode.push("selectDinosuars");
+    levelMode.push("selectDinosaurs");
   }
   if (e.target.classList.contains('endangered')) {
   levelMode.push("selectEndangered");

@@ -1,4 +1,4 @@
-@media screen and (min-width:750px){
+@media screen and (min-width:600px){
   .heading {
     font-size: 1em;
   }
@@ -99,9 +99,9 @@
   /* styling for all decks */
   /* styling for easy decks */
   .deck.easy {
-    width: 70%;
+    width: 90%;
     height: 300px;
-    max-width: 580px;
+    max-width: 520px;
   }
   .deck.easy .card {
       height: 7em;
@@ -109,8 +109,9 @@
   }
   /* medium decks styling */
   .deck.medium {
-    width: 70%;
-    height: 450px;
+    width: 90%;
+    height: 90%;
+    max-width: 540px;
   }
   .deck.medium .card {
       height: 7em;
@@ -118,17 +119,19 @@
   }
   /* styling for hard decks */
   .deck.hard {
-    width: 70%;
-    height: 550px;
+    width: 90%;
+    height: 90%;
+    max-width: 520px;
   }
   .deck.hard .card {
-      height: 7em;
-      width: 7em;
+      height: 6.5em;
+      width: 6.5em;
   }
   /* styling for expert decks */
   .deck.expert {
     width: 90%;
-    height: 575px;
+    height: 90%;
+    max-width: 560px;
   }
   .deck.expert .card {
       height: 7em;
@@ -152,10 +155,10 @@
     overflow: hidden;
   }
 }
-@media screen and (min-width:1000px){
-  body {
+@media screen and (min-width:800px){
+  /* body {
     font-size: 1.6em;
-  }
+  } */
   .modal {
       left: 20%;
       top: 10%;
@@ -252,39 +255,42 @@
   .deck.easy {
     width: 80%;
     height: 95%;
-    max-width: 900px;
+    max-width: 740px;
 
   }
   .deck.easy .card {
-      height: 11em;
-      width: 11em;
+      height: 9em;
+      width: 9em;
   }
   /* medium decks styling */
   .deck.medium {
-    width: 80%;
-    height: 950px;
+    width: 90%;
+    height: 90%;
+    max-width: 720px;
   }
   .deck.medium .card {
-      height: 11em;
-      width: 11em;
+      height: 9em;
+      width: 9em;
   }
   /* styling for hard decks */
   .deck.hard {
-    width: 70%;
-    height: 1200px;
+    width: 90%;
+    height: 90%;
+    max-width: 740px;
   }
   .deck.hard .card {
-      height: 9.5em;
-      width: 9.5em;
+      height: 9em;
+      width: 9em;
   }
   /* styling for expert decks */
   .deck.expert {
-    width: 80%;
-    height: 90%;
+    width: 95%;
+    height: 95%;
+    max-width: 720px;
   }
   .deck.expert .card {
-      height: 9em;
-      width: 9em;
+      height: 8em;
+      width: 8em;
   }
   /* winning modal styling */
   .congrats {

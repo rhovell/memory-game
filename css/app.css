@@ -1234,13 +1234,14 @@ h1 {
 /* styling for easy decks */
 /* styling for butterfly deck */
 .deck.easy {
-  height: auto;
-  width: 70%;
-  max-width: 220px;
+  height: 90%;
+  /* min-height: 540px; */
+  width: 90%;
+  max-width: 260px;
 }
 .deck.easy .card {
-    height: 4.5em;
-    width: 4.5em;
+    height: 6em;
+    width: 6em;
 }
 body.butterflies {
   background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/butterflies.png');
@@ -1344,10 +1345,11 @@ body.farmyard {
 .deck.medium {
   height: 90%;
   width: 90%;
+  max-width: 380px;
 }
 .deck.medium .card {
-    height: 4.5em;
-    width: 4.5em;
+    height: 6em;
+    width: 6em;
 }
 /* birds deck styling */
 body.birds {
@@ -1499,11 +1501,12 @@ body.reptiles {
 /* styling for hard decks */
 .deck.hard {
   height: 90%;
-  width: 95%;
+  width: 90%;
+  max-width: 480px;
 }
 .deck.hard .card {
-    height: 3.8em;
-    width: 3.8em;
+    height: 6em;
+    width: 6em;
 }
 /* dinosaur deck styling */
 body.dinosaurs {
@@ -1658,10 +1661,11 @@ body.woodland {
 .deck.expert {
   height: 90%;
   width: 95%;
+  max-width: 520px;
 }
 .deck.expert .card {
-    height: 3.5em;
-    width: 3.5em;
+    height: 5em;
+    width: 5em;
 }
 /* sealife deck styling */
 body.sealife {
