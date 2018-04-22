@@ -29,20 +29,26 @@ var woodlandCards = ['badger', 'badger', 'deer', 'deer', 'fox', 'fox', 'hedgehog
 // expert level arrays
 var sealifeCards = ['clownfish', 'clownfish', 'dolphin', 'dolphin', 'hermit-crab', 'hermit-crab', 'killer-whale', 'killer-whale', 'octopus', 'octopus',
  'puffafish', 'puffafish', 'shark', 'shark', 'squid', 'squid', 'starfish', 'starfish', 'whale', 'whale'];
+
 // level variables
+const levelSelect = document.getElementsByClassName('level-select');
 const levelOne = document.getElementById('easyButton');
+const levelOneImage = document.getElementById('easyI');
 const levelOneThemes = document.getElementsByClassName('easy');
 const levelOneChoices = document.querySelector('.easyThemeSelection');
 
 const levelTwo = document.getElementById('mediumButton');
+const levelTwoImage = document.getElementById('mediumI');
 const levelTwoThemes = document.getElementsByClassName('medium');
 const levelTwoChoices = document.querySelector('.mediumThemeSelection');
 
 const levelThree = document.getElementById('hardButton');
+const levelThreeImage = document.getElementById('hardI');
 const levelThreeThemes = document.getElementsByClassName('hard');
 const levelThreeChoices = document.querySelector('.hardThemeSelection');
 
 const levelFour = document.getElementById('expertButton');
+const levelFourImage = document.getElementById('expertI');
 const levelFourThemes = document.getElementsByClassName('expert');
 const levelFourChoices = document.querySelector('.expertThemeSelection');
 
@@ -56,20 +62,10 @@ const themeSelectionTwo = document.querySelector('.selectPack.two');
 const themeSelectionThree = document.querySelector('.selectPack.three');
 const themeSelectionFour = document.querySelector('.selectPack.four');
 
-levelOne.addEventListener("click", levelSelectionChange);
-levelTwo.addEventListener("click", levelSelectionChange);
-levelThree.addEventListener("click", levelSelectionChange);
-levelFour.addEventListener("click", levelSelectionChange);
-// Intro and level select Modal
-// document on load show modal, with level selection buttons
-// buttons lead to theme selection window
-const levelModal = document.getElementById("levelModal");
-const levelSelections = document.querySelector('.level');
-// theme select starts Game
-function introPopup(){
-document.onload = levelModal.style.display = "block";
-}
-introPopup();
+levelOneImage.addEventListener("click", levelSelectionChange);
+levelTwoImage.addEventListener("click", levelSelectionChange);
+levelThreeImage.addEventListener("click", levelSelectionChange);
+levelFourImage.addEventListener("click", levelSelectionChange);
 
 function levelSelectionChange(e){
   const body = document.querySelector("body");
@@ -77,140 +73,104 @@ function levelSelectionChange(e){
     levelSelects.style.display = "none";
     themeSelects.style.display = "block";
     let choosen = document.getElementById('easyThemeSelection');
-    choosen.classList.add('lvlChoice');
-    let choice = document.querySelector('.lvlChoice');
-    let choices = e.target.id;
     choosen.style.display = "grid";
-    levelMode.push(choices);
-    body.classList.add("easy");
-}
+    levelMode.push("easy");
+    body.classList.add("Easy");
+  }
   if (e.target.classList.contains('medium')) {
     levelSelects.style.display = "none";
     themeSelects.style.display = "block";
     let choosen = document.getElementById('mediumThemeSelection');
-    choosen.classList.add('lvlChoice');
-    let choice = document.querySelector('.lvlChoice');
-    let choices = e.target.id;
     choosen.style.display = "grid";
-    levelMode.push(choices);
-    body.classList.add("medium");
-}
+    levelMode.push("medium");
+    body.classList.add("Medium");
+  }
   if (e.target.classList.contains('hard')) {
     levelSelects.style.display = "none";
     themeSelects.style.display = "block";
     let choosen = document.getElementById('hardThemeSelection');
-    choosen.classList.add('lvlChoice');
-    let choice = document.querySelector('.lvlChoice');
-    let choices = e.target.id;
     choosen.style.display = "grid";
-    levelMode.push(choices);
-    body.classList.add("hard");
-}
+    levelMode.push("hard");
+    body.classList.add("Hard");
+  }
   if (e.target.classList.contains('expert')) {
     levelSelects.style.display = "none";
     themeSelects.style.display = "block";
     let choosen = document.getElementById('expertThemeSelection');
-    choosen.classList.add('lvlChoice');
-    let choice = document.querySelector('.lvlChoice');
-    let choices = e.target.id;
     choosen.style.display = "grid";
-    levelMode.push(choices);
-    body.classList.add("expert");
+    levelMode.push("expert");
+    body.classList.add("Expert");
+  }
 }
-}
+// add event listeners to theme selections
+const butterfliesSelection = document.getElementById("selectButterflies");
+const farmyardSelection = document.getElementById("selectFarmyard");
+butterfliesSelection.addEventListener("click", switchDecks);
+farmyardSelection.addEventListener("click", switchDecks);
+// medium themes
+const birdsSelection = document.getElementById("selectBirds");
+const bugsSelection = document.getElementById("selectBugs");
+const reptilesSelection = document.getElementById("selectReptiles");
+birdsSelection.addEventListener("click", switchDecks);
+bugsSelection.addEventListener("click", switchDecks);
+reptilesSelection.addEventListener("click", switchDecks);
+// hard themes
+const dinosaursSelection = document.getElementById("selectDinosaurs");
+const endangeredSelection = document.getElementById("selectEndangered");
+const woodlandSelection = document.getElementById("selectWoodland");
+dinosaursSelection.addEventListener("click", switchDecks);
+endangeredSelection.addEventListener("click", switchDecks);
+woodlandSelection.addEventListener("click", switchDecks);
+// expert themes
+const sealifeSelection = document.getElementById("selectSealife");
+sealifeSelection.addEventListener("click", switchDecks);
+// Intro and level select Modal
+// document on load show modal, with level selection buttons
+// buttons lead to theme selection window
+const levelModal = document.getElementById("levelModal");
+const levelSelections = document.querySelector('.level');
 
+// theme select starts Game
+function introPopup(){
+document.onload = levelModal.style.display = "block";
+}
+introPopup();
 
 function switchDecks(e){
   let me = event.target.classList;
-  // console.log(event.target);
-  // console.log("switchDecks called");
   // easy themes
-  if (me.contains('butterflies')) {
-    let choosen = document.getElementById('selectButterflies');
-    choosen.classList.add('lvlChoice');
-    let choice = document.querySelector('.butterflies.lvlChoice');
-    let choices = choice.id;
-    // choosen.style.display = "block";
-    levelMode.push(choices);
-    // console.log(levelMode);
-}
-  if (me.contains('farmyard')) {
-    let choosen = document.getElementById('selectFarmyard');
-    choosen.classList.add('lvlChoice');
-    let choice = document.querySelector('.farmyard.lvlChoice');
-    let choices = choice.id;
-    // choosen.style.display = "block";
-    levelMode.push(choices);
-    // console.log(levelMode);
-}
-// medium themes
-  if (me.contains('birds')) {
-    let choosen = document.getElementById('selectBirds');
-    choosen.classList.add('lvlChoice');
-    let choice = document.querySelector('.birds.lvlChoice');
-    let choices = choice.id;
-    // choosen.style.display = "block";
-    levelMode.push(choices);
-    // console.log(levelMode);
-}
-  if (me.contains('bugs')) {
-    let choosen = document.getElementById('selectBugs');
-    choosen.classList.add('lvlChoice');
-    let choice = document.querySelector('.bugs.lvlChoice');
-    let choices = choice.id;
-    // choosen.style.display = "block";
-    levelMode.push(choices);
-    // console.log(levelMode);
-}
-  if (me.contains('reptiles')) {
-    let choosen = document.getElementById('selectReptiles');
-    choosen.classList.add('lvlChoice');
-    let choice = document.querySelector('.reptiles.lvlChoice');
-    let choices = choice.id;
-    // choosen.style.display = "block";
-    levelMode.push(choices);
-    // console.log(levelMode);
-}
-// hard themes
-if (me.contains('dinosaurs')) {
-  let choosen = document.getElementById('selectDinosaurs');
-  choosen.classList.add('lvlChoice');
-  let choice = document.querySelector('.dinosaurs.lvlChoice');
-  let choices = choice.id;
-  // choosen.style.display = "block";
-  levelMode.push(choices);
-  // console.log(levelMode);
-}
-if (me.contains('endangered')) {
-  let choosen = document.getElementById('selectEndangered');
-  choosen.classList.add('lvlChoice');
-  let choice = document.querySelector('.endangered.lvlChoice');
-  let choices = choice.id;
-  // choosen.style.display = "block";
-  levelMode.push(choices);
-  // console.log(levelMode);
-}
-if (me.contains('woodland')) {
-  let choosen = document.getElementById('selectWoodland');
-  choosen.classList.add('lvlChoice');
-  let choice = document.querySelector('.woodland.lvlChoice');
-  let choices = choice.id;
-  // choosen.style.display = "block";
-  levelMode.push(choices);
-  // console.log(levelMode);
-}
-// expert themeSelects
-if (me.contains('sealife')) {
-  let choosen = document.getElementById('selectSealife');
-  choosen.classList.add('lvlChoice');
-  let choice = document.querySelector('.sealife.lvlChoice');
-  let choices = choice.id;
-  // choosen.style.display = "block";
-  levelMode.push(choices);
-  // console.log(levelMode);
-}
-  levelModal.style.display = "none";
-  dealCards();
+  if (e.target.classList.contains('butterflies')) {
+    levelMode.push("selectButterflies");
+  }
+  if (e.target.classList.contains('farmyard')) {
+    levelMode.push("selectFarmyard");
+  }
+  // medium themes
+  if (e.target.classList.contains('birds')) {
+    levelMode.push("selectBirds");
+  }
+  if (e.target.classList.contains('bugs')) {
+  levelMode.push("selectBugs");
+  }
+  if (e.target.classList.contains('reptiles')) {
+  levelMode.push("selectReptiles");
+  }
+  // hard themes
+  if (e.target.classList.contains('dinosaurs')) {
+    levelMode.push("selectDinosuars");
+  }
+  if (e.target.classList.contains('endangered')) {
+  levelMode.push("selectEndangered");
+  }
+  if (e.target.classList.contains('woodland')) {
+  levelMode.push("selectWoodland");
+  }
+  // expert themeSelects
+  if (e.target.classList.contains('sealife')) {
+  levelMode.push("selectSealife");
+  }
+levelModal.style.display = "none";
+dealCards();
 }
 /*
  * Display the cards on the page
@@ -244,28 +204,32 @@ function shuffle(array){
 
 
 // create container div
-const deck = document.querySelector(".deck");
+
 function createContainer(){
   const body = document.querySelector("body");
   const bodyNameLevel = body.classList[0];
   const container = document.createElement('div');
   container.classList = 'container';
   body.insertBefore(container, levelModal);
-  // console.log("container built");
+  console.log("main container built");
   const headingContainer = document.createElement('div');
   headingContainer.classList = "heading"
   container.appendChild(headingContainer);
+  console.log("heading div container built");
   const heading = document.createElement("header");
   heading.innerHTML = "<h1>Matching Game</h1>";
   headingContainer.appendChild(heading);
+  console.log("header element built");
   const levelLog = document.createElement("p");
   levelLog.classList = "difficulty-class";
   // console.log(body.classList);
   levelLog.innerText = "Difficulty: " + bodyNameLevel;
   // add container div to body
   headingContainer.appendChild(levelLog);
+  console.log("p element built");
   // console.log("header added");
 }
+
 function createStars(){
   const scores = document.createElement('section');
   const starRating = document.createElement('ul');
@@ -276,13 +240,13 @@ function createStars(){
   starRating.classList = 'stars';
   starRating.id = "starId";
     for(var i = 0; i < starRatings.length; i++){
-    const starList = document.createElement('li');
-    starRating.appendChild(starList);
-    const stars = document.createElement('p');
-    starList.appendChild(stars);
-    stars.classList = 'fa fa-star';
-    scores.appendChild(starRating);
-    }
+      const starList = document.createElement('li');
+      starRating.appendChild(starList);
+      const stars = document.createElement('p');
+      starList.appendChild(stars);
+      stars.classList = 'fa fa-star';
+      scores.appendChild(starRating);
+      }
 }
 
 function createMovecounter(){
@@ -296,12 +260,8 @@ function createMovecounter(){
   const moveText = document.createElement('SPAN');
   moveText.textContent = " Moves";
   moveCounter.appendChild(moveText);
-  console.log("add P  movecounter element");
-  // console.log("add textContent");
-  // console.log("add m")
-  // console.log("add class moves");
-  console.log("add span element");
 }
+
 function createRestartButton(){
   const scores = document.querySelector(".score-panel");
   const restartButton = document.createElement('div');
@@ -312,12 +272,13 @@ function createRestartButton(){
   restartButton.appendChild(restart);
   restartButton.addEventListener("click", restartGame);
 }
+
+// call to restart game - forces page reload
 function restartGame(){
-  // call to restart game - forces page reload
-  // console.log("restart game called")
   location.reload(true);
 }
-// create deck ul list
+
+// deal cards for each theme
 function dealCards(){
   createContainer();
   createStars();
@@ -344,6 +305,7 @@ function dealCards(){
   let woodlandSelector = "selectWoodland";
   // expert themes
   let sealifeSelector = "selectSealife";
+  const deck = document.querySelector(".deck");
   // call to shuffle cards for chosen deck
   // for statement for ALL decks
 for(var i = 0; i < levelMode.length; i++){
@@ -386,7 +348,6 @@ for(var i = 0; i < levelMode.length; i++){
     // console.log("cardDetails IMG element placed");
   }
   // add level details to deck and body
-    const deck = document.querySelector(".deck");
     deck.classList.add("easy");
     deck.classList.add("butterflies");
     body.classList.add("butterflies");
@@ -430,7 +391,6 @@ for(var i = 0; i < levelMode.length; i++){
       // console.log("cardDetails IMG element placed");
     }
     // add level details to deck and body
-      const deck = document.querySelector(".deck");
       deck.classList.add("easy");
       deck.classList.add("farmyard");
       body.classList.add("farmyard");
@@ -483,7 +443,6 @@ for(var i = 0; i < levelMode.length; i++){
       // console.log("cardDetails IMG element placed");
     }
     // add level details to deck and body
-      const deck = document.querySelector(".deck");
       deck.classList.add("medium");
       deck.classList.add("birds");
       body.classList.add("birds");
@@ -536,11 +495,10 @@ for(var i = 0; i < levelMode.length; i++){
       // console.log("cardDetails IMG element placed");
     }
     // add level details to deck and body
-      const deck = document.querySelector(".deck");
       deck.classList.add("medium");
       deck.classList.add("bugs");
       body.classList.add("bugs");
-      console.log(levelMode);
+      // console.log(levelMode);
       // end of bugs deck
     }
 
@@ -589,7 +547,6 @@ for(var i = 0; i < levelMode.length; i++){
       // console.log("cardDetails IMG element placed");
     }
     // add level details to deck and body
-      const deck = document.querySelector(".deck");
       deck.classList.add("medium");
       deck.classList.add("reptiles");
       body.classList.add("reptiles");
@@ -650,7 +607,6 @@ for(var i = 0; i < levelMode.length; i++){
         // console.log("cardDetails IMG element placed");
       }
       // add level details to deck and body
-        const deck = document.querySelector(".deck");
         deck.classList.add("hard");
         deck.classList.add("dinosaurs");
         body.classList.add("dinosaurs");
@@ -710,7 +666,6 @@ for(var i = 0; i < levelMode.length; i++){
           // console.log("cardDetails IMG element placed");
         }
         // add level details to deck and body
-          const deck = document.querySelector(".deck");
           deck.classList.add("hard");
           deck.classList.add("endangered");
           body.classList.add("endangered");
@@ -770,7 +725,6 @@ for(var i = 0; i < levelMode.length; i++){
             // console.log("cardDetails IMG element placed");
           }
           // add level details to deck and body
-            const deck = document.querySelector(".deck");
             deck.classList.add("hard");
             deck.classList.add("woodland");
             body.classList.add("woodland");
@@ -838,14 +792,13 @@ for(var i = 0; i < levelMode.length; i++){
               // console.log("cardDetails IMG element placed");
             }
             // add level details to deck and body
-              const deck = document.querySelector(".deck");
               deck.classList.add("expert");
               deck.classList.add("sealife");
               body.classList.add("sealife");
               // end of endangered deck
             }
     dealtCards.addEventListener('click', respondToTheClick);
-    console.log(levelMode);
+    // console.log(levelMode);
 
   }
 }
