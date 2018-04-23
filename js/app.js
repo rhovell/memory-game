@@ -972,10 +972,10 @@ function clear(){
 }
 
 function moveCount(){
-  let easySelector = "easyI";
-  let mediumSelector = "mediumI";
-  let hardSelector = "hardI";
-  let expertSelector = "expertI";
+  let easySelector = "easy";
+  let mediumSelector = "medium";
+  let hardSelector = "hard";
+  let expertSelector = "expert";
   let card = document.querySelector(".card");
   let moveCounter = document.querySelector('.moves');
   let moves = moveCounter.innerText;
@@ -1067,132 +1067,107 @@ function win(){
   let scoringMoves = document.querySelector("#printMoves");
   let scoringStars = document.querySelector("#printStars");
   let winArray = matchedCards.length;
-  let easySelector = "easy";
-  let mediumSelector = "mediumI";
-  let hardSelector = "hardI";
-  let expertSelector = "expertI";
+  let easySelector = "Easy";
+  let mediumSelector = "Medium";
+  let hardSelector = "Hard";
+  let expertSelector = "Expert";
   let card = document.querySelector(".card");
   // let moveCounter = document.querySelector('.moves');
   // let starCounter = document.querySelector('#starId').innerText;
-    console.log("win animation called");
+    // console.log("win animation called");
     congrats.classList.add("live");
-    console.log("congrats live added");
+    // console.log("congrats live added");
 
     let moveCounter = document.querySelector('.moves');
     let moves = moveCounter.innerText;
     scoringMoves.innerText = moves;
+let body = document.body;
 
-    for(let i = 0; i < 100; i++){
-    if(levelMode[i] === easySelector){
-      let threeStar = 6;
-      let twoHalfStar = 7;
-      let twoStar = 8;
-      let oneHalfStar = 9;
-      let oneStar = 10;
-      if(moves <= 6){
-        console.log("if less than or equal to 6");
+    if(body.classList.contains("Easy")){
+      if(moves > 1){
         scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i><i class = 'fa fa-star'></i>";
       }
-      if(moves = twoHalfStar){
-        console.log("if equal to 7");
+      if(moves >= 6){
       scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i><i class = 'fas fa-star-half'></i>";
       }
-      if(moves = twoStar){
-        console.log("if equal to 8");
+      if(moves >= 8){
       scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i>";
       }
-      if(moves = oneHalfStar){
-        console.log("if equal to 9");
+      if(moves >= 9){
       scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fas fa-star-half'></i>";
       }
-      if(moves = oneStar){
-        console.log("if equal to 10");
+      if(moves >= 10){
       scoringStars.innerHTML = "<i class = 'fa fa-star'></i>";
       }
       if(moves > 10){
-        console.log("if more than 10");
       scoringStars.innerHTML = "<i class = 'fas fa-star-half'></i>";
       }
     }
-    if(levelMode[i] === mediumSelector){
-      let threeStar = 9;
-      let twoHalfStar = 10;
-      let twoStar = 11;
-      let oneHalfStar = 12;
-      let oneStar = 13;
-      if(moves <= threeStar){
+    if(body.classList.contains("Medium")){
+      if(moves > 1){
         scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i><i class = 'fa fa-star'></i>";
       }
-      if(moves === twoHalfStar){
+      if(moves >= 10){
       scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i><i class = 'fas fa-star-half'></i>";
       }
-      if(moves === twoStar){
+      if(moves >= 11){
       scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i>";
       }
-      if(moves === oneHalfStar){
+      if(moves >= 12){
       scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fas fa-star-half'></i>";
       }
-      if(moves === oneStar){
+      if(moves >= 13){
       scoringStars.innerHTML = "<i class = 'fa fa-star'></i>";
       }
-      if(moves > oneStar){
+      if(moves > 13){
       scoringStars.innerHTML = "<i class = 'fas fa-star-half'></i>";
       }
-    }    if(levelMode[i] === hardSelector){
-          let threeStar = 13;
-          let twoHalfStar = 14;
-          let twoStar = 15;
-          let oneHalfStar = 16;
-          let oneStar = 17;
-          if(moves <= threeStar){
-            scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i><i class = 'fa fa-star'></i>";
-          }
-          if(moves === twoHalfStar){
-          scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i><i class = 'fas fa-star-half'></i>";
-          }
-          if(moves === twoStar){
-          scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i>";
-          }
-          if(moves === oneHalfStar){
-          scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fas fa-star-half'></i>";
-          }
-          if(moves === oneStar){
-          scoringStars.innerHTML = "<i class = 'fa fa-star'></i>";
-          }
-          if(moves > oneStar){
-          scoringStars.innerHTML = "<i class = 'fas fa-star-half'></i>";
-          }
-        }    if(levelMode[i] === expertSelector){
-              let threeStar = 16;
-              let twoHalfStar = 17;
-              let twoStar = 18;
-              let oneHalfStar = 19;
-              let oneStar = 20;
-              if(moves <= threeStar){
-                scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i><i class = 'fa fa-star'></i>";
-              }
-              if(moves === twoHalfStar){
-              scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i><i class = 'fas fa-star-half'></i>";
-              }
-              if(moves === twoStar){
-              scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i>";
-              }
-              if(moves === oneHalfStar){
-              scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fas fa-star-half'></i>";
-              }
-              if(moves === oneStar){
-              scoringStars.innerHTML = "<i class = 'fa fa-star'></i>";
-              }
-              if(moves > oneStar){
-              scoringStars.innerHTML = "<i class = 'fas fa-star-half'></i>";
-              }
-            }
-  }
+    }
+    if(body.classList.contains("Hard")){
+      if(moves > 1){
+        scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i><i class = 'fa fa-star'></i>";
+      }
+      if(moves >= 14){
+      scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i><i class = 'fas fa-star-half'></i>";
+      }
+      if(moves >= 15){
+      scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i>";
+      }
+      if(moves >= 16){
+      scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fas fa-star-half'></i>";
+      }
+      if(moves >= 18){
+      scoringStars.innerHTML = "<i class = 'fa fa-star'></i>";
+      }
+      if(moves > 18){
+      scoringStars.innerHTML = "<i class = 'fas fa-star-half'></i>";
+      }
+    }
+    if(body.classList.contains("Expert")){
+      if(moves > 1){
+        scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i><i class = 'fa fa-star'></i>";
+      }
+      if(moves >= 17){
+      scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i><i class = 'fas fa-star-half'></i>";
+      }
+      if(moves >= 18){
+      scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i>";
+      }
+      if(moves >= 19){
+      scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fas fa-star-half'></i>";
+      }
+      if(moves >= 20){
+      scoringStars.innerHTML = "<i class = 'fa fa-star'></i>";
+      }
+      if(moves > 20){
+      scoringStars.innerHTML = "<i class = 'fas fa-star-half'></i>";
+      }
+    }
   congratAni = setTimeout(function playCongats(){
     congrats.classList.remove("live");
-    console.log("remove congrats live");
+    // console.log("remove congrats live");
     winModal.style.display = "block";
-    console.log("display winModal");
+    // console.log("display winModal");
 
     // scoringPanel.style.display = "grid";
     // console.log("display score panel");
