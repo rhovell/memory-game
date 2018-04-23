@@ -137,12 +137,12 @@ document.onload = levelModal.style.display = "block";
 introPopup();
 
 function switchDecks(e){
-  let me = event.target.classList;
-  console.log(e.target);
+  // let me = event.target.classList;
+  // console.log(e.target);
   // easy themes
   if (e.target.classList.contains('butterflies')) {
     levelMode.push("selectButterflies");
-    console.log(e.target);
+    // console.log(e.target);
   }
   if (e.target.classList.contains('farmyard')) {
     levelMode.push("selectFarmyard");
@@ -213,22 +213,22 @@ function createContainer(){
   const container = document.createElement('div');
   container.classList = 'container';
   body.insertBefore(container, levelModal);
-  console.log("main container built");
+  // console.log("main container built");
   const headingContainer = document.createElement('div');
   headingContainer.classList = "heading"
   container.appendChild(headingContainer);
-  console.log("heading div container built");
+  // console.log("heading div container built");
   const heading = document.createElement("header");
   heading.innerHTML = "<h1>Matching Game</h1>";
   headingContainer.appendChild(heading);
-  console.log("header element built");
+  // console.log("header element built");
   const levelLog = document.createElement("p");
   levelLog.classList = "difficulty-class";
   // console.log(body.classList);
   levelLog.innerText = "Difficulty: " + bodyNameLevel;
   // add container div to body
   headingContainer.appendChild(levelLog);
-  console.log("p element built");
+  // console.log("p element built");
   // console.log("header added");
 }
 
@@ -916,10 +916,10 @@ winCall();
  function winCall(){
 
    let winArray = matchedCards.length;
-   let easySelector = "easyI";
-   let mediumSelector = "mediumI";
-   let hardSelector = "hardI";
-   let expertSelector = "expertI";
+   let easySelector = "easy";
+   let mediumSelector = "medium";
+   let hardSelector = "hard";
+   let expertSelector = "expert";
    let card = document.querySelector(".card");
    // let cardList = cards.length;
 
@@ -1067,7 +1067,7 @@ function win(){
   let scoringMoves = document.querySelector("#printMoves");
   let scoringStars = document.querySelector("#printStars");
   let winArray = matchedCards.length;
-  let easySelector = "easyI";
+  let easySelector = "easy";
   let mediumSelector = "mediumI";
   let hardSelector = "hardI";
   let expertSelector = "expertI";

@@ -68,7 +68,61 @@
     width: 100%;
     display: inline-block;
   }
-
+  /* Modal Content/Box */
+  .level-selection {
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: auto;
+    margin: 0.5em 0 1em 0;
+  }
+  .level-selection .intro {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  .level.easy {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  .level.medium {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  .level.hard {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  .level.expert {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  .Easy .theme-selection-area .intro {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  .Easy .selectPack.one {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  .Easy .selectPack.two {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
   .theme-selection-area .intro {
     grid-column-start: 1;
     grid-column-end: 4;
@@ -90,6 +144,24 @@
   .selectPack.three {
     grid-column-start: 3;
     grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  .Expert .theme-selection-area .intro {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  .Expert .selectPack.one {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  .Expert .selectPack.two {
+    grid-column-start: 2;
+    grid-column-end: 3;
     grid-row-start: 2;
     grid-row-end: 3;
   }
@@ -136,9 +208,7 @@
     font-size: 0;
   }
   .congrats.live {
-    font-size: 3em;
-    top: 20%;
-    left: 30%;
+    font-size: 2.5em;
   }
   .winModal {
     top: 22%;
@@ -160,43 +230,7 @@
       height: auto;
       max-height: 100%;
   }
-  /* Modal Content/Box */
-  .level-selection {
-    display: grid;
-    flex-wrap: wrap;
-    grid-template-columns: auto;
-    margin: 0.5em 0 1em 0;
-  }
-  .level-selection .intro {
-    grid-column-start: 1;
-    grid-column-end: 5;
-    grid-row-start: 1;
-    grid-row-end: 2;
-  }
-  .level.easy {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 3;
-  }
-  .level.medium {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 3;
-  }
-  .level.hard {
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 3;
-  }
-  .level.expert {
-    grid-column-start: 4;
-    grid-column-end: 5;
-    grid-row-start: 2;
-    grid-row-end: 3;
-  }
+
   .level-selection img {
     height: 3em;
     width: auto;
@@ -217,30 +251,6 @@
     display: inline-block;
   }
 
-  .theme-selection-area .intro {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 2;
-  }
-  .selectPack.one {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 3;
-  }
-  .selectPack.two {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 3;
-  }
-  .selectPack.three {
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 3;
-  }
   /*
    * Styles for the deck of cards
    */
@@ -260,7 +270,7 @@
   .deck.medium {
     width: 90%;
     height: 90%;
-    max-width: 720px;
+    max-width: 680px;
   }
   .deck.medium .card {
       height: 9em;
@@ -292,8 +302,7 @@
   }
   .congrats.live {
     font-size: 3em;
-    top: 20%;
-    left: 30%;
+    left: 35%;
   }
   .winModal {
     top: 22%;
