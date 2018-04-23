@@ -66,7 +66,7 @@ levelOneImage.addEventListener("click", levelSelectionChange);
 levelTwoImage.addEventListener("click", levelSelectionChange);
 levelThreeImage.addEventListener("click", levelSelectionChange);
 levelFourImage.addEventListener("click", levelSelectionChange);
-
+// function to change body to choosen level and add choosen level to levelMode
 function levelSelectionChange(e){
   const body = document.querySelector("body");
   if (e.target.classList.contains('easy')) {
@@ -102,7 +102,7 @@ function levelSelectionChange(e){
     body.classList.add("Expert");
   }
 }
-// add event listeners to theme selections
+// add event listeners to easy theme selections
 const butterfliesSelection = document.getElementById("selectButterflies");
 const farmyardSelection = document.getElementById("selectFarmyard");
 butterfliesSelection.addEventListener("click", switchDecks);
@@ -125,20 +125,15 @@ woodlandSelection.addEventListener("click", switchDecks);
 const sealifeSelection = document.getElementById("selectSealife");
 sealifeSelection.addEventListener("click", switchDecks);
 // Intro and level select Modal
-// document on load show modal, with level selection buttons
-// buttons lead to theme selection window
 const levelModal = document.getElementById("levelModal");
 const levelSelections = document.querySelector('.level');
-
-// theme select starts Game
+// function to show level selection modal on document load
 function introPopup(){
 document.onload = levelModal.style.display = "block";
 }
 introPopup();
-
+// function to add choosen theme to levelMode
 function switchDecks(e){
-  // let me = event.target.classList;
-  // console.log(e.target);
   // easy themes
   if (e.target.classList.contains('butterflies')) {
     levelMode.push("selectButterflies");
@@ -174,17 +169,9 @@ function switchDecks(e){
 levelModal.style.display = "none";
 dealCards();
 }
-/*
- * Display the cards on the page
- *   - shuffle the list of cards using the provided "shuffle" method below
- *   - loop through each card and create its HTML
- *   - add each card's HTML to the page
- */
-
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array){
     var currentIndex = array.length, temporaryValue, randomIndex;
-
     while (currentIndex !== 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
@@ -192,46 +179,27 @@ function shuffle(array){
         array[currentIndex] = array[randomIndex];
         array[randomIndex] = temporaryValue;
     }
-
     return array;
 }
-/* Process explanation
-+ div class = "container" element
-- move javascript link to bottom of body
-+ ul class = "deck" element
-- shuffle cards array
-+ li class = "card" elements
-+ i class = cardList array items
-+ addEventListener to li elements*/
-
-
-// create container div
-
+// function to create game area container, header, and difficulty class
 function createContainer(){
   const body = document.querySelector("body");
   const bodyNameLevel = body.classList[0];
   const container = document.createElement('div');
   container.classList = 'container';
   body.insertBefore(container, levelModal);
-  // console.log("main container built");
   const headingContainer = document.createElement('div');
   headingContainer.classList = "heading"
   container.appendChild(headingContainer);
-  // console.log("heading div container built");
   const heading = document.createElement("header");
   heading.innerHTML = "<h1>Matching Game</h1>";
   headingContainer.appendChild(heading);
-  // console.log("header element built");
   const levelLog = document.createElement("p");
   levelLog.classList = "difficulty-class";
-  // console.log(body.classList);
   levelLog.innerText = "Difficulty: " + bodyNameLevel;
-  // add container div to body
   headingContainer.appendChild(levelLog);
-  // console.log("p element built");
-  // console.log("header added");
 }
-
+// function to create star rating in game area
 function createStars(){
   const scores = document.createElement('section');
   const starRating = document.createElement('ul');
@@ -250,7 +218,7 @@ function createStars(){
       scores.appendChild(starRating);
       }
 }
-
+// function to create move counter in game area
 function createMovecounter(){
   const scores = document.querySelector(".score-panel");
   const moveCounter = document.createElement('div');
@@ -263,7 +231,7 @@ function createMovecounter(){
   moveText.textContent = " Moves";
   moveCounter.appendChild(moveText);
 }
-
+// function to create restart button
 function createRestartButton(){
   const scores = document.querySelector(".score-panel");
   const restartButton = document.createElement('div');
@@ -274,13 +242,11 @@ function createRestartButton(){
   restartButton.appendChild(restart);
   restartButton.addEventListener("click", restartGame);
 }
-
 // call to restart game - forces page reload
 function restartGame(){
   location.reload(true);
 }
-
-// deal cards for each theme
+// deal cards for each theme (called on user theme selection)
 function dealCards(){
   createContainer();
   createStars();
@@ -292,7 +258,6 @@ function dealCards(){
   const dealtCards = document.createElement('ul');
   dealtCards.classList = 'deck';
   const container = document.querySelector(".container");
-  // add cards to deck
   container.appendChild(dealtCards);
   // easy themes
   let butterflySelector = "selectButterflies";
@@ -347,7 +312,6 @@ for(var i = 0; i < levelMode.length; i++){
         cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/easy/butterflies/orange.png';
       }
     placedCard.appendChild(cardDetails);
-    // console.log("cardDetails IMG element placed");
   }
   // add level details to deck and body
     deck.classList.add("easy");
@@ -442,7 +406,6 @@ for(var i = 0; i < levelMode.length; i++){
         cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/medium/birds/tucan.png';
       }
       placedCard.appendChild(cardDetails);
-      // console.log("cardDetails IMG element placed");
     }
     // add level details to deck and body
       deck.classList.add("medium");
@@ -450,8 +413,7 @@ for(var i = 0; i < levelMode.length; i++){
       body.classList.add("birds");
       // end of butterfly deck
     }
-// end of birds themes
-// bug themes
+// bug theme
   if(levelMode[i] === bugSelector){
     let cards = bugCards;
     cardList = shuffle(cards);
@@ -500,10 +462,9 @@ for(var i = 0; i < levelMode.length; i++){
       deck.classList.add("medium");
       deck.classList.add("bugs");
       body.classList.add("bugs");
-      // console.log(levelMode);
       // end of bugs deck
     }
-
+// reptile theme
   if(levelMode[i] === reptileSelector){
     let cards = reptileCards;
     cardList = shuffle(cards);
@@ -546,7 +507,6 @@ for(var i = 0; i < levelMode.length; i++){
         cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/medium/reptiles/turtle.png';
       }
       placedCard.appendChild(cardDetails);
-      // console.log("cardDetails IMG element placed");
     }
     // add level details to deck and body
       deck.classList.add("medium");
@@ -732,6 +692,8 @@ for(var i = 0; i < levelMode.length; i++){
             body.classList.add("woodland");
             // end of endangered deck
           }
+          // end of hard decks
+          // expert decks
           // sealife decks
           if(levelMode[i] === sealifeSelector){
             let cards = sealifeCards;
@@ -791,7 +753,6 @@ for(var i = 0; i < levelMode.length; i++){
                 cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/expert/sealife/whale.png';
               }
               placedCard.appendChild(cardDetails);
-              // console.log("cardDetails IMG element placed");
             }
             // add level details to deck and body
               deck.classList.add("expert");
@@ -800,100 +761,46 @@ for(var i = 0; i < levelMode.length; i++){
               // end of endangered deck
             }
     dealtCards.addEventListener('click', respondToTheClick);
-    // console.log(levelMode);
-
   }
 }
-/* respondToTheClick process explanation
-- target li elements only
-+ add open and show classes to selected card
-- removeEventListener from selected card
-+ add selected I element class[1] to openCards array
-- call check() function*/
-
 // function to call all other functions when card is clicked
 function respondToTheClick(e) {
-// console.log("card selected");
 // check if the target that is clicked is the li
-if (openCards.length < 2){
-  if (e.target.tagName === 'LI') {
-    // console.log("check if the target that is clicked is the li");
-// toggles open and show class
-// console.log("toggles open and show class");
-    e.target.classList.add('open','show');
-// fucntion variables
-    let choice = document.querySelector('.card.open');
-    let choices = e.target.firstChild.classList[2];
-    let choiceImage = $(".open.show").find(".cardSymbols");
-    // let childI = document.getElementById('cardSymbols');
-    // choiceImage.style.display = "block";
-    // let image = choice.children['image'];
-    // body > div.container > ul > li.card.open.show > i > div
-// end of function variables
-    choices.toArray;
-
-// remove event target
-// console.log("remove event target");
-    e.target.removeEventListener('click', respondToTheClick);
-// add first selection to opencards array
-    openCards.push(choices);
-// console.log("card added to openCards array");
-// console.log("openCards array = " + openCards);
-// perform check function
-moveCount();
-    check(cards);
-    // rating();
-  }
+  if (openCards.length < 2){
+    if (e.target.tagName === 'LI') {
+  // toggles open and show class
+      e.target.classList.add('open','show');
+  // fucntion variables
+      let choice = document.querySelector('.card.open');
+      let choices = e.target.firstChild.classList[2];
+      let choiceImage = $(".open.show").find(".cardSymbols");
+      choices.toArray;
+      e.target.removeEventListener('click', respondToTheClick);
+      openCards.push(choices);
+      // perform check function
+      moveCount();
+      check(cards);
+    }
   }
 }
-
-/* check process explanation
-- check openCards array items for matching values
-- if so call match() function
-- if not after 1.01 seconds add wrong class to card
-- wrong class calls css animation
-+ call clear() function*/
-
 function check(event) {
 // variables for new openCards array
   let firstChoice = openCards[0];
   let secondChoice = openCards[1];
 // if cards match
   if(openCards.length % 2 === 0 && firstChoice === secondChoice){
-// console.log("perform check function if openCards is divisible by 2");
-      match();
-// console.log("if match called");
-// console.log("openCards array = " + openCards);
+    match();
   }
-    // if cards dont match
+// if cards dont match
   if(openCards.length % 2 === 0 && firstChoice != secondChoice){
-// console.log("if no match called");
-// noMatch function
     notAMatch = setTimeout(function noMatch(){
-// console.log("noMatch called");
     let selects = $(".open.show");
     selects.addClass("wrong");
-// console.log("wrong class added");
-// console.log("openCards array = " + openCards);
     clear();
     },1001);
 
   }
 }
-/* match process explanation
-- remove open.show classes
-+ add match.hold classes
-+ match class performs css animation
-- removeEventListener from matched cards
-- for every item in the openCards array, add I class[1] to matchedCards array
-- after 3 seconds remove match class
-- empty openCards array*/
-// let deck = document.querySelector("body");
-let easySelector = "easyI";
-let mediumSelector = "mediumI";
-let hardSelector = "hardI";
-let expertSelector = "expertI";
-let card = document.querySelector(".card");
 // match function
 function match(){
   let openSelects = $(".open.show");
@@ -907,22 +814,20 @@ function match(){
   for(let i = 0; i < openCards.length; i++){
     matchedCards.push(matches);
   }
-holdCard = setTimeout(function (){
-  $(".card.match").removeClass("match");
-},3000);
-openCards.splice(0, 2);
-winCall();
+    holdCard = setTimeout(function (){
+      $(".card.match").removeClass("match");
+    },3000);
+    openCards.splice(0, 2);
+    winCall();
 }
+// winning scenario function with call to winning animation
  function winCall(){
-
    let winArray = matchedCards.length;
    let easySelector = "easy";
    let mediumSelector = "medium";
    let hardSelector = "hard";
    let expertSelector = "expert";
    let card = document.querySelector(".card");
-   // let cardList = cards.length;
-
      for(let i = 0; i < matchedCards.length; i++){
        if(levelMode[i] === easySelector){
          if(winArray === 8){
@@ -946,31 +851,19 @@ winCall();
        }
      }
  }
-/* clear process explanation
-- after 0.001 seconds remove open.show classes
-- after 1 seconds remove wrong class
-+ empty openCards array*/
-
 // wrong choice function
 function clear(){
-// console.log("open.show class removed");
   clearOpen = setTimeout(function(){
     let openSelects = $(".open.show");
     openSelects.removeClass("open show");
   },100);
-// console.log("clear function called with timeout")
   myVar = setTimeout(function clearWrong(){
-// console.log("clearWrong function called");
     let selects = $(".card.wrong");
     selects.removeClass("wrong");
-// console.log("wrong class removed");
     openCards.splice(0, 2);
-// console.log("openCards emptied");
-// console.log("openCards array = " + openCards);
 }, 1000);
-
 }
-
+// function to count moves (2 clicks = 1 move)
 function moveCount(){
   let easySelector = "easy";
   let mediumSelector = "medium";
@@ -981,14 +874,12 @@ function moveCount(){
   let moves = moveCounter.innerText;
   let starRatings = document.querySelector(".stars");
   let star = $(".stars").find("p");
-  // let st = star.firstChild
-  // console.log("moveCount function called")
-  // console.log(moves);
   if(openCards.length === 2){
   moves++;
   moveCounter.innerText = moves;
 }
   for(let i = 0; i < 100; i++){
+    // easy mode
   if(levelMode[i] === easySelector){
   if(moves === 7){
     star[2].classList = "fas fa-star-half";
@@ -1006,6 +897,7 @@ function moveCount(){
     star[0].classList = "fas fa-star-half";
   }
 }
+// medium mode
   if(levelMode[i] === mediumSelector){
   if(moves === 10){
     star[2].classList = "fas fa-star-half";
@@ -1023,6 +915,7 @@ function moveCount(){
     star[0].classList = "fas fa-star-half";
   }
 }
+// hard mode
   if(levelMode[i] === hardSelector){
   if(moves === 14){
     star[2].classList = "fas fa-star-half";
@@ -1040,6 +933,7 @@ function moveCount(){
     star[0].classList = "fas fa-star-half";
   }
 }
+// expert mode
   if(levelMode[i] === expertSelector){
   if(moves === 17){
     star[2].classList = "fas fa-star-half";
@@ -1059,7 +953,7 @@ function moveCount(){
 }
 }
 }
-
+// winning animation
 function win(){
   let winModal = document.querySelector(".winModal");
   let congrats = document.querySelector(".congrats");
@@ -1072,17 +966,12 @@ function win(){
   let hardSelector = "Hard";
   let expertSelector = "Expert";
   let card = document.querySelector(".card");
-  // let moveCounter = document.querySelector('.moves');
-  // let starCounter = document.querySelector('#starId').innerText;
-    // console.log("win animation called");
+  let moveCounter = document.querySelector('.moves');
+  let moves = moveCounter.innerText;
+  let body = document.body;
     congrats.classList.add("live");
-    // console.log("congrats live added");
-
-    let moveCounter = document.querySelector('.moves');
-    let moves = moveCounter.innerText;
     scoringMoves.innerText = moves;
-let body = document.body;
-
+    // easy mode
     if(body.classList.contains("Easy")){
       if(moves > 1){
         scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i><i class = 'fa fa-star'></i>";
@@ -1103,6 +992,7 @@ let body = document.body;
       scoringStars.innerHTML = "<i class = 'fas fa-star-half'></i>";
       }
     }
+    // medium mode
     if(body.classList.contains("Medium")){
       if(moves > 1){
         scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i><i class = 'fa fa-star'></i>";
@@ -1123,6 +1013,7 @@ let body = document.body;
       scoringStars.innerHTML = "<i class = 'fas fa-star-half'></i>";
       }
     }
+    // hard mode
     if(body.classList.contains("Hard")){
       if(moves > 1){
         scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i><i class = 'fa fa-star'></i>";
@@ -1143,6 +1034,7 @@ let body = document.body;
       scoringStars.innerHTML = "<i class = 'fas fa-star-half'></i>";
       }
     }
+    // expert mode
     if(body.classList.contains("Expert")){
       if(moves > 1){
         scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i><i class = 'fa fa-star'></i>";
@@ -1163,13 +1055,9 @@ let body = document.body;
       scoringStars.innerHTML = "<i class = 'fas fa-star-half'></i>";
       }
     }
+    // timed function to delay appearance of winning modal after congrats disappers
   congratAni = setTimeout(function playCongats(){
     congrats.classList.remove("live");
-    // console.log("remove congrats live");
     winModal.style.display = "block";
-    // console.log("display winModal");
-
-    // scoringPanel.style.display = "grid";
-    // console.log("display score panel");
   }, 2000);
 };
