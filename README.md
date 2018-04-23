@@ -1,20 +1,22 @@
-# Memory Game Project
+# Memory Card Game Project
+
+Link to Live preview https://rhovell.github.io/memory-game/
 
 ## Table of Contents
 
 * [Instructions](#instructions)
-* [Contributing](#contributing)
 
 ## Instructions
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+-Choose your level - Easy, Medium, Hard or Expert.
+-Each level has a few different themes to choose from.
+-Select which theme you prefer.
 
-To get started, open `js/app.js` and start building out the app's functionality
+-Now, click on a card to turn it over, and try to find the matching card! _(You can only have two cards flipped over at once!)_
+-If you get it right, the matched cards will stay face-up.
+-If you get it wrong, they will turn back over so you can select them again.
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+-Try to find all the pairs in the deck in as little moves as possible!
+-You start with 3 stars, can you keep them all?
 
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+-If you would like to restart your game at any game, simply press the restart button at the top right.
