@@ -1,3 +1,5 @@
+/* universal page styling */
+/* screens under 600px */
 html {
     box-sizing: border-box;
 }
@@ -16,12 +18,12 @@ body {
     margin: 0;
     padding: 0;
 }
-
 body {
     font-family: 'Coda', cursive;
     font-size: 1em;
     background-color: rgba(40, 39, 37, 1);
 }
+/* link styling */
 a:link {
   color: black;
   background-color: transparent;
@@ -45,38 +47,37 @@ a:active {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    height: auto;
+    top: 15%;
+    left: 15%;
     overflow: hidden;
     background: linear-gradient(to bottom, rgba(97, 215, 255, 0.5), rgba(73, 188, 16, 0.5));
     border: 3px ridge rgba(97, 215, 255, 1);
     color: white;
-    margin: auto;
+    height: auto;
     width: 60%;
-    top: 15%;
-    left: 15%;
 }
-.level-desc {
-  margin-bottom: 0.2em;
-}
-/* Modal Content/Box */
-.level-modal-content {
-    text-align: center;
-    margin: 1em;
-}
-
+/* Modal Content */
 .level-selection {
   display: grid;
   flex-wrap: wrap;
   grid-template-columns: auto;
 }
-.level-selection .intro {
+.level-desc {
+  margin-bottom: 0.2em;
+}
+.level-modal-content {
+  text-align: center;
+  margin: 1em;
+}
+/* grid positioning */
+.level-modal-content .intro {
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 2;
   margin: auto;
 }
-.level.Easy {
+.level.easy {
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 2;
@@ -102,25 +103,21 @@ a:active {
 }
 .level {
   width: 100%;
-  background: transparent;
-  border: none;
   cursor: pointer;
-  /* padding-bottom: 1em; */
-  /* margin: auto; */
-  /* justify-content: center; */
   align-items: center;
 }
+/* level selection images */
 .level-select {
-  margin: auto;
   height: 3em;
 }
 .hard .level-select {
-  margin: auto;
   height: 4em;
 }
 .expert .level-select {
-  margin: auto;
   height: 3em;
+}
+.pack-select.tbc {
+  width: 2.3em;
 }
 .level:hover {
   background-color: rgba(97, 215, 255, 0.4);
@@ -128,9 +125,7 @@ a:active {
 .level:active {
   transform: translateY(4px);
 }
-.pack-select.tbc {
-  width: 2.3em;
-}
+/* theme selection styling */
 .selectPack {
   width: 100%;
   cursor: pointer;
@@ -149,6 +144,7 @@ a:active {
 .themes {
   display: none;
 }
+/* grid positioning */
 .theme-selection-area .intro {
   grid-column-start: 1;
   grid-column-end: 2;
@@ -173,7 +169,8 @@ a:active {
   grid-row-start: 4;
   grid-row-end: 5;
 }
-
+/* game area styling */
+/* header styling */
 .container {
   display: flex;
   justify-content: center;
@@ -182,7 +179,6 @@ a:active {
   vertical-align: middle;
 }
 h1 {
-    /* font-family: 'Open Sans', sans-serif; */
     font-weight: 300;
     margin-bottom: 0;
     margin-top: 0.2em;
@@ -197,10 +193,7 @@ h1 {
   margin-bottom: 1%;
   font-size: 0.8em;
 }
-
-/*
- * Styles for the Score Panel
-*/
+/* Styles for the Score Panel */
 .score-panel {
   text-align: center;
   width: 70%;
@@ -241,37 +234,19 @@ h1 {
 .difficulty-class {
   margin: 0;
 }
-/*
- * Styles for the deck of cards
- */
-
+/* Styling for the all decks of cards */
 .deck {
-    padding: 1.5em;
-    padding-bottom: 10px;
-    border-radius: 10px;
-    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin: auto;
-    width: 90%;
-    height: 90%;
+  padding: 1.5em;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  height: 90%;
 }
-
-.card img {
-  display: none;
-  width: 50%;
-  height: 50%;
-  margin: auto;
-}
-.card.open.show img {
-  display: block;
-}
-.card.hold img {
-  display: block;
-}
-/* styling for all decks */
 .card {
   border-radius: 8px;
   cursor: pointer;
@@ -287,8 +262,19 @@ h1 {
   transform: rotateY(0);
   cursor: default;
 }
+.card img {
+  display: none;
+  width: 50%;
+  height: 50%;
+  margin: auto;
+}
+.card.open.show img {
+  display: block;
+}
+.card.hold img {
+  display: block;
+}
 /* styling for easy decks */
-/* styling for butterfly deck */
 .deck.easy {
   max-width: 260px;
 }
@@ -296,6 +282,7 @@ h1 {
   height: 6em;
   width: 6em;
 }
+/* styling for butterfly deck */
 body.butterflies {
   background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/butterflies.png');
   background-repeat: no-repeat;
@@ -399,8 +386,8 @@ body.farmyard {
   max-width: 380px;
 }
 .deck.medium .card {
-    height: 6em;
-    width: 6em;
+  height: 6em;
+  width: 6em;
 }
 /* birds deck styling */
 body.birds {
@@ -479,8 +466,8 @@ body.bugs {
   animation-duration: 1s;
 }
 .bugs .card.wrong {
-   animation-name: bugs-wrong-animation;
-   animation-duration: 1s;
+  animation-name: bugs-wrong-animation;
+  animation-duration: 1s;
 }
 @-webkit-keyframes bugs-right-animation {
   from {background-color: rgba(156, 181, 79, 1);}
@@ -554,7 +541,6 @@ body.reptiles {
   width: 95%;
   height: auto;
   max-width: 440px;
-  /* max-height: 480px; */
 }
 .deck.hard .card {
     height: 6em;
@@ -617,7 +603,6 @@ body.endangered {
   background-size: cover;
   background-attachment: fixed;
 }
-
 .deck.endangered {
   background: linear-gradient(60deg, rgba(235, 0, 0, 0.5) 0%, rgba(251, 19, 19, 0.5) 100%);
 }
@@ -667,7 +652,6 @@ body.woodland {
   background-size: cover;
   background-attachment: fixed;
 }
-
 .deck.woodland {
   background: linear-gradient(60deg, rgba(48, 134, 40, 0.5) 0%, rgba(38, 173, 26, 0.5) 100%);
 }
@@ -766,38 +750,34 @@ body.sealife {
 	75% { -webkit-transform: translate(-1px, -1px) rotate(-2deg); }
 	100% { -webkit-transform: translate(1px, 1px) rotate(2deg); }
 }
-/* winning modal styling */
+/* congratulations animation styling */
 .congrats {
   font-size: 0;
   display: none;
 }
 .congrats.live {
-  font-size: 1.8em;
   display: block;
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   top: 35%;
   left: 25%;
-  background: transparent;
+  font-size: 1.8em;
 }
+/* winning modal styling */
 .winModal {
   display: none;
   width: auto;
-  /* min-height: 150px; */
   height: auto;
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   top: 20%;
   left: 20%;
-  /* margin: auto; */
-  /* font-size: 1em; */
   background: linear-gradient(to bottom, rgba(97, 215, 255, 0.9), rgba(73, 188, 16, 0.9));
   border: 3px ridge rgba(97, 215, 255, 1);
   overflow: hidden;
   padding: 1em;
 }
 .win-modal-content {
-  background-color: transparent;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -809,6 +789,7 @@ body.sealife {
   flex-wrap: wrap;
   font-size: 1em;
 }
+/* grid positioning */
 .you-win {
   grid-column-start: 1;
   grid-column-end: 2;
@@ -849,6 +830,7 @@ body.sealife {
   cursor: pointer;
   width: 3px;
 }
+/* footer styling */
 .footer{
   background-color: rgba(250, 250, 250, 0.5);
   width: 100%;
@@ -858,7 +840,5 @@ body.sealife {
   flex-direction: column;
   position: fixed;
   bottom: 0;
-  /* z-index: -1; */
-  font-size: 0.8em;
   text-align: center;
 }
