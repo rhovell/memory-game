@@ -996,6 +996,7 @@ function win(){
   let scoringPanel = document.querySelector(".winning-score");
   let scoringMoves = document.querySelector("#printMoves");
   let scoringStars = document.querySelector("#printStars");
+
   let winArray = matchedCards.length;
   let easySelector = "Easy";
   let mediumSelector = "Medium";
@@ -1007,12 +1008,27 @@ function win(){
   let body = document.body;
     congrats.classList.add("live");
     scoringMoves.innerText = moves;
+  let timeCounter = document.querySelector('.timer');
+  let scoringMinutes = document.querySelector("#printMinutes");
+  let scoringSeconds = document.querySelector("#printSeconds");
+  let time = timeCounter.innerText;
+  if(time < 60){
+  scoringMinutes.innerText = "0";
+  scoringSeconds.innerText = time;
+}
+if (time > 60){
+minutes = Math.floor(time / 60);
+scoringMinutes.innerText = minutes;
+timeSecs = time - minutes * 60;
+scoringSeconds.innerText = timeSecs;
+
+}
     // easy mode
     if(body.classList.contains("Easy")){
       if(moves > 1){
         scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i><i class = 'fa fa-star'></i>";
       }
-      if(moves >= 6){
+      if(moves >= 7){
       scoringStars.innerHTML = "<i class = 'fa fa-star'></i><i class = 'fa fa-star'></i><i class = 'fas fa-star-half'></i>";
       }
       if(moves >= 8){
