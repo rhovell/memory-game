@@ -1,6 +1,6 @@
 # Memory Card Game Project
 
-Card Matching Game - Can you find all the pairs?
+Card Matching Game - Can you find all the pairs?</br>
 Link to Live preview https://rhovell.github.io/memory-game/
 
 ## Table of Contents
@@ -29,10 +29,10 @@ Link to Live preview https://rhovell.github.io/memory-game/
 
 ## Code Dependencies
 
--app.css - Normalises styling of app
--responsive-styles.css - Responsive styling for different medias
--app.js - JavaScript that controls all game play
--index.html - Main HTML base
+* app.css - Normalises styling of app
+* responsive-styles.css - Responsive styling for different medias
+* app.js - JavaScript that controls all game play
+* index.html - Main HTML base
 
 ## Authors
 
