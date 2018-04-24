@@ -33,21 +33,25 @@ var sealifeCards = ['clownfish', 'clownfish', 'dolphin', 'dolphin', 'hermit-crab
 // level variables
 const levelSelect = document.getElementsByClassName('level-select');
 const levelOne = document.getElementById('easyButton');
+const levelOneClick = document.getElementById('levelSelectE');
 const levelOneImage = document.getElementById('easyI');
 const levelOneThemes = document.getElementsByClassName('easy');
 const levelOneChoices = document.querySelector('.easyThemeSelection');
 
 const levelTwo = document.getElementById('mediumButton');
+const levelTwoClick = document.getElementById('levelSelectM');
 const levelTwoImage = document.getElementById('mediumI');
 const levelTwoThemes = document.getElementsByClassName('medium');
 const levelTwoChoices = document.querySelector('.mediumThemeSelection');
 
 const levelThree = document.getElementById('hardButton');
+const levelThreeClick = document.getElementById('levelSelectH');
 const levelThreeImage = document.getElementById('hardI');
 const levelThreeThemes = document.getElementsByClassName('hard');
 const levelThreeChoices = document.querySelector('.hardThemeSelection');
 
 const levelFour = document.getElementById('expertButton');
+const levelFourClick = document.getElementById('levelSelectEx');
 const levelFourImage = document.getElementById('expertI');
 const levelFourThemes = document.getElementsByClassName('expert');
 const levelFourChoices = document.querySelector('.expertThemeSelection');
@@ -62,10 +66,10 @@ const themeSelectionTwo = document.querySelector('.selectPack.two');
 const themeSelectionThree = document.querySelector('.selectPack.three');
 const themeSelectionFour = document.querySelector('.selectPack.four');
 
-levelOneImage.addEventListener("click", levelSelectionChange);
-levelTwoImage.addEventListener("click", levelSelectionChange);
-levelThreeImage.addEventListener("click", levelSelectionChange);
-levelFourImage.addEventListener("click", levelSelectionChange);
+levelOneClick.addEventListener("click", levelSelectionChange);
+levelTwoClick.addEventListener("click", levelSelectionChange);
+levelThreeClick.addEventListener("click", levelSelectionChange);
+levelFourClick.addEventListener("click", levelSelectionChange);
 // function to change body to choosen level and add choosen level to levelMode
 function levelSelectionChange(e){
   const body = document.querySelector("body");
@@ -137,7 +141,6 @@ function switchDecks(e){
   // easy themes
   if (e.target.classList.contains('butterflies')) {
     levelMode.push("selectButterflies");
-    // console.log(e.target);
   }
   if (e.target.classList.contains('farmyard')) {
     levelMode.push("selectFarmyard");
@@ -382,7 +385,6 @@ for(var i = 0; i < levelMode.length; i++){
         cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/easy/farmyard/sheep.png';
       }
       placedCard.appendChild(cardDetails);
-      // console.log("cardDetails IMG element placed");
     }
     // add level details to deck and body
       deck.classList.add("easy");
@@ -484,7 +486,6 @@ for(var i = 0; i < levelMode.length; i++){
         cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/medium/bugs/snail.png';
       }
       placedCard.appendChild(cardDetails);
-      // console.log("cardDetails IMG element placed");
     }
     // add level details to deck and body
       deck.classList.add("medium");
@@ -594,7 +595,6 @@ for(var i = 0; i < levelMode.length; i++){
           cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/hard/dinosaurs/velociraptor.png';
         }
         placedCard.appendChild(cardDetails);
-        // console.log("cardDetails IMG element placed");
       }
       // add level details to deck and body
         deck.classList.add("hard");
@@ -653,7 +653,6 @@ for(var i = 0; i < levelMode.length; i++){
             cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/hard/endangered/polar-bear.png';
           }
           placedCard.appendChild(cardDetails);
-          // console.log("cardDetails IMG element placed");
         }
         // add level details to deck and body
           deck.classList.add("hard");
@@ -712,7 +711,6 @@ for(var i = 0; i < levelMode.length; i++){
               cardDetails.src = 'https://rachel-hovell-designs.000webhostapp.com/memory-game/game-sets/hard/woodland/squirrel.png';
             }
             placedCard.appendChild(cardDetails);
-            // console.log("cardDetails IMG element placed");
           }
           // add level details to deck and body
             deck.classList.add("hard");
