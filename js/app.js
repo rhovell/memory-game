@@ -803,7 +803,7 @@ if (e.target.tagName === 'LI') {
 
   if (openCards.length < 2){
   // toggles open and show class
-      e.target.classList.add('open','show');
+      e.target.classList.add('open','show','disabled');
   // fucntion variables
       let choice = document.querySelector('.card.open');
       let choices = e.target.firstChild.classList[2];
@@ -891,7 +891,7 @@ function match(){
 function clear(){
   clearOpen = setTimeout(function(){
     let openSelects = $(".open.show");
-    openSelects.removeClass("open show");
+    openSelects.removeClass("open show disabled");
   },100);
   myVar = setTimeout(function clearWrong(){
     let selects = $(".card.wrong");

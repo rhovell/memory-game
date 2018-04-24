@@ -280,6 +280,9 @@ h1 {
 .card.hold img {
   display: block;
 }
+.disabled {
+  pointer-events: none;
+}
 /* styling for easy decks */
 .deck.easy {
   max-width: 260px;
