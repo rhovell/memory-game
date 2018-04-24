@@ -1115,5 +1115,4 @@ scoringSeconds.innerText = timeSecs;
     congrats.classList.remove("live");
     winModal.style.display = "block";
   }, 2000);
-stopCount();
 };
