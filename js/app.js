@@ -873,16 +873,19 @@ function match(){
        if(levelMode[i] === mediumSelector){
          if(winArray === 12){
            win();
+           stopCount();
          }
        }
        if(levelMode[i] === hardSelector){
          if(winArray === 16){
            win();
+           stopCount();
          }
        }
        if(levelMode[i] === expertSelector){
          if(winArray === 20){
            win();
+           stopCount();
          }
        }
      }
