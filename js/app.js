@@ -231,6 +231,32 @@ function createMovecounter(){
   moveText.textContent = " Moves";
   moveCounter.appendChild(moveText);
 }
+// function to create timer in game area
+function countTime(){
+var start = new Date().getTime(),
+    time = 0,
+    elapsed = '0.0';
+    function instance(){
+      const timer = document.querySelector(".timer");
+      time += 100;
+      elapsed = Math.floor(time / 100) / 10;
+      if(Math.round(elapsed) == elapsed) { elapsed += '.0'; }
+      timer.innerHTML = elapsed;
+      var diff = (new Date().getTime() - start) - time;
+      window.setTimeout(instance, (100 - diff));
+    }
+window.setTimeout(instance, 100);
+}
+// function to create timer, called on card click
+function createTimer(){
+  const scores = document.querySelector(".score-panel");
+  const timer = document.createElement('div');
+  timer.classList = "timer";
+  let timerInner = document.getElementsByTagName('DIV')
+  scores.appendChild(timer);
+  countTime();
+}
+
 // function to create restart button
 function createRestartButton(){
   const scores = document.querySelector(".score-panel");
@@ -780,6 +806,7 @@ function respondToTheClick(e) {
       // perform check function
       moveCount();
       check(cards);
+      createTimer();
     }
   }
 }

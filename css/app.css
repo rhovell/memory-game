@@ -199,7 +199,7 @@ h1 {
   width: 70%;
   display: grid;
   flex-wrap: wrap;
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: 25% 25% 25% 25%;
   margin: 0;
 }
 .score-panel .stars {
@@ -228,6 +228,12 @@ h1 {
   cursor: pointer;
   grid-column-start: 3;
   grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.timer {
+  grid-column-start: 4;
+  grid-column-end: 5;
   grid-row-start: 1;
   grid-row-end: 2;
 }
