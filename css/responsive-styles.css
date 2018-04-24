@@ -2,6 +2,10 @@
   .heading {
     font-size: 1em;
   }
+  .modal {
+    overflow: hidden;
+    height: auto;
+  }
   /* Modal Content */
   .level-modal-content .intro {
     grid-column-start: 1;
@@ -159,6 +163,7 @@
       width: 60%;
       height: auto;
       max-height: 100%;
+      overflow: hidden;
   }
   .level-modal-content .intro {
     grid-column-start: 1;
