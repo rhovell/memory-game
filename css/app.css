@@ -306,7 +306,7 @@ h1 {
 }
 /* styling for butterfly deck */
 body.butterflies {
-  background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/butterflies.png');
+  background: #61D7FF url('https://raw.githubusercontent.com/rhovell/memory-game/master/img/backgrounds/butterflies.png');
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
@@ -355,7 +355,7 @@ body.butterflies {
 }
 /* styling for farmyard deck */
 body.farmyard {
-  background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/farmyard.png');
+  background: #61D7FF url('https://raw.githubusercontent.com/rhovell/memory-game/master/img/backgrounds/farmyard.png');
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
@@ -413,7 +413,7 @@ body.farmyard {
 }
 /* birds deck styling */
 body.birds {
-  background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/birds.jpg');
+  background: #61D7FF url('https://raw.githubusercontent.com/rhovell/memory-game/master/img/backgrounds/birds.jpg');
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
@@ -462,7 +462,7 @@ body.birds {
 }
 /* styling for bug deck */
 body.bugs {
-  background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/bugs.jpg');
+  background: #61D7FF url('https://raw.githubusercontent.com/rhovell/memory-game/master/img/backgrounds/bugs.jpg');
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
@@ -511,7 +511,7 @@ body.bugs {
 }
 /* reptile deck stling */
 body.reptiles {
-  background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/reptiles.jpg');
+  background: #61D7FF url('https://raw.githubusercontent.com/rhovell/memory-game/master/img/backgrounds/reptiles.jpg');
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
@@ -570,7 +570,7 @@ body.reptiles {
 }
 /* dinosaur deck styling */
 body.dinosaurs {
-  background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/dinosaurs.jpg');
+  background: #61D7FF url('https://raw.githubusercontent.com/rhovell/memory-game/master/img/backgrounds/dinosaurs.jpg');
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
@@ -619,7 +619,7 @@ body.dinosaurs {
 }
 /* endangered deck styling */
 body.endangered {
-  background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/endangered.jpg');
+  background: #61D7FF url('https://raw.githubusercontent.com/rhovell/memory-game/master/img/backgrounds/endangered.jpg');
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
@@ -668,7 +668,7 @@ body.endangered {
 }
 /* woodland deck styling */
 body.woodland {
-  background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/woodland.jpg');
+  background: #61D7FF url('https://raw.githubusercontent.com/rhovell/memory-game/master/img/backgrounds/woodland.jpg');
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
@@ -725,7 +725,7 @@ body.woodland {
 }
 /* sealife deck styling */
 body.sealife {
-  background: #61D7FF url('https://rachel-hovell-designs.000webhostapp.com/memory-game/backgrounds/sealife.jpg');
+  background: #61D7FF url('https://raw.githubusercontent.com/rhovell/memory-game/master/img/backgrounds/sealife.jpg');
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
