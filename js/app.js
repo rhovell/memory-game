@@ -331,17 +331,17 @@ for(var i = 0; i < levelMode.length; i++){
     let yellowSelect = "butterfly-yellow";
     let orangeSelect = "butterfly-orange";
       if(cardDetails.classList[2] === redSelect){
-        cardDetails.src = 'https://github.com/rhovell/memory-game/img/game-sets/easy/butterflies/red.png';
+        cardDetails.src = 'https://raw.githubusercontent.com/rhovell/memory-game/master/img//game-sets/easy/butterflies/red.png';
       }
       if(cardDetails.classList[2] === blueSelect){
         // img/game-sets/easy/butterflies/blue.png
-        cardDetails.src = 'https://github.com/rhovell/memory-game/img/game-sets/easy/butterflies/blue.png';
+        cardDetails.src = 'https://raw.githubusercontent.com/rhovell/memory-game/master/img//game-sets/easy/butterflies/blue.png';
       }
       if(cardDetails.classList[2] === yellowSelect){
-        cardDetails.src = 'https://github.com/rhovell/memory-game/img/game-sets/easy/butterflies/yellow.png';
+        cardDetails.src = 'https://raw.githubusercontent.com/rhovell/memory-game/master/img//game-sets/easy/butterflies/yellow.png';
       }
       if(cardDetails.classList[2] === orangeSelect){
-        cardDetails.src = 'https://github.com/rhovell/memory-game/img/game-sets/easy/butterflies/orange.png';
+        cardDetails.src = 'https://raw.githubusercontent.com/rhovell/memory-game/master/img//game-sets/easy/butterflies/orange.png';
       }
     placedCard.appendChild(cardDetails);
   }
